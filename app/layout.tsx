@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const OceanicTextMono = localFont({
+  src: "../public/fonts/OceanicTextMono-Regular.woff",
+  variable: "--font-oceanic-text-mono",
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const BrutalType = localFont({
+  src: "../public/fonts/BrutalType-Bold.woff",
+  variable: "--font-brutal-type",
+  weight: "700",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${OceanicTextMono.variable} ${BrutalType.variable} antialiased`}
       >
         {children}
       </body>

@@ -8,9 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        oceanic: ["var(--font-oceanic-text-mono)"],
+        brutal: ["var(--font-brutal-type)"],
       },
     },
   },
