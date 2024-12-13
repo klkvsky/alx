@@ -320,17 +320,17 @@ export default function Home() {
       <div className="flex flex-row mt-[32px]">
         <motion.div
           className="w-[308px] h-[480px] -ml-[209px] relative lg:w-[768px] lg:h-[1200px] lg:-ml-[371px] lg:rotate-0 lg:z-10"
-          style={{
-            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "10%"]) : 0,
-          }}
+          // style={{
+          //   y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "10%"]) : 0,
+          // }}
         >
           <Image src={Hero9} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
         <motion.div
           className="w-[294px] h-[352px] relative lg:w-[1488px] lg:h-[984px]"
-          style={{
-            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]) : 0,
-          }}
+          // style={{
+          //   y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]) : 0,
+          // }}
         >
           <Image
             src={Hero8}
@@ -344,17 +344,17 @@ export default function Home() {
       <div className="flex flex-col items-center lg:gap-0">
         <motion.div
           className="w-[111px] h-[76px] relative z-10 lg:w-[406px] lg:h-[254px]"
-          style={{
-            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "50%"]) : 0,
-          }}
+          // style={{
+          //   y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "50%"]) : 0,
+          // }}
         >
           <Image src={Hero10} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
         <motion.div
           className="w-[273px] h-[396px] relative lg:w-[978px] lg:h-[1428px] "
-          style={{
-            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-5%"]) : 0,
-          }}
+          // style={{
+          //   y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-5%"]) : 0,
+          // }}
         >
           <Image src={Hero11} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
