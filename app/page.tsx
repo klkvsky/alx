@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 import Navbar from "@/components/navbar";
 import Image from "next/image";
@@ -31,26 +31,10 @@ import Slider8 from "@/public/Home/Slider8.jpg";
 import Slider9 from "@/public/Home/Slider9.png";
 import Slider10 from "@/public/Home/Slider10.png";
 import Slider11 from "@/public/Home/Slider11.jpg";
-import { useRef } from "react";
 
-function ImageWrapper({ children }: { children: React.ReactNode }) {
-  const ref = useRef(null);
-  const inView = useInView(ref);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: inView ? 1 : 0 }}
-      ref={ref}
-    >
-      {children}
-    </motion.div>
-  );
-}
 export default function Home() {
   const { scrollYProgress } = useScroll();
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
   const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
 
@@ -279,12 +263,9 @@ export default function Home() {
       {/* растягивать на больших */}
       <motion.div
         className="flex flex-row justify-center gap-2.5 mt-[45px] lg:mt-[52px]"
-        style={{
-          x:
-            window.innerWidth < 1199
-              ? useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-              : 0,
-        }}
+        // style={{
+        //   x: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+        // }}
       >
         <div className="w-[50px] h-[72px] flex-none relative stroke-none">
           <Image src={Slider1} alt="Slider Image 1" fill objectFit="cover" />

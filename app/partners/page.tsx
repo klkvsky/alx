@@ -4,8 +4,8 @@ import Navbar from "@/components/navbar";
 
 import Image from "next/image";
 
-import Hero1 from "@/public/Partnets/Hero1.png";
-import Hero2 from "@/public/Partnets/Hero2.png";
+// import Hero1 from "@/public/Partnets/Hero1.png";
+// import Hero2 from "@/public/Partnets/Hero2.png";
 
 import Sergey1 from "@/public/Partnets/Sergey/1.jpg";
 import Sergey2 from "@/public/Partnets/Sergey/2.jpg";

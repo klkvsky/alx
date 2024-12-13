@@ -2,9 +2,6 @@
 
 import Navbar from "@/components/navbar";
 
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-
 import Image from "next/image";
 
 import Image1 from "@/public/Artifacts/Image1.jpg";

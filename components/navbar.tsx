@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Logo from "@/public/ALXLogo.png";
 
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 import { useState } from "react";
@@ -12,8 +12,6 @@ import Link from "next/link";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-
   
 
   const [isOpen, setIsOpen] = useState(false);
