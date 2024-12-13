@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "motion/react";
+import { useState, useEffect } from "react";
 
 import Navbar from "@/components/navbar";
 import Image from "next/image";
@@ -34,6 +35,20 @@ import Slider11 from "@/public/Home/Slider11.jpg";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1199);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
   const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
@@ -305,53 +320,41 @@ export default function Home() {
       <div className="flex flex-row mt-[32px]">
         <motion.div
           className="w-[308px] h-[480px] -ml-[209px] relative lg:w-[768px] lg:h-[1200px] lg:-ml-[371px] lg:rotate-0 lg:z-10"
-          // style={{
-          //   y:
-          //     window.innerWidth < 1199
-          //       ? useTransform(scrollYProgress, [0, 1], ["0%", "10%"])
-          //       : 0,
-          // }}
+          style={{
+            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "10%"]) : 0,
+          }}
         >
           <Image src={Hero9} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
         <motion.div
           className="w-[294px] h-[352px] relative lg:w-[1488px] lg:h-[984px]"
-          // style={{
-          //   y:
-          //     window.innerWidth < 1199
-          //       ? useTransform(scrollYProgress, [0, 1], ["0%", "-10%"])
-          //       : 0,
-          // }}
+          style={{
+            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]) : 0,
+          }}
         >
           <Image
             src={Hero8}
             alt="Hero Home"
             fill
             objectFit="cover"
-            objectPosition={window.innerWidth < 1199 ? "20%" : "50%"}
+            objectPosition={isMobile ? "20%" : "50%"}
           />
         </motion.div>
       </div>
       <div className="flex flex-col items-center lg:gap-0">
         <motion.div
           className="w-[111px] h-[76px] relative z-10 lg:w-[406px] lg:h-[254px]"
-          // style={{
-          //   y:
-          //     window.innerWidth < 1199
-          //       ? useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-          //       : 0,
-          // }}
+          style={{
+            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "50%"]) : 0,
+          }}
         >
           <Image src={Hero10} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
         <motion.div
           className="w-[273px] h-[396px] relative lg:w-[978px] lg:h-[1428px] "
-          // style={{
-          //   y:
-          //     window.innerWidth < 1199
-          //       ? useTransform(scrollYProgress, [0, 1], ["0%", "-5%"])
-          //       : 0,
-          // }}
+          style={{
+            y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-5%"]) : 0,
+          }}
         >
           <Image src={Hero11} alt="Hero Home" fill objectFit="cover" />
         </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 
 import Image from "next/image";
@@ -56,6 +57,21 @@ import Ksenia4 from "@/public/Partnets/Ksenya/4.png";
 import Ksenia5 from "@/public/Partnets/Ksenya/5.png";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1199);
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden bg-black text-white">
       <Navbar />
@@ -268,8 +284,7 @@ export default function Home() {
             fill
             objectFit="cover"
             style={{
-              transform:
-                window.innerWidth < 1199 ? "translateX(-35%) scale(1.05)" : "",
+              transform: isMobile ? "translateX(-35%) scale(1.05)" : "",
             }}
           />
         </div>
@@ -315,7 +330,7 @@ export default function Home() {
             fill
             objectFit="cover"
             style={{
-              transform: window.innerWidth < 1199 ? "translateX(-25%)" : "",
+              transform: isMobile ? "translateX(-25%)" : "",
             }}
           />
         </div>
@@ -367,7 +382,7 @@ export default function Home() {
             fill
             objectFit="cover"
             style={{
-              transform: window.innerWidth < 1199 ? "translateX(-20%)" : "",
+              transform: isMobile ? "translateX(-20%)" : "",
             }}
           />
         </div>
@@ -418,14 +433,14 @@ export default function Home() {
             fill
             objectFit="cover"
             style={{
-              transform: window.innerWidth < 1199 ? "translateX(-20%)" : "",
+              transform: isMobile ? "translateX(-20%)" : "",
             }}
           />
         </div>
         <div
           className="w-[302px] h-[200px] relative flex-none z-10 lg:w-[544px] lg:h-[360px]"
           style={{
-            marginLeft: window.innerWidth < 1199 ? "-90px" : "-46px",
+            marginLeft: isMobile ? "-90px" : "-46px",
           }}
         >
           <Image src={Arina2} alt="Arina 2" fill objectFit="cover" />
@@ -468,14 +483,14 @@ export default function Home() {
             fill
             objectFit="cover"
             style={{
-              transform: window.innerWidth < 1199 ? "translateX(-20%)" : "",
+              transform: isMobile ? "translateX(-20%)" : "",
             }}
           />
         </div>
         <div
           className="w-[132px] h-[200px] relative flex-none lg:w-[238px] lg:h-[360px]"
           style={{
-            marginLeft: window.innerWidth < 1199 ? "-71px" : "",
+            marginLeft: isMobile ? "-71px" : "",
           }}
         >
           <Image src={Ksenia2} alt="Ksenia 2" fill objectFit="cover" />
