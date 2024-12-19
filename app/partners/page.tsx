@@ -73,91 +73,91 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col max-w-[100vw] overflow-hidden bg-black text-white">
+    <div className="flex flex-col max-w-[100vw] overflow-hidden bg-black text-white relative">
       <Navbar />
 
       {/* TODO: Вставить фоновые 2 изображения */}
 
-      <p className="bold-text ml-[91px] mt-[92px] uppercase lg:mt-[224px] lg:ml-[12px]">
-        команда
+      <p className="bold-text ml-[94px] mt-[92px] uppercase lg:mt-[224px] lg:ml-[12px]">
+        КОМАНДА
       </p>
 
-      <div className="flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:pl-[12px] lg:gap-[20px]">
-        <div className="flex flex-row items-start">
+      <div className="flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:pl-[12px] lg:gap-[20px] lg:fixed lg:top-[92px] lg:z-0">
+        <div className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">01</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Sergey4} alt="Sergey 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5">
             Сергей Лисин
           </p>
         </div>
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">02</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Alexey4} alt="Alexey 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5">
             Алексей Ахуба
           </p>
         </div>
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">03</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Asya5} alt="Asya 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5 ">
             Ася Алфёрова
           </p>
         </div>
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">04</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={AlexeyR4} alt="Alexey R 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5">
             Алексей Рябов
           </p>
         </div>
-        <div className="flex flex-row items-start mt-[28px] lg:mt-[52px]">
+        <div className="flex flex-row items-center mt-[28px] lg:mt-[52px]">
           <p className="bold-text mt-0.5 w-[2.5ch]">05</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Evgeny5} alt="Evgeny 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5">
             Евгений Орлов
           </p>
         </div>
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">06</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Anastasia6} alt="Anastasia 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5">
             Анастасия Рябова
           </p>
         </div>
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">07</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Arina4} alt="Arina 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5">
             Арина Русакевич
           </p>
         </div>
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">08</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Ksenia5} alt="Ksenia 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-offset-4 ml-2.5 -translate-y-[6px]">
+          <p className="regular-text underline underline-extension-2 ml-2.5">
             Ксения Мерзлякова
           </p>
         </div>
       </div>
 
-      <div className="flex flex-row items-end mt-16 lg:-mt-[140px] lg:ml-[44px]">
+      <div className="flex flex-row items-end mt-16 lg:mt-[165px] lg:ml-[44px] lg:z-20">
         <div className="w-[156px] h-[103px] relative flex-none lg:w-[255px] lg:h-[168px]">
           <Image src={Sergey1} alt="Sergey 1" fill objectFit="cover" />
         </div>
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px] lg:z-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Сергей Лисин</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
@@ -184,19 +184,20 @@ export default function Home() {
           </p>
         </div>
         <p className="regular-text mt-6">
-          <span className="bold-text">01</span> В деле с 1992 года.{" "}
-          <span className="bold-text">02</span> Его карьера — ровесница рыночной
-          экономики страны.<span className="bold-text">03</span> За плечами
-          легенды прошлого и настоящего, такие как ЛЛД, Первый Ваучерный банк,
-          Ост-Вест Групп, Росбилдинг, РЖД — Развитие вокзалов,
-          Промсвязьнедвижимость, Платформа, BGP Litigation.{" "}
-          <span className="bold-text">04</span> Разбирается в людях, цифрах и
-          документах. Заключил сделок в дюжине отраслей на сотни миллиардов
-          рублей.
+          <span className="bold-text">01</span> Редкий день из последних 15 лет
+          провёл не в арбитраже, выиграл сотни процессов на десятки миллиардов.{" "}
+          <span className="bold-text">02</span> Создал несколько громких
+          прецедентов в Верховном суде. <span className="bold-text">03</span>{" "}
+          Отмечен в рейтингах Best Lawyers, Legal 500, Leaders League,
+          Право.Ru-300, 100 влиятельных персон банкротства России.{" "}
+          <span className="bold-text">04</span> Любим не только клиентами, но и
+          профессиональными изданиями и студентами.{" "}
+          <span className="bold-text">05</span> До ALX строил карьеру в BGP
+          litigation.
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px]">
+      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:-ml-[16px]">
           <Image src={Alexey1} alt="Sergey 3" fill objectFit="cover" />
         </div>
@@ -217,7 +218,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:w-[665px]">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Алексей Ахуба</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -238,7 +239,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px]">
+      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
         <div className="w-[210px] h-[138px] relative flex-none lg:w-[344px] lg:h-[228px] lg:-ml-[46px]">
           <Image src={Asya1} alt="Asya 1" fill objectFit="cover" />
         </div>
@@ -253,7 +254,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:w-[692px]">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Ася Алфёрова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -296,7 +297,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[682px]">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Алексей Рябов</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -311,6 +312,7 @@ export default function Home() {
           учебников и монографий. А затем более 10 лет возглавлял
           Экспертно-правовой центр Уполномоченного при Президенте РФ по защите
           прав предпринимателей (бизнес-омбудсмена).{" "}
+          <br className="max-lg:hidden" />
           <span className="bold-text">03</span> Входил в различные постоянные
           экспертные группы при Верховном суде РФ, Генеральной прокуратуре РФ,
           Министерстве юстиции РФ, Федерального арбитражного суда Московского
@@ -348,7 +350,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[700px]">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Евгений Орлов</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -362,16 +364,18 @@ export default function Home() {
           давно превысил 50 млрд рублей.<span className="bold-text"> 02</span>
           Составленные им процессуальные документы имеют особый и узнаваемый
           почерк — они лаконичны, пронизаны правом и в большинстве случаев
-          приводят к судебным победам.<span className="bold-text"> 03</span> С
-          отличием окончил Российскую правовую академию Министерства Юстиции
-          Российской Федерации (специалитет) в 2015 году, а впоследствии получил
-          второе образование в Англии. <span className="bold-text">04</span>
+          приводят к судебным победам.
+          <br className="max-lg:hidden" />{" "}
+          <span className="bold-text"> 03</span> С отличием окончил Российскую
+          правовую академию Министерства Юстиции Российской Федерации
+          (специалитет) в 2015 году, а впоследствии получил второе образование в
+          Англии. <span className="bold-text">04</span>
           Любит большие скорости и тонкие колёса своего шоссейного велосипеда.
           05 До ALX работал в Lidings и BGP Litigation.
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px]">
+      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:z-10">
           <Image src={Anastasia1} alt="Anastasya 1" fill objectFit="cover" />
         </div>
@@ -400,7 +404,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[655px] lg:z-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Анастасия Рябова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -413,6 +417,7 @@ export default function Home() {
           учёбы в ВШЭ. К красным дипломам бакалавриата и магистратуры добавился
           еще гигантский прикладной опыт судебного представительства
           и подготовки процессуальных документов.{" "}
+          <br className="max-lg:hidden" />
           <span className="bold-text"> 02</span> Несколько лет такого симбиоза
           дали феноменальные плоды — Анастасия в 24 года получила статус
           адвоката, сдав один из самых сложных экзаменов в Адвокатской палате
@@ -425,7 +430,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px]">
+      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
         <div className="w-[191px] h-[127px] relative flex-none z-0 lg:w-[345px] lg:h-[228px]">
           <Image
             src={Arina1}
@@ -453,7 +458,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[682px] lg:z-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Арина Русакевич</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
@@ -475,7 +480,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px]">
+      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
         <div className="w-[166px] h-[110px] relative flex-none lg:w-[299px] lg:h-[197px]">
           <Image
             src={Ksenia1}
@@ -506,7 +511,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[25%] lg:pr-[210px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[25%] lg:max-w-[682px] lg:z-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Ксения Мерзлякова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">

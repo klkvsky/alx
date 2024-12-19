@@ -14,4 +14,29 @@
   .big-text {
     @apply font-normal font-oceanic text-[20px] leading-[24px] -tracking-[0.03em] lg:text-[24px] lg:leading-[28px];
   }
+
+  .underline-extension {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 25%;
+    text-decoration-thickness: 10%;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .underline-extension-2 {
+    text-decoration-style: solid;
+    text-underline-offset: 10%;
+    text-decoration-thickness: 2%;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .underline-extension-2-x {
+    text-decoration-style: solid;
+    text-underline-offset: 10%;
+    text-decoration-thickness: 1%;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
 }

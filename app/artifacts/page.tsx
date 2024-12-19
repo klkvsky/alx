@@ -25,21 +25,11 @@ import Image17 from "@/public/Artifacts/image17.jpg";
 import ImageX from "@/public/Artifacts/ImageForgot.png";
 
 export default function Home() {
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   if (router.pathname === "/partners") {
-  //     document.body.style.backgroundColor = "black";
-  //   } else {
-  //     document.body.style.backgroundColor = "";
-  //   }
-  // }, [router.pathname]);
-
   return (
-    <div className="flex flex-col max-w-[100vw] overflow-hidden">
+    <div className="flex flex-col max-w-[100vw] overflow-hidden bg-[#E8E8E8]">
       <Navbar />
 
-      <p className="bold-text text-center mt-[308px] uppercase lg:mt-[272px]">
+      <p className="bold-text text-center mt-[38.5dvh] uppercase lg:mt-[272px]">
         Артефакты
       </p>
 
@@ -57,7 +47,7 @@ export default function Home() {
             }}
           />
         </div>
-        <p className="bold-text absolute left-[150px] lg:left-[487px] top-4">
+        <p className="bold-text absolute left-[150px] lg:left-[487px] top-4 z-10">
           01
         </p>
       </div>
@@ -72,7 +62,7 @@ export default function Home() {
         <Image src={Image3} alt="Image 3" fill objectFit="cover" />
       </div>
 
-      <p className="bold-text ml-[150px] lg:ml-[487px] mt-16 lg:mt-[132px]">
+      <p className="bold-text ml-[150px] lg:ml-[487px] mt-[256px] lg:mt-[132px]">
         03
       </p>
       <div className="w-[273px] h-[181px] mt-3 mx-auto relative lg:w-[584px] lg:h-[384px]">
@@ -125,7 +115,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full h-[240px] relative mx-auto lg:hidden">
+      <div className="w-full h-[240px] relative mx-auto lg:hidden max-lg:mt-[256px
+      ]">
         <Image src={Image8} alt="Image 8" fill objectFit="cover" />
       </div>
       <div className="w-full h-[240px] mx-auto relative lg:hidden">

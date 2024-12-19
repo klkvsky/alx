@@ -1,25 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "@/public/ALXLogo.png";
+import Logo from "@/public/ALXLogo.svg";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 
 export default function Navbar() {
   const pathname = usePathname();
-  
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
     <>
+      {/* <div className="fixed top-[42px] left-0 w-screen h-px bg-red-500" /> */}
       <div
-        className="flex flex-row items-start pl-1 pr-2.5 fixed top-1 left-0 w-screen h-fit z-50 lg:pl-11 lg:top-1.5"
+        className="flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5"
         style={{
           color: isOpen || pathname.includes("partners") ? "white" : "black",
         }}
@@ -36,7 +48,7 @@ export default function Navbar() {
           }}
           className="lg:w-[204px] lg:h-[60px]"
         />
-        <div className="flex flex-col ml-[10px] translate-y-[24px] lg:ml-[63px] lg:translate-y-[45px]">
+        <div className="flex flex-col ml-[10px] translate-y-[24px] lg:ml-[63px] lg:translate-y-[35px]">
           <div className="flex flex-col gap-[3px] text-[10px] lg:text-[12px]">
             <p className="uppercase bold-text">коллегия адвокатов</p>
             <p className="uppercase font-oceanic leading-[10px] tracking-[0.2em] lg:text-[12px] lg:leading-[12px] lg:ml-[100%] whitespace-nowrap">
@@ -45,7 +57,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="lg:flex flex-col lg:ml-[155px] translate-y-[45px] hidden">
+        <div className="lg:flex flex-col lg:ml-[155px] translate-y-[35px] hidden">
           <div className="flex flex-col gap-[3px] text-[10px] lg:text-[12px]">
             <p className="uppercase bold-text">
               Беспокойство ваших оппонентов.
@@ -54,7 +66,7 @@ export default function Navbar() {
               href="/"
               className={cn(
                 "bold-text mt-[30px] uppercase",
-                pathname !== "/" && "underline underline-offset-8",
+                pathname !== "/" && "underline underline-extension",
                 pathname === "/partners"
                   ? "decoration-white/50"
                   : "decoration-black/50"
@@ -66,7 +78,7 @@ export default function Navbar() {
               href="/partners"
               className={cn(
                 "bold-text mt-3 uppercase",
-                pathname !== "/partners" && "underline underline-offset-8",
+                pathname !== "/partners" && "underline underline-extension",
                 pathname === "/partners"
                   ? "decoration-white/50"
                   : "decoration-black/50"
@@ -78,7 +90,7 @@ export default function Navbar() {
               href="/artifacts"
               className={cn(
                 "bold-text mt-3 uppercase",
-                pathname !== "/artifacts" && "underline underline-offset-8 ",
+                pathname !== "/artifacts" && "underline underline-extension ",
                 pathname === "/partners"
                   ? "decoration-white/50"
                   : "decoration-black/50"
@@ -88,8 +100,20 @@ export default function Navbar() {
             </Link>
             <Link
               href="/#contacts"
+              onClick={(e) => {
+                e.preventDefault();
+                const href = e.currentTarget.href;
+                const targetId = href.split("#")[1];
+
+                if (pathname === "/") {
+                  scrollToCenter(targetId);
+                } else {
+                  router.push("/");
+                  setTimeout(() => scrollToCenter(targetId), 300);
+                }
+              }}
               className={cn(
-                "bold-text mt-3 uppercase underline underline-offset-8 ",
+                "bold-text mt-3 uppercase underline underline-extension ",
                 pathname === "/partners"
                   ? "decoration-white/50"
                   : "decoration-black/50"
@@ -151,9 +175,9 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={cn(
-                  "big-text",
+                  "big-text text-[24px]",
                   pathname !== "/" &&
-                    "underline underline-offset-8  decoration-white/50"
+                    "underline underline-extension  decoration-white/50"
                 )}
               >
                 О нас
@@ -178,9 +202,9 @@ export default function Navbar() {
               <Link
                 href="/partners"
                 className={cn(
-                  "big-text",
+                  "big-text text-[24px]",
                   pathname !== "/partners" &&
-                    "underline underline-offset-8  decoration-white/50"
+                    "underline underline-extension  decoration-white/50"
                 )}
               >
                 Команда
@@ -205,9 +229,9 @@ export default function Navbar() {
               <Link
                 href="/artifacts"
                 className={cn(
-                  "big-text",
+                  "big-text text-[24px]",
                   pathname !== "/artifacts" &&
-                    "underline underline-offset-8  decoration-white/50"
+                    "underline underline-extension  decoration-white/50"
                 )}
               >
                 Артефакты
@@ -229,15 +253,28 @@ export default function Navbar() {
               className="flex flex-row items-end justify-between w-full"
             >
               <p className="bold-text">04</p>
-              <p
+              <Link
+                href="/#contacts"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const href = e.currentTarget.href;
+                  const targetId = href.split("#")[1];
+
+                  if (pathname === "/") {
+                    scrollToCenter(targetId);
+                  } else {
+                    router.push("/");
+                    setTimeout(() => scrollToCenter(targetId), 300);
+                  }
+                }}
                 className={cn(
-                  "big-text",
+                  "big-text text-[24px]",
                   pathname !== "/contacts" &&
-                    "underline underline-offset-8  decoration-white/50"
+                    "underline underline-extension  decoration-white/50"
                 )}
               >
                 Контакты
-              </p>
+              </Link>
               <p className="bold-text">04</p>
             </motion.div>
 
@@ -270,3 +307,22 @@ export default function Navbar() {
     </>
   );
 }
+
+export const scrollToCenter = (elementId: string) => {
+  setTimeout(() => {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    const navbarHeight = 100; // Adjust based on your navbar height
+    const elementRect = element.getBoundingClientRect();
+    const elementTop = elementRect.top + window.pageYOffset;
+    const windowCenter = window.innerHeight / 2;
+    const elementCenter = elementRect.height / 2;
+    const scrollTo = elementTop - windowCenter + elementCenter - navbarHeight;
+
+    window.scrollTo({
+      top: scrollTo,
+      behavior: "smooth",
+    });
+  }, 10);
+};
