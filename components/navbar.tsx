@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Logo from "@/public/ALXLogo.svg";
+import LogoShort from "@/public/ALXLogoShort.svg";
 
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useScroll } from "motion/react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -15,6 +16,15 @@ export default function Navbar() {
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const { scrollY } = useScroll();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      setVisible(latest > window.innerHeight);
+    });
+  }, [scrollY]);
 
   useEffect(() => {
     if (isOpen) {
@@ -29,25 +39,97 @@ export default function Navbar() {
 
   return (
     <>
-      {/* <div className="fixed top-[42px] left-0 w-screen h-px bg-red-500" /> */}
+      <AnimatePresence mode="wait" initial={false}>
+        {visible && (
+          <motion.div
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            initial={{ opacity: 0, y: -100 }}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 w-screen z-50 mix-blend-difference p-3 flex flex-row items-center gap-9"
+          >
+            <Link href="/">
+              <Image
+                src={LogoShort}
+                alt="ALX Logo"
+                width={124}
+                height={20}
+                objectFit="contain"
+              />
+            </Link>
+            <Link
+              href="/"
+              className={cn(
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] ml-auto uppercase",
+                pathname !== "/" && "underline underline-extension"
+              )}
+            >
+              О НАС
+            </Link>
+            <Link
+              href="/partners"
+              className={cn(
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase",
+                pathname !== "/partners" && "underline underline-extension"
+              )}
+            >
+              Команда
+            </Link>
+            <Link
+              href="/artifacts"
+              className={cn(
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase",
+                pathname !== "/artifacts" && "underline underline-extension"
+              )}
+            >
+              Артефакты
+            </Link>
+            <Link
+              href="/#contacts"
+              onClick={(e) => {
+                e.preventDefault();
+                const href = e.currentTarget.href;
+                const targetId = href.split("#")[1];
+
+                if (pathname === "/") {
+                  scrollToCenter(targetId);
+                } else {
+                  router.push("/");
+                  setTimeout(() => scrollToCenter(targetId), 300);
+                }
+              }}
+              className={cn(
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase underline underline-extension"
+              )}
+            >
+              Контакты
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div
         className="flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5"
         style={{
           color: isOpen || pathname.includes("partners") ? "white" : "black",
         }}
       >
-        <Image
-          src={Logo}
-          alt="ALX Logo"
-          width={134}
-          height={48}
-          objectFit="contain"
-          style={{
-            filter:
-              pathname.includes("partners") || isOpen ? "invert(1)" : "none",
-          }}
-          className="lg:w-[204px] lg:h-[60px]"
-        />
+        <Link href="/">
+          <Image
+            src={Logo}
+            alt="ALX Logo"
+            width={134}
+            height={48}
+            objectFit="contain"
+            style={{
+              filter:
+                pathname.includes("partners") || isOpen ? "invert(1)" : "none",
+            }}
+            className="lg:w-[204px] lg:h-[60px]"
+          />
+        </Link>
         <div className="flex flex-col ml-[10px] translate-y-[24px] lg:ml-[63px] lg:translate-y-[35px]">
           <div className="flex flex-col gap-[3px] text-[10px] lg:text-[12px]">
             <p className="uppercase bold-text">коллегия адвокатов</p>

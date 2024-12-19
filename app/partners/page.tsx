@@ -55,6 +55,7 @@ import Ksenia2 from "@/public/Partnets/Ksenya/2.png";
 import Ksenia3 from "@/public/Partnets/Ksenya/3.png";
 import Ksenia4 from "@/public/Partnets/Ksenya/4.png";
 import Ksenia5 from "@/public/Partnets/Ksenya/5.png";
+import Link from "next/link";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -82,8 +83,8 @@ export default function Home() {
         КОМАНДА
       </p>
 
-      <div className="flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:pl-[12px] lg:gap-[20px] lg:fixed lg:top-[92px] lg:z-0">
-        <div className="flex flex-row items-center">
+      <div className="flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:pl-[12px] lg:gap-[20px] lg:fixed lg:top-[272px] lg:z-0 lg:mt-0">
+        <Link href="#sergey" className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">01</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Sergey4} alt="Sergey 1" fill objectFit="cover" />
@@ -91,8 +92,8 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5">
             Сергей Лисин
           </p>
-        </div>
-        <div className="flex flex-row items-center">
+        </Link>
+        <Link href="#alexey" className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">02</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Alexey4} alt="Alexey 1" fill objectFit="cover" />
@@ -100,8 +101,8 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5">
             Алексей Ахуба
           </p>
-        </div>
-        <div className="flex flex-row items-center">
+        </Link>
+        <Link href="#asya" className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">03</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Asya5} alt="Asya 1" fill objectFit="cover" />
@@ -109,8 +110,8 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5 ">
             Ася Алфёрова
           </p>
-        </div>
-        <div className="flex flex-row items-center">
+        </Link>
+        <Link href="#alexey-r" className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">04</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={AlexeyR4} alt="Alexey R 1" fill objectFit="cover" />
@@ -118,8 +119,11 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5">
             Алексей Рябов
           </p>
-        </div>
-        <div className="flex flex-row items-center mt-[28px] lg:mt-[52px]">
+        </Link>
+        <Link
+          href="#evgeny"
+          className="flex flex-row items-center mt-[28px] lg:mt-[52px]"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">05</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Evgeny5} alt="Evgeny 1" fill objectFit="cover" />
@@ -127,8 +131,8 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5">
             Евгений Орлов
           </p>
-        </div>
-        <div className="flex flex-row items-center">
+        </Link>
+        <Link href="#anastasia" className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">06</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Anastasia6} alt="Anastasia 1" fill objectFit="cover" />
@@ -136,8 +140,8 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5">
             Анастасия Рябова
           </p>
-        </div>
-        <div className="flex flex-row items-center">
+        </Link>
+        <Link href="#arina" className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">07</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Arina4} alt="Arina 1" fill objectFit="cover" />
@@ -145,8 +149,8 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5">
             Арина Русакевич
           </p>
-        </div>
-        <div className="flex flex-row items-center">
+        </Link>
+        <Link href="#ksenia" className="flex flex-row items-center">
           <p className="bold-text mt-0.5 w-[2.5ch]">08</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Ksenia5} alt="Ksenia 1" fill objectFit="cover" />
@@ -154,10 +158,13 @@ export default function Home() {
           <p className="regular-text underline underline-extension-2 ml-2.5">
             Ксения Мерзлякова
           </p>
-        </div>
+        </Link>
       </div>
 
-      <div className="flex flex-row items-end mt-16 lg:mt-[165px] lg:ml-[44px] lg:z-20">
+      <div
+        className="flex flex-row items-end mt-16 lg:mt-[315px] lg:ml-[44px] lg:z-20"
+        id="sergey"
+      >
         <div className="w-[156px] h-[103px] relative flex-none lg:w-[255px] lg:h-[168px]">
           <Image src={Sergey1} alt="Sergey 1" fill objectFit="cover" />
         </div>
@@ -197,7 +204,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
+      <div
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        id="alexey"
+      >
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:-ml-[16px]">
           <Image src={Alexey1} alt="Sergey 3" fill objectFit="cover" />
         </div>
@@ -239,7 +249,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
+      <div
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        id="asya"
+      >
         <div className="w-[210px] h-[138px] relative flex-none lg:w-[344px] lg:h-[228px] lg:-ml-[46px]">
           <Image src={Asya1} alt="Asya 1" fill objectFit="cover" />
         </div>
@@ -274,7 +287,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px]">
+      <div
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px]"
+        id="alexey-r"
+      >
         <div className="hidden relative flex-none lg:flex lg:w-[288px] lg:h-[192px] lg:ml-[11px]">
           <Image src={AlexeyR1} alt="Alexey R 1" fill objectFit="cover" />
         </div>
@@ -324,7 +340,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end justify-center mt-[128px] lg:mt-[192px]">
+      <div
+        className="flex flex-row items-end justify-center mt-[128px] lg:mt-[192px]"
+        id="evgeny"
+      >
         <div className="w-[168px] h-[111px] relative flex-none lg:w-[310px] lg:h-[204px]">
           <Image
             src={Evgeny1}
@@ -375,7 +394,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
+      <div
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        id="anastasia"
+      >
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:z-10">
           <Image src={Anastasia1} alt="Anastasya 1" fill objectFit="cover" />
         </div>
@@ -430,7 +452,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
+      <div
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        id="arina"
+      >
         <div className="w-[191px] h-[127px] relative flex-none z-0 lg:w-[345px] lg:h-[228px]">
           <Image
             src={Arina1}
@@ -480,7 +505,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20">
+      <div
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        id="ksenia"
+      >
         <div className="w-[166px] h-[110px] relative flex-none lg:w-[299px] lg:h-[197px]">
           <Image
             src={Ksenia1}
