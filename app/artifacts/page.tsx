@@ -29,7 +29,7 @@ export default function Home() {
     <div className="flex flex-col max-w-[100vw] overflow-hidden bg-[#E8E8E8]">
       <Navbar />
 
-      <p className="bold-text text-center mt-[38.5dvh] uppercase lg:mt-[272px]">
+      <p className="bold-text max-lg:text-center mt-[38.5dvh] uppercase lg:mt-[272px] lg:ml-[490px]">
         Артефакты
       </p>
 
