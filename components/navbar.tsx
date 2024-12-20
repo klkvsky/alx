@@ -148,10 +148,7 @@ export default function Navbar() {
               href="/"
               className={cn(
                 "bold-text mt-[30px] uppercase",
-                pathname !== "/" && "underline underline-extension",
-                pathname === "/partners"
-                  ? "decoration-white/50 hover:decoration-white/0 transition-all"
-                  : "decoration-black/50 hover:decoration-black/0 transition-all"
+                pathname !== "/" && "underline underline-extension hover:no-underline"
               )}
             >
               О нас
@@ -160,10 +157,7 @@ export default function Navbar() {
               href="/partners"
               className={cn(
                 "bold-text mt-3 uppercase",
-                pathname !== "/partners" && "underline underline-extension",
-                pathname === "/partners"
-                  ? "decoration-white/50 hover:decoration-white/0 transition-all"
-                  : "decoration-black/50 hover:decoration-black/0 transition-all"
+                pathname !== "/partners" && "underline underline-extension hover:no-underline"
               )}
             >
               Команда
@@ -172,10 +166,7 @@ export default function Navbar() {
               href="/artifacts"
               className={cn(
                 "bold-text mt-3 uppercase",
-                pathname !== "/artifacts" && "underline underline-extension ",
-                pathname === "/partners"
-                  ? "decoration-white/50 hover:decoration-white/0 transition-all"
-                  : "decoration-black/50 hover:decoration-black/0 transition-all"
+                pathname !== "/artifacts" && "underline underline-extension hover:no-underline"
               )}
             >
               Артефакты
@@ -195,10 +186,7 @@ export default function Navbar() {
                 }
               }}
               className={cn(
-                "bold-text mt-3 uppercase underline underline-extension ",
-                pathname === "/partners"
-                  ? "decoration-white/50 hover:decoration-white/0 transition-all "
-                  : "decoration-black/50 hover:decoration-black/0 transition-all"
+                "bold-text mt-3 uppercase underline underline-extension hover:no-underline"
               )}
             >
               Контакты
