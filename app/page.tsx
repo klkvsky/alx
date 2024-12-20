@@ -24,7 +24,7 @@ import Hero9 from "@/public/Home/Home9.jpg";
 import Hero10 from "@/public/Home/Home10.jpg";
 import Hero11 from "@/public/Home/Home11.jpg";
 import Hero12 from "@/public/Home/Home12.jpg";
-import Hero13 from "@/public/Home/Home13.png";
+import Hero13 from "@/public/Home/Home13.jpg";
 // import Hero14 from "@/public/Home/Home14.jpg";
 import Hero14X from "@/public/Home/Home14X.jpg";
 
@@ -193,7 +193,7 @@ export default function Home() {
           </TextWrapper>
 
           <TextWrapper>
-            <div className="flex flex-row mt-8 max-lg:max-w-[480px] lg:min-w-[780px]  lg:justify-between">
+            <div className="flex flex-row mt-8 max-lg:max-w-[480px] lg:min-w-[780px]  lg:justify-between items-center">
               <p className=" bold-text leading-[20px]">01</p>
               <p className="ml-[26px] mr-[29px] regular-text lg:-ml-12 max-lg:w-[260px]">
                 Узкая специализация: мы делаем <br className="lg:hidden" />{" "}
@@ -206,46 +206,45 @@ export default function Home() {
 
           <TextWrapper>
             <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px]">
-              <p className=" bold-text leading-[20px]">02</p>
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">02</p>
               <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
                 Высокая юридическая кухня — <br className="lg:hidden" />
                 качество документов, творческие <br className="lg:hidden" />
                 и креативные рецепты.
               </p>
-              <p className=" bold-text leading-[20px]">02</p>
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">02</p>
             </div>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
-              <p className=" bold-text leading-[20px]">03</p>
+            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px]">
+              <p className="bold-text leading-[22px] lg:leading-[26px]">03</p>
               <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
                 Честные и долгосрочные отношения <br className="lg:hidden" />{" "}
                 важнее заработка. Некоторые <br className="lg:hidden" />
                 клиенты с нами больше 25 лет.
               </p>
-              <p className=" bold-text leading-[20px]">03</p>
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">03</p>
             </div>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
-              <p className=" bold-text leading-[20px]">04</p>
+            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px]">
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">04</p>
               <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
                 Наша главная ценность — команда.
                 <br className="lg:hidden" />
                 Она стабильна: костяк вместе <br className="lg:hidden" />
                 больше десятилетия. Она <br className="lg:hidden" />
-                преемственна: есть те, кому 50,
-                <br className="lg:hidden" />
+                преемственна: есть те, кому 50, <br className="lg:hidden" />
                 40, 30 и даже чуть за 20, наше
                 <br className="lg:hidden" />
                 прошлое, настоящее и будущее.
               </p>
-              <p className=" bold-text leading-[20px]">04</p>
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">04</p>
             </div>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
-              <p className=" bold-text leading-[20px]">05</p>
+            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px]">
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">05</p>
               <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
                 Каждое дело — это инвестиция.
                 <br className="lg:hidden" /> В саморазвитие, в развитие{" "}
@@ -253,7 +252,7 @@ export default function Home() {
                 <br className="lg:hidden" />
                 с клиентом. 
               </p>
-              <p className=" bold-text leading-[20px]">05</p>
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">05</p>
             </div>
           </TextWrapper>
         </div>
@@ -448,21 +447,11 @@ export default function Home() {
         </div>
       </motion.div>
 
-      <div className="flex flex-row mt-[52px]">
-        <motion.div
-          className="w-[308px] h-[480px] -ml-[209px] relative lg:w-[768px] lg:h-[1200px] lg:-ml-[17px] lg:rotate-0 lg:z-10"
-          // style={{
-          //   y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "10%"]) : 0,
-          // }}
-        >
+      <div className="flex flex-row mt-[52px] relative lg:h-[1200px]">
+        <motion.div className="w-[308px] h-[480px] -ml-[209px] relative lg:w-[768px] lg:h-[1200px] lg:z-10 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-[126.5%]">
           <Image src={Hero9} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
-        <motion.div
-          className="w-[294px] h-[352px] relative lg:w-[1488px] lg:h-[984px] overflow-hidden"
-          // style={{
-          //   y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]) : 0,
-          // }}
-        >
+        <motion.div className="w-[294px] h-[352px] relative lg:w-[1488px] lg:h-[984px] overflow-hidden lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-[13.7%]">
           <ImageWrapper>
             <Image
               src={Hero8}

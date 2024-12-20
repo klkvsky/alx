@@ -80,8 +80,8 @@ export default function Home() {
       const targetPosition =
         pickedComponentRef!.getBoundingClientRect().top +
         window.scrollY +
-        pickedComponentRef!.offsetHeight / 2 -
-        window.innerHeight / 2;
+        pickedComponentRef!.offsetHeight -
+        window.innerHeight;
 
       const distance = targetPosition - currentPosition;
       const duration = 1500;
@@ -146,7 +146,7 @@ export default function Home() {
               x: -100,
             }}
             transition={{
-              bounce: 0
+              bounce: 0,
             }}
             className="fixed top-[102px] left-0 flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:hidden"
           >
