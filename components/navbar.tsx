@@ -1,14 +1,17 @@
 "use client";
 
 import Image from "next/image";
+
 import Logo from "@/public/ALXLogo.svg";
 import LogoShort from "@/public/ALXLogoShort.svg";
+import NavbarBackground from "@/public/NavbarBackground.jpg";
 
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
+
 import Link from "next/link";
 
 export default function Navbar() {
@@ -148,7 +151,8 @@ export default function Navbar() {
               href="/"
               className={cn(
                 "bold-text mt-[30px] uppercase",
-                pathname !== "/" && "underline underline-extension hover:no-underline"
+                pathname !== "/" &&
+                  "underline underline-extension hover:no-underline"
               )}
             >
               О нас
@@ -157,7 +161,8 @@ export default function Navbar() {
               href="/partners"
               className={cn(
                 "bold-text mt-3 uppercase",
-                pathname !== "/partners" && "underline underline-extension hover:no-underline"
+                pathname !== "/partners" &&
+                  "underline underline-extension hover:no-underline"
               )}
             >
               Команда
@@ -166,7 +171,8 @@ export default function Navbar() {
               href="/artifacts"
               className={cn(
                 "bold-text mt-3 uppercase",
-                pathname !== "/artifacts" && "underline underline-extension hover:no-underline"
+                pathname !== "/artifacts" &&
+                  "underline underline-extension hover:no-underline"
               )}
             >
               Артефакты
@@ -226,7 +232,13 @@ export default function Navbar() {
             }}
             className="fixed top-0 left-0 w-screen h-[100dvh] bg-black z-40 flex flex-col items-center justify-center gap-6 text-white px-2.5"
           >
-            {/* TODO: Фотку фоновую */}
+            <Image
+              src={NavbarBackground}
+              layout="fill"
+              objectFit="cover"
+              alt="Navbar Background"
+              className="z-0"
+            />
             <motion.div
               initial={{
                 opacity: 0,
@@ -239,7 +251,7 @@ export default function Navbar() {
                   delay: 0.1,
                 },
               }}
-              className="flex flex-row items-end justify-between w-full"
+              className="flex flex-row items-end justify-between w-full z-10"
             >
               <p className="bold-text">01</p>
               <Link
@@ -266,7 +278,7 @@ export default function Navbar() {
                   delay: 0.2,
                 },
               }}
-              className="flex flex-row items-end justify-between w-full"
+              className="flex flex-row items-end justify-between w-full z-10"
             >
               <p className="bold-text">02</p>
               <Link
@@ -293,7 +305,7 @@ export default function Navbar() {
                   delay: 0.3,
                 },
               }}
-              className="flex flex-row items-end justify-between w-full"
+              className="flex flex-row items-end justify-between w-full z-10"
             >
               <p className="bold-text">03</p>
               <Link
@@ -320,7 +332,7 @@ export default function Navbar() {
                   delay: 0.4,
                 },
               }}
-              className="flex flex-row items-end justify-between w-full"
+              className="flex flex-row items-end justify-between w-full z-10"
             >
               <p className="bold-text">04</p>
               <Link
@@ -340,7 +352,7 @@ export default function Navbar() {
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/contacts" &&
-                    "underline underline-extension-2  decoration-white/50"
+                    "underline underline-extension-2 decoration-white/50"
                 )}
               >
                 Контакты

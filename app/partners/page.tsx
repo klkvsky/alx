@@ -55,6 +55,9 @@ import Ksenia2 from "@/public/Partnets/Ksenya/2.png";
 import Ksenia3 from "@/public/Partnets/Ksenya/3.png";
 import Ksenia4 from "@/public/Partnets/Ksenya/4.png";
 import Ksenia5 from "@/public/Partnets/Ksenya/5.png";
+
+import background from "@/public/Partnets/Phon.jpg";
+
 import { AnimatePresence, motion, useScroll } from "motion/react";
 
 export default function Home() {
@@ -123,10 +126,23 @@ export default function Home() {
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden bg-black text-white relative">
       <Navbar />
-
+      <Image
+        src={background}
+        alt="Background"
+        width={1000}
+        height={1221}
+        className="absolute top-0 left-0 z-0 max-lg:h-[108vh] max-lg:w-auto max-lg:object-cover max-lg:object-right"
+      />
+      <Image
+        src={background}
+        alt="Background"
+        width={1000}
+        height={1221}
+        className="absolute top-0 left-[115px] lg:left-[299px] z-0 max-lg:h-[108vh] max-lg:w-auto max-lg:object-cover max-lg:object-right"
+      />
       {/* TODO: Вставить фоновые 2 изображения */}
 
-      <p className="bold-text ml-[94px] mt-[92px] uppercase lg:mt-[224px] lg:ml-[12px]">
+      <p className="bold-text ml-[94px] mt-[92px] uppercase lg:mt-[224px] lg:ml-[12px] z-10">
         КОМАНДА
       </p>
 
@@ -148,7 +164,7 @@ export default function Home() {
             transition={{
               bounce: 0,
             }}
-            className="fixed top-[102px] left-0 flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:hidden"
+            className="fixed top-[102px] left-0 flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:hidden z-10"
           >
             <button
               onClick={(e) => {
@@ -255,7 +271,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <div className="flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:pl-[12px] lg:gap-[20px] lg:fixed lg:top-[272px] lg:z-0 lg:mt-0">
+      <div className="flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:pl-[12px] lg:gap-[20px] lg:fixed lg:top-[272px] lg:z-0 lg:mt-0 z-10">
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -397,7 +413,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-16 lg:mt-[315px] lg:ml-[44px] lg:z-20 pointer-events-none"
+        className="flex flex-row items-end mt-16 lg:mt-[315px] lg:ml-[44px] z-20 pointer-events-none"
         id="sergey"
       >
         <div className="w-[156px] h-[103px] relative flex-none lg:w-[255px] lg:h-[168px]">
@@ -417,7 +433,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px] lg:z-20">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:pr-[210px] z-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Сергей Лисин</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
@@ -442,7 +458,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20  pointer-events-none"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] z-20  pointer-events-none"
         id="alexey"
       >
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:-ml-[16px]">
@@ -487,7 +503,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] z-20 pointer-events-none"
         id="asya"
       >
         <div className="w-[210px] h-[138px] relative flex-none lg:w-[344px] lg:h-[228px] lg:-ml-[46px]">
@@ -527,7 +543,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] pointer-events-none"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] pointer-events-none z-20"
         id="alexey-r"
       >
         <div className="hidden relative flex-none lg:flex lg:w-[288px] lg:h-[192px] lg:ml-[11px]">
@@ -581,7 +597,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end justify-center mt-[128px] lg:mt-[192px] pointer-events-none"
+        className="flex flex-row items-end justify-center mt-[128px] lg:mt-[192px] pointer-events-none z-20"
         id="evgeny"
       >
         <div className="w-[168px] h-[111px] relative flex-none lg:w-[310px] lg:h-[204px]">
@@ -636,7 +652,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none z-20"
         id="anastasia"
       >
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:z-10">
@@ -667,7 +683,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[655px] lg:z-20">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[655px] z-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Анастасия Рябова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -696,7 +712,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none z-20"
         id="arina"
       >
         <div className="w-[191px] h-[127px] relative flex-none z-0 lg:w-[345px] lg:h-[228px]">
@@ -726,7 +742,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[682px] lg:z-20">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[682px] z-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
           <p className="big-text">Арина Русакевич</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
@@ -750,7 +766,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] z-20 pointer-events-none"
         id="ksenia"
       >
         <div className="w-[166px] h-[110px] relative flex-none lg:w-[299px] lg:h-[197px]">
