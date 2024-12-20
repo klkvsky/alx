@@ -9,7 +9,8 @@ import TextWrapper from "@/components/TextWrapper";
 
 import Image from "next/image";
 
-import HeroImage from "@/public/Home/MainHeroBackground.png";
+// import HeroImage from "@/public/Home/MainHeroBackground.png";
+import HeroImageX from "@/public/Home/MainHeroBackgroundX.jpg";
 import Hero2 from "@/public/Home/Home2.jpg";
 // import Hero3 from "@/public/Home/Home3.png";
 import Hero3X from "@/public/Home/Home3X.jpg";
@@ -74,7 +75,7 @@ export default function Home() {
         >
           <ImageWrapper>
             <Image
-              src={HeroImage}
+              src={HeroImageX}
               alt="Hero Home"
               fill
               objectFit="cover"
