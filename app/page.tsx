@@ -2,7 +2,7 @@
 
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 // import { useState, useEffect } from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Navbar from "@/components/navbar";
 import TextWrapper from "@/components/TextWrapper";
@@ -11,10 +11,12 @@ import Image from "next/image";
 
 import HeroImage from "@/public/Home/MainHeroBackground.png";
 import Hero2 from "@/public/Home/Home2.jpg";
-import Hero3 from "@/public/Home/Home3.png";
+// import Hero3 from "@/public/Home/Home3.png";
+import Hero3X from "@/public/Home/Home3X.jpg";
 import Hero4 from "@/public/Home/Home4.jpg";
 import Hero5 from "@/public/Home/Home5.jpg";
-import Hero6 from "@/public/Home/Home6.png";
+// import Hero6 from "@/public/Home/Home6.png";
+import Hero6X from "@/public/Home/Home6X.jpg";
 import Hero7 from "@/public/Home/Home7.jpg";
 import Hero8 from "@/public/Home/Home8.jpg";
 import Hero9 from "@/public/Home/Home9.jpg";
@@ -22,7 +24,8 @@ import Hero10 from "@/public/Home/Home10.jpg";
 import Hero11 from "@/public/Home/Home11.jpg";
 import Hero12 from "@/public/Home/Home12.jpg";
 import Hero13 from "@/public/Home/Home13.png";
-import Hero14 from "@/public/Home/Home14.jpg";
+// import Hero14 from "@/public/Home/Home14.jpg";
+import Hero14X from "@/public/Home/Home14X.jpg";
 
 import HeroX from "@/public/Home/HomeX.jpeg";
 
@@ -41,11 +44,11 @@ import Link from "next/link";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  // const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      // setIsMobile(window.innerWidth < 1199);
+      setIsMobile(window.innerWidth < 1199);
     };
 
     handleResize();
@@ -75,7 +78,7 @@ export default function Home() {
               alt="Hero Home"
               fill
               objectFit="cover"
-              objectPosition="60% 50%"
+              objectPosition={isMobile ? "60% 50%" : "60% 50%"}
               className="max-h-[100dvh]"
             />
           </ImageWrapper>
@@ -125,7 +128,7 @@ export default function Home() {
         <motion.div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
           <ImageWrapper>
             <Image
-              src={Hero3}
+              src={Hero3X}
               alt="Hero Home"
               fill
               objectFit="cover"
@@ -361,7 +364,7 @@ export default function Home() {
       <div className="flex flex-col items-center mt-[106px] lg:mt-[96px]">
         <div className="w-[273px] h-[328px] relative lg:w-[calc(100vw-220px)] lg:h-[1140px] overflow-hidden">
           <ImageWrapper>
-            <Image src={Hero6} alt="Hero Home" fill objectFit="cover" />
+            <Image src={Hero6X} alt="Hero Home" fill objectFit="cover" />
           </ImageWrapper>
         </div>
         <motion.div
@@ -556,16 +559,19 @@ export default function Home() {
       </TextWrapper>
       <TextWrapper>
         <p className="bold-text text-center max-lg:text-[10px] uppercase">
-          ©2024 <span className="underline underline-extension-2">Политика конфиденциальности</span>
+          ©2024{" "}
+          <span className="underline underline-extension-2">
+            Политика конфиденциальности
+          </span>
         </p>
       </TextWrapper>
 
       <div className="mt-16 w-[200px] h-[128px]  relative mx-auto lg:w-[386px] lg:h-[240px]">
         <Image src={Hero13} alt="Hero Home" fill objectFit="cover" />
       </div>
-      <div className="mt-[128px] w-screen h-screen relative lg:h-[200dvh] lg:mt-[216px] overflow-hidden">
+      <div className="mt-[128px] w-screen h-screen relative lg:h-[200dvh] lg:mt-[216px] overflow-hidden -mb-[50px]">
         <ImageWrapper>
-          <Image src={Hero14} alt="Hero Home" fill objectFit="cover" />
+          <Image src={Hero14X} alt="Hero Home" fill objectFit="cover" />
         </ImageWrapper>
       </div>
     </div>
@@ -583,7 +589,7 @@ function ImageWrapper({ children }: { children: React.ReactNode }) {
     offset: ["start end", "end start"],
   });
 
-  const yOffset = useTransform(scrollYProgress, [0, 1], [0, 50]);
+  const yOffset = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
     <motion.div
