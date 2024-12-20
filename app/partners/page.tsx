@@ -55,7 +55,7 @@ import Ksenia2 from "@/public/Partnets/Ksenya/2.png";
 import Ksenia3 from "@/public/Partnets/Ksenya/3.png";
 import Ksenia4 from "@/public/Partnets/Ksenya/4.png";
 import Ksenia5 from "@/public/Partnets/Ksenya/5.png";
-import Link from "next/link";
+import { AnimatePresence, motion, useScroll } from "motion/react";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -73,6 +73,53 @@ export default function Home() {
     };
   }, []);
 
+  function ScrollToTeamMember(member: string) {
+    const pickedComponentRef = document.getElementById(member);
+    const scrollToComponent = () => {
+      const currentPosition = window.scrollY;
+      const targetPosition =
+        pickedComponentRef!.getBoundingClientRect().top +
+        window.scrollY +
+        pickedComponentRef!.offsetHeight / 2 -
+        window.innerHeight / 2;
+
+      const distance = targetPosition - currentPosition;
+      const duration = 1500;
+      let start: number | null = null;
+
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+
+        window.scrollTo(
+          0,
+          currentPosition + distance * easeInOutCubic(percentage)
+        );
+
+        if (progress < duration) {
+          window.requestAnimationFrame(step);
+        }
+      };
+
+      window.requestAnimationFrame(step);
+    };
+
+    const easeInOutCubic = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+
+    scrollToComponent();
+  }
+
+  const { scrollY } = useScroll();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      setVisible(latest > window.innerHeight);
+    });
+  }, [scrollY]);
+
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden bg-black text-white relative">
       <Navbar />
@@ -83,82 +130,252 @@ export default function Home() {
         КОМАНДА
       </p>
 
+      <AnimatePresence initial={false} mode="wait">
+        {visible && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -100,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: -100,
+            }}
+            transition={{
+              bounce: 0
+            }}
+            className="fixed top-[102px] left-0 flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:hidden"
+          >
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("sergey");
+              }}
+              className="flex flex-row items-center"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">01</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image src={Sergey4} alt="Sergey 1" fill objectFit="cover" />
+              </div>
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("alexey");
+              }}
+              className="flex flex-row items-center"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">02</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image src={Alexey4} alt="Alexey 1" fill objectFit="cover" />
+              </div>
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("asya");
+              }}
+              className="flex flex-row items-center"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">03</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image src={Asya5} alt="Asya 1" fill objectFit="cover" />
+              </div>
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("alexey-r");
+              }}
+              className="flex flex-row items-center"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">04</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image src={AlexeyR4} alt="Alexey R 1" fill objectFit="cover" />
+              </div>
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("evgeny");
+              }}
+              className="flex flex-row items-center mt-[28px] lg:mt-[52px]"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">05</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image src={Evgeny5} alt="Evgeny 1" fill objectFit="cover" />
+              </div>
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("anastasia");
+              }}
+              className="flex flex-row items-center"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">06</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image
+                  src={Anastasia6}
+                  alt="Anastasia 1"
+                  fill
+                  objectFit="cover"
+                />
+              </div>
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("arina");
+              }}
+              className="flex flex-row items-center"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">07</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image src={Arina4} alt="Arina 1" fill objectFit="cover" />
+              </div>
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                ScrollToTeamMember("ksenia");
+              }}
+              className="flex flex-row items-center"
+            >
+              <p className="bold-text mt-0.5 w-[2.5ch]">08</p>
+              <div className="w-[44px] h-[28px] relative ml-[15px]">
+                <Image src={Ksenia5} alt="Ksenia 1" fill objectFit="cover" />
+              </div>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="flex flex-col mt-[24px] pl-2.5 gap-[12px] lg:pl-[12px] lg:gap-[20px] lg:fixed lg:top-[272px] lg:z-0 lg:mt-0">
-        <Link href="#sergey" className="flex flex-row items-center">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("sergey");
+          }}
+          className="flex flex-row items-center"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">01</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Sergey4} alt="Sergey 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Сергей Лисин
           </p>
-        </Link>
-        <Link href="#alexey" className="flex flex-row items-center">
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("alexey");
+          }}
+          className="flex flex-row items-center"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">02</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Alexey4} alt="Alexey 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Алексей Ахуба
           </p>
-        </Link>
-        <Link href="#asya" className="flex flex-row items-center">
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("asya");
+          }}
+          className="flex flex-row items-center"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">03</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Asya5} alt="Asya 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5 ">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Ася Алфёрова
           </p>
-        </Link>
-        <Link href="#alexey-r" className="flex flex-row items-center">
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("alexey-r");
+          }}
+          className="flex flex-row items-center"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">04</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={AlexeyR4} alt="Alexey R 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Алексей Рябов
           </p>
-        </Link>
-        <Link
-          href="#evgeny"
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("evgeny");
+          }}
           className="flex flex-row items-center mt-[28px] lg:mt-[52px]"
         >
           <p className="bold-text mt-0.5 w-[2.5ch]">05</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Evgeny5} alt="Evgeny 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Евгений Орлов
           </p>
-        </Link>
-        <Link href="#anastasia" className="flex flex-row items-center">
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("anastasia");
+          }}
+          className="flex flex-row items-center"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">06</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Anastasia6} alt="Anastasia 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Анастасия Рябова
           </p>
-        </Link>
-        <Link href="#arina" className="flex flex-row items-center">
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("arina");
+          }}
+          className="flex flex-row items-center"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">07</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Arina4} alt="Arina 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Арина Русакевич
           </p>
-        </Link>
-        <Link href="#ksenia" className="flex flex-row items-center">
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            ScrollToTeamMember("ksenia");
+          }}
+          className="flex flex-row items-center"
+        >
           <p className="bold-text mt-0.5 w-[2.5ch]">08</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
             <Image src={Ksenia5} alt="Ksenia 1" fill objectFit="cover" />
           </div>
-          <p className="regular-text underline underline-extension-2 ml-2.5">
+          <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Ксения Мерзлякова
           </p>
-        </Link>
+        </button>
       </div>
 
       <div

@@ -63,7 +63,7 @@ export default function Navbar() {
             <Link
               href="/"
               className={cn(
-                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] ml-auto uppercase",
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] ml-auto uppercase hover:decoration-white/0 transition-all",
                 pathname !== "/" && "underline underline-extension"
               )}
             >
@@ -72,7 +72,7 @@ export default function Navbar() {
             <Link
               href="/partners"
               className={cn(
-                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase",
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase hover:decoration-white/0 transition-all",
                 pathname !== "/partners" && "underline underline-extension"
               )}
             >
@@ -81,7 +81,7 @@ export default function Navbar() {
             <Link
               href="/artifacts"
               className={cn(
-                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase",
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase hover:decoration-white/0 transition-all",
                 pathname !== "/artifacts" && "underline underline-extension"
               )}
             >
@@ -102,7 +102,7 @@ export default function Navbar() {
                 }
               }}
               className={cn(
-                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase underline underline-extension"
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase underline underline-extension hover:decoration-white/0 transition-all"
               )}
             >
               Контакты
@@ -111,10 +111,10 @@ export default function Navbar() {
         )}
       </AnimatePresence>
       <div
-        className="flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5"
-        style={{
-          color: isOpen || pathname.includes("partners") ? "white" : "black",
-        }}
+        className="flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5 mix-blend-difference !text-white"
+        // style={{
+        //   color: isOpen || pathname.includes("partners") ? "white" : "black",
+        // }}
       >
         <Link href="/">
           <Image
@@ -123,10 +123,10 @@ export default function Navbar() {
             width={134}
             height={48}
             objectFit="contain"
-            style={{
-              filter:
-                pathname.includes("partners") || isOpen ? "invert(1)" : "none",
-            }}
+            // style={{
+            //   filter:
+            //     pathname.includes("partners") || isOpen ? "invert(1)" : "none",
+            // }}
             className="lg:w-[204px] lg:h-[60px]"
           />
         </Link>
@@ -150,8 +150,8 @@ export default function Navbar() {
                 "bold-text mt-[30px] uppercase",
                 pathname !== "/" && "underline underline-extension",
                 pathname === "/partners"
-                  ? "decoration-white/50"
-                  : "decoration-black/50"
+                  ? "decoration-white/50 hover:decoration-white/0 transition-all"
+                  : "decoration-black/50 hover:decoration-black/0 transition-all"
               )}
             >
               О нас
@@ -162,8 +162,8 @@ export default function Navbar() {
                 "bold-text mt-3 uppercase",
                 pathname !== "/partners" && "underline underline-extension",
                 pathname === "/partners"
-                  ? "decoration-white/50"
-                  : "decoration-black/50"
+                  ? "decoration-white/50 hover:decoration-white/0 transition-all"
+                  : "decoration-black/50 hover:decoration-black/0 transition-all"
               )}
             >
               Команда
@@ -174,8 +174,8 @@ export default function Navbar() {
                 "bold-text mt-3 uppercase",
                 pathname !== "/artifacts" && "underline underline-extension ",
                 pathname === "/partners"
-                  ? "decoration-white/50"
-                  : "decoration-black/50"
+                  ? "decoration-white/50 hover:decoration-white/0 transition-all"
+                  : "decoration-black/50 hover:decoration-black/0 transition-all"
               )}
             >
               Артефакты
@@ -197,8 +197,8 @@ export default function Navbar() {
               className={cn(
                 "bold-text mt-3 uppercase underline underline-extension ",
                 pathname === "/partners"
-                  ? "decoration-white/50"
-                  : "decoration-black/50"
+                  ? "decoration-white/50 hover:decoration-white/0 transition-all "
+                  : "decoration-black/50 hover:decoration-black/0 transition-all"
               )}
             >
               Контакты
@@ -259,7 +259,7 @@ export default function Navbar() {
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/" &&
-                    "underline underline-extension  decoration-white/50"
+                    "underline underline-extension-2  decoration-white/50"
                 )}
               >
                 О нас
@@ -286,7 +286,7 @@ export default function Navbar() {
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/partners" &&
-                    "underline underline-extension  decoration-white/50"
+                    "underline underline-extension-2  decoration-white/50"
                 )}
               >
                 Команда
@@ -313,7 +313,7 @@ export default function Navbar() {
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/artifacts" &&
-                    "underline underline-extension  decoration-white/50"
+                    "underline underline-extension-2  decoration-white/50"
                 )}
               >
                 Артефакты
@@ -352,7 +352,7 @@ export default function Navbar() {
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/contacts" &&
-                    "underline underline-extension  decoration-white/50"
+                    "underline underline-extension-2  decoration-white/50"
                 )}
               >
                 Контакты

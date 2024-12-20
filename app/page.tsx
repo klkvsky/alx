@@ -86,7 +86,7 @@ export default function Home() {
           className="mt-[100px] ml-[155px] gap-3 flex flex-col items-start justify-start lg:block lg:ml-auto lg:mr-[90px] lg:mt-[42px]"
         >
           <p className="bold-text uppercase leading-[14px] z-10 lg:hidden">
-            Беспокойство <br /> ваших оппонентов.
+            БЕСПОКОЙСТВО <br /> ВАШИХ ОППОНЕНТОВ
           </p>
           <div className="w-[117px] h-[84px] lg:w-[135px] lg:h-[96px] relative z-0">
             <Image
@@ -273,63 +273,87 @@ export default function Home() {
         </TextWrapper>
         <div className="lg:flex lg:flex-row lg:gap-8 lg:mt-3 flex flex-col items-center">
           <TextWrapper>
-            <div className="flex flex-row gap-2 items-end mt-4 lg:mt-1">
+            <Link
+              href="/partners#sergey"
+              className="flex flex-row gap-2 items-end mt-4 lg:mt-1"
+            >
               <p className="bold-text leading-[16px]">01</p>
               <p className="big-text underline underline-extension-2">
                 Сергей Лисин
               </p>
-            </div>
+            </Link>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row gap-2 items-end mt-1">
+            <Link
+              href="/partners#alexey"
+              className="flex flex-row gap-2 items-end mt-1"
+            >
               <p className="bold-text leading-[16px]">02</p>
               <p className="big-text underline underline-extension-2">
                 Алексей Ахуба
               </p>
-            </div>
+            </Link>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row gap-2 items-end mt-1">
+            <Link
+              href="/partners#asya"
+              className="flex flex-row gap-2 items-end mt-1"
+            >
               <p className="bold-text leading-[16px]">03</p>
               <p className="big-text underline underline-extension-2">
                 Ася Алфёрова
               </p>
-            </div>
+            </Link>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row gap-2 items-end mt-1">
+            <Link
+              href="/partners#alexey-r"
+              className="flex flex-row gap-2 items-end mt-1"
+            >
               <p className="bold-text leading-[16px]">04</p>
               <p className="big-text underline underline-extension-2">
                 Алексей Рябов
               </p>
-            </div>
+            </Link>
           </TextWrapper>
         </div>
 
         <div className="lg:flex gap-2 lg:flex-row lg:gap-4 lg:mt-[30px] flex flex-col items-center">
           <TextWrapper>
-            <div className="flex flex-row gap-1 items-end mt-6 uppercase bold-text lg:mt-2">
+            <Link
+              href="/partners#evgeny"
+              className="flex flex-row gap-1 items-end mt-6 uppercase bold-text lg:mt-2"
+            >
               <p>05</p>
               <p className="underline underline-extension">Евгений Орлов</p>
-            </div>
+            </Link>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
+            <Link
+              href="/partners#anastasia"
+              className="flex flex-row gap-1 items-end mt-2 uppercase bold-text "
+            >
               <p>06</p>
               <p className="underline underline-extension">Анастасия Рябова</p>
-            </div>
+            </Link>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
+            <Link
+              href="/partners#arina"
+              className="flex flex-row gap-1 items-end mt-2 uppercase bold-text "
+            >
               <p>07</p>
               <p className="underline underline-extension">Арина Русакевич</p>
-            </div>
+            </Link>
           </TextWrapper>
           <TextWrapper>
-            <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
+            <Link
+              href="/partners#ksenia"
+              className="flex flex-row gap-1 items-end mt-2 uppercase bold-text "
+            >
               <p>08</p>
               <p className="underline underline-extension">Ксения Мерзлякова</p>
-            </div>
+            </Link>
           </TextWrapper>
         </div>
       </div>
@@ -532,7 +556,7 @@ export default function Home() {
       </TextWrapper>
       <TextWrapper>
         <p className="bold-text text-center max-lg:text-[10px] uppercase">
-          ©2024 <span className="underline">Политика конфиденциальности</span>
+          ©2024 <span className="underline underline-extension-2">Политика конфиденциальности</span>
         </p>
       </TextWrapper>
 
