@@ -120,7 +120,7 @@ export default function Home() {
             «Интервью с Алексей Ахубой, сооснователем ALX Part
           </p>
         </motion.div>
-        <div className="w-[calc(100dvw-20px)] mx-auto h-[240px] relative lg:h-screen z-10 lg:mt-[75dvh]">
+        <div className="w-[calc(100dvw-20px)] mx-auto h-[240px] relative lg:h-screen z-10 mt-[63dvh] lg:mt-[75dvh]">
           <Image src={Hero2} alt="Hero Home" fill objectFit="cover" />
         </div>
       </div>
@@ -134,6 +134,7 @@ export default function Home() {
               fill
               objectFit="cover"
               objectPosition="10%"
+              className="scale-[1.2]"
             />
           </ImageWrapper>
         </motion.div>
@@ -193,14 +194,14 @@ export default function Home() {
           </TextWrapper>
 
           <TextWrapper>
-            <div className="flex flex-row mt-8 max-lg:max-w-[480px] lg:min-w-[780px]  lg:justify-between items-center">
-              <p className=" bold-text leading-[20px]">01</p>
+            <div className="flex flex-row mt-8 max-lg:max-w-[480px] lg:min-w-[780px]  lg:justify-between">
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">01</p>
               <p className="ml-[26px] mr-[29px] regular-text lg:-ml-12 max-lg:w-[260px]">
                 Узкая специализация: мы делаем <br className="lg:hidden" />{" "}
                 только то, что хорошо знаем <br className="lg:hidden" />
                 и умеем.
               </p>
-              <p className=" bold-text leading-[20px]">01</p>
+              <p className=" bold-text leading-[22px] lg:leading-[26px]">01</p>
             </div>
           </TextWrapper>
 
@@ -394,20 +395,19 @@ export default function Home() {
           href="/artifacts"
           className="flex flex-row items-end justify-between mt-4 px-2.5 lg:mt-3 lg:w-[calc(100vw-440px)] lg:mx-auto lg:lg:max-w-[780px]"
         >
-          <p className="bold-text">А</p>
+          <p className="bold-text max-lg:leading-[19px] ">А</p>
           <p className="big-text">
-            Изучите{" "}
+            Изучите наши{" "}
             <span className="underline underline-extension-2 hover:no-underline">
-              {" "}
-              наши артефакты{" "}
+              артефакты
             </span>
           </p>
-          <p className="bold-text">А</p>
+          <p className="bold-text max-lg:leading-[19px] ">А</p>
         </Link>
       </TextWrapper>
 
       <motion.div
-        className="flex flex-row justify-center gap-2.5 mt-[45px] lg:mt-[52px] lg:scale-[1.07] max-lg:translate-x-28 max-lg:items-end"
+        className="flex flex-row justify-center gap-2.5 mt-[45px] lg:mt-[52px] lg:scale-[1.07] max-lg:translate-x-28 max-lg:items-end items-center"
         // style={{
         //   x: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
         // }}
@@ -439,7 +439,15 @@ export default function Home() {
           />
         </div>
         <div className="w-[60px] h-[96px] flex-none relative lg:w-[4.7vw] lg:h-[7.5vw]">
-          <Image src={Slider7} alt="Slider Image 7" fill objectFit="cover" />
+          <Image
+            src={Slider7}
+            alt="Slider Image 7"
+            fill
+            objectFit="cover"
+            style={{
+              transform: "scaleX(-1)",
+            }}
+          />
         </div>
         <div className="w-[73px] h-[48px] flex-none relative lg:w-[5.7vw] lg:h-[3.7vw]">
           <Image src={Slider8} alt="Slider Image 8" fill objectFit="cover" />
@@ -455,7 +463,7 @@ export default function Home() {
         </div>
       </motion.div>
 
-      <div className="flex flex-row mt-[52px] relative lg:h-[1200px]">
+      <div className="flex flex-row mt-[36px] relative lg:h-[1200px]">
         <motion.div className="w-[308px] h-[480px] max-lg:-ml-[209px] relative lg:w-[768px] lg:h-[1200px] lg:z-10 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-[126.5%]">
           <Image src={Hero9} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
@@ -558,9 +566,14 @@ export default function Home() {
       <TextWrapper>
         <p className="bold-text text-center max-lg:text-[10px] uppercase">
           ©2024{" "}
-          <span className="underline underline-extension-2 hover:no-underline cursor-pointer">
+          <Link
+            href="/privacy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-extension-2 hover:no-underline cursor-pointer"
+          >
             Политика конфиденциальности
-          </span>
+          </Link>
         </p>
       </TextWrapper>
 

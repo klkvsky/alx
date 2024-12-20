@@ -29,7 +29,7 @@ export default function Home() {
     <div className="flex flex-col max-w-[100vw] overflow-hidden bg-[#E8E8E8]">
       <Navbar />
 
-      <p className="bold-text max-lg:text-center mt-[38.5dvh] uppercase lg:mt-[272px] lg:ml-[490px]">
+      <p className="bold-text ml-[153px]  mt-[38.5dvh] uppercase lg:mt-[272px] lg:ml-[490px]">
         Артефакты
       </p>
 
@@ -47,7 +47,7 @@ export default function Home() {
             }}
           />
         </div>
-        <p className="bold-text absolute left-[150px] lg:left-[490px] top-4 z-10">
+        <p className="bold-text absolute left-[153px] lg:left-[490px] top-4 z-10">
           01
         </p>
       </div>
@@ -55,14 +55,14 @@ export default function Home() {
         <Image src={Image2} alt="Image 2" fill objectFit="cover" />
       </div>
 
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-16 lg:mt-[120px]">
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-16 lg:mt-[120px]">
         02
       </p>
       <div className="w-full h-[256px] relative mt-3 lg:h-[804px]">
         <Image src={Image3} alt="Image 3" fill objectFit="cover" />
       </div>
 
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-[256px] lg:mt-[132px]">
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-[256px] lg:mt-[132px]">
         03
       </p>
       <div className="w-[273px] h-[181px] mt-3 mx-auto relative lg:w-[584px] lg:h-[384px]">
@@ -82,7 +82,7 @@ export default function Home() {
               }}
             />
           </div>
-          <p className="bold-text ml-[150px] lg:ml-0 mt-3">04</p>
+          <p className="bold-text ml-[153px] lg:ml-0 mt-3">04</p>
         </div>
 
         <div className="lg:flex lg:flex-col lg:justify-center lg:items-start">
@@ -97,7 +97,7 @@ export default function Home() {
               }}
             />
           </div>
-          <p className="bold-text ml-[150px] lg:ml-0 mt-3 ">05</p>
+          <p className="bold-text ml-[153px] lg:ml-0 mt-3 ">05</p>
         </div>
         <div className="lg:flex lg:flex-col lg:justify-center lg:items-start">
           <div className="w-[193px] h-[123px] mx-auto mt-16 relative lg:mx-0 lg:mt-0">
@@ -111,7 +111,7 @@ export default function Home() {
               }}
             />
           </div>
-          <p className="bold-text ml-[150px] lg:ml-0 mt-3 ">06</p>
+          <p className="bold-text ml-[153px] lg:ml-0 mt-3 ">06</p>
         </div>
       </div>
 
@@ -171,12 +171,12 @@ export default function Home() {
         </div>
       </div>
 
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-3 ">07—09</p>
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-3 ">07—09</p>
 
       <div className="w-[273px] h-[178px] relative mx-auto mt-[256px] lg:mt-[600px]">
         <Image src={Image5} alt="Image 11" fill objectFit="cover" />
       </div>
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-3">10</p>
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-3">10</p>
 
       <div className="w-full h-[161px] relative mt-16 lg:mt-6 lg:w-[672px] lg:h-[258px] lg:mx-auto">
         <Image
@@ -191,7 +191,7 @@ export default function Home() {
         <Image src={Image12} alt="Image 13" fill objectFit="cover" />
       </div>
 
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-3 ">11</p>
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-3 ">11</p>
 
       <div className="w-[193px] h-[24px] relative mt-16 mx-auto lg:w-[188px] lg:mt-6">
         <Image src={ImageX} alt="Image 14" fill objectFit="cover" />
@@ -200,7 +200,7 @@ export default function Home() {
         <Image src={Image13} alt="Image 15" fill objectFit="cover" />
       </div>
 
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-[256px] lg:mt-[600px]">
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-[256px] lg:mt-[600px]">
         12
       </p>
 
@@ -211,7 +211,7 @@ export default function Home() {
         <Image src={Image15} alt="Image 17" fill objectFit="cover" />
       </div>
 
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-16 lg:mt-6">13</p>
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-16 lg:mt-6">13</p>
       <div className="w-[233px] h-[473px] relative mt-3 ml-[25%] lg:ml-auto lg:mr-[111px] lg:w-[385px] lg:h-[792px]">
         <Image
           src={Image16}
@@ -225,7 +225,7 @@ export default function Home() {
       <div className="w-[273px] h-[170px] relative mt-[256px] mx-auto lg:mt-[948px] lg:w-[386px] lg:h-[240px]">
         <Image src={Image17} alt="Image 19" fill objectFit="cover" />
       </div>
-      <p className="bold-text ml-[150px] lg:ml-[490px] mt-3 mb-16">14</p>
+      <p className="bold-text ml-[153px] lg:ml-[490px] mt-3 mb-16">14</p>
     </div>
   );
 }

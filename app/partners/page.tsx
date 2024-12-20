@@ -310,7 +310,7 @@ export default function Home() {
         >
           <p className="bold-text mt-0.5 w-[2.5ch]">04</p>
           <div className="w-[44px] h-[28px] relative ml-[15px]">
-            <Image src={AlexeyR4} alt="Alexey R 1" fill objectFit="cover" />
+            <Image src={AlexeyR1} alt="Alexey R 1" fill objectFit="cover" />
           </div>
           <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Алексей Рябов
@@ -324,8 +324,14 @@ export default function Home() {
           className="flex flex-row items-center mt-[28px] lg:mt-[52px]"
         >
           <p className="bold-text mt-0.5 w-[2.5ch]">05</p>
-          <div className="w-[44px] h-[28px] relative ml-[15px]">
-            <Image src={Evgeny5} alt="Evgeny 1" fill objectFit="cover" />
+          <div className="w-[44px] h-[28px] relative ml-[15px] overflow-hidden">
+            <Image
+              src={Evgeny1}
+              alt="Evgeny 1"
+              fill
+              objectFit="cover"
+              className="scale-[1.6] translate-y-1"
+            />
           </div>
           <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Евгений Орлов
@@ -339,8 +345,14 @@ export default function Home() {
           className="flex flex-row items-center"
         >
           <p className="bold-text mt-0.5 w-[2.5ch]">06</p>
-          <div className="w-[44px] h-[28px] relative ml-[15px]">
-            <Image src={Anastasia6} alt="Anastasia 1" fill objectFit="cover" />
+          <div className="w-[44px] h-[28px] relative ml-[15px] overflow-hidden">
+            <Image
+              src={Anastasia1}
+              alt="Anastasia 1"
+              fill
+              objectFit="cover"
+              className="scale-[1.6] translate-y-2"
+            />
           </div>
           <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Анастасия Рябова
@@ -354,8 +366,14 @@ export default function Home() {
           className="flex flex-row items-center"
         >
           <p className="bold-text mt-0.5 w-[2.5ch]">07</p>
-          <div className="w-[44px] h-[28px] relative ml-[15px]">
-            <Image src={Arina4} alt="Arina 1" fill objectFit="cover" />
+          <div className="w-[44px] h-[28px] relative ml-[15px] overflow-hidden">
+            <Image
+              src={Arina2}
+              alt="Arina 1"
+              fill
+              objectFit="cover"
+              className="scale-[1.6] translate-y-2"
+            />
           </div>
           <p className="regular-text underline underline-extension-2 ml-2.5 hover:no-underline">
             Арина Русакевич
@@ -379,7 +397,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-16 lg:mt-[315px] lg:ml-[44px] lg:z-20"
+        className="flex flex-row items-end mt-16 lg:mt-[315px] lg:ml-[44px] lg:z-20 pointer-events-none"
         id="sergey"
       >
         <div className="w-[156px] h-[103px] relative flex-none lg:w-[255px] lg:h-[168px]">
@@ -409,20 +427,22 @@ export default function Home() {
         </div>
         <p className="regular-text mt-6">
           <span className="bold-text">01</span> Редкий день из последних 15 лет
-          провёл не в арбитраже, выиграл сотни процессов на десятки миллиардов.{" "}
           <span className="bold-text">02</span> Создал несколько громких
-          прецедентов в Верховном суде. <span className="bold-text">03</span>{" "}
-          Отмечен в рейтингах Best Lawyers, Legal 500, Leaders League,
-          Право.Ru-300, 100 влиятельных персон банкротства России.{" "}
-          <span className="bold-text">04</span> Любим не только клиентами, но и
-          профессиональными изданиями и студентами.{" "}
+          прецедентов <br /> в Верховном суде.
+          <span className="bold-text">03</span> Отмечен
+          <br className="lg:hidden" /> в рейтингах Best Lawyers, Legal 500,
+          Leaders League, Право.Ru-300, 100 влиятельных персон банкротства
+          России. <span className="bold-text">04</span> Любим не только
+          клиентами, <br className="lg:hidden" /> но и профессиональными
+          изданиями <br className="lg:hidden" /> и студентами.{" "}
+          <br className="max-lg:hidden" />
           <span className="bold-text">05</span> До ALX строил карьеру в BGP
           litigation.
         </p>
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20  pointer-events-none"
         id="alexey"
       >
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:-ml-[16px]">
@@ -461,13 +481,13 @@ export default function Home() {
           <span className="bold-text">03</span> Хорошо разбирается в цифрах и
           документах, а также немного в людях.{" "}
           <span className="bold-text">04</span> В последние годы сосредоточен на
-          сопровождении крупных инвестиционных проектов и на
-          урегулировании бизнес-конфликтов.
+          сопровождении крупных инвестиционных проектов{" "}
+          <br className="lg:hidden" /> и на урегулировании бизнес-конфликтов.
         </p>
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
         id="asya"
       >
         <div className="w-[210px] h-[138px] relative flex-none lg:w-[344px] lg:h-[228px] lg:-ml-[46px]">
@@ -496,16 +516,18 @@ export default function Home() {
           не пропустить ни буквы и встать за клиента горой.
           <span className="bold-text"> 02</span> К ней за помощью не раз
           обращались даже представители другой стороны.{" "}
+          <br className="lg:hidden" />
           <span className="bold-text">03 </span>15 лет разбирает по косточкам
           конфликты и гладко проводит любые поглощения, выстраивает сложнейшие
-          сделки и становится основным коммуникатором для сторон.{" "}
+          сделки и становится основным коммуникатором{" "}
+          <br className="lg:hidden" /> для сторон.{" "}
           <span className="bold-text">04</span> За её плечами Платформа,
           АНТИ и BGP Litigation.
         </p>
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px]"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] pointer-events-none"
         id="alexey-r"
       >
         <div className="hidden relative flex-none lg:flex lg:w-[288px] lg:h-[192px] lg:ml-[11px]">
@@ -546,19 +568,20 @@ export default function Home() {
           Экспертно-правовой центр Уполномоченного при Президенте РФ по защите
           прав предпринимателей (бизнес-омбудсмена).{" "}
           <br className="max-lg:hidden" />
-          <span className="bold-text">03</span> Входил в различные постоянные
-          экспертные группы при Верховном суде РФ, Генеральной прокуратуре РФ,
-          Министерстве юстиции РФ, Федерального арбитражного суда Московского
-          округа, был экспертом Союза Европы в проектах защиты предпринимателей,
-          многократно участвовал в рассмотрении вопросов Конституционным судом
-          РФ. Мало кто сравнится с ним в понимании работы системы на её верхних
-          этажах. <span className="bold-text">04</span> Награждён благодарностью
-          Президента РФ.
+          <span className="bold-text">03</span> Входил{" "}
+          <br className="lg:hidden" /> в различные постоянные экспертные группы
+          при Верховном суде РФ, Генеральной прокуратуре РФ, Министерстве
+          юстиции РФ, Федерального арбитражного суда Московского округа, был
+          экспертом Союза Европы в проектах защиты предпринимателей, многократно
+          участвовал в рассмотрении вопросов Конституционным судом РФ. Мало кто
+          сравнится с ним <br className="lg:hidden" /> в понимании работы
+          системы на её верхних этажах. <span className="bold-text">04</span>{" "}
+          Награждён благодарностью Президента РФ.
         </p>
       </div>
 
       <div
-        className="flex flex-row items-end justify-center mt-[128px] lg:mt-[192px]"
+        className="flex flex-row items-end justify-center mt-[128px] lg:mt-[192px] pointer-events-none"
         id="evgeny"
       >
         <div className="w-[168px] h-[111px] relative flex-none lg:w-[310px] lg:h-[204px]">
@@ -597,7 +620,7 @@ export default function Home() {
           <span className="bold-text">01</span> Евгений имеет широкую
           специализацию. Он вёл как громкие судебные дела, так и сопровождал
           такие же громкие сделки. Общий рублёвый счетчик таких дел и сделок
-          давно превысил 50 млрд рублей.<span className="bold-text"> 02</span>
+          давно превысил 50 млрд рублей.<span className="bold-text"> 02</span>{" "}
           Составленные им процессуальные документы имеют особый и узнаваемый
           почерк — они лаконичны, пронизаны правом и в большинстве случаев
           приводят к судебным победам.
@@ -605,14 +628,15 @@ export default function Home() {
           <span className="bold-text"> 03</span> С отличием окончил Российскую
           правовую академию Министерства Юстиции Российской Федерации
           (специалитет) в 2015 году, а впоследствии получил второе образование в
-          Англии. <span className="bold-text">04</span>
-          Любит большие скорости и тонкие колёса своего шоссейного велосипеда.
-          05 До ALX работал в Lidings и BGP Litigation.
+          Англии. <span className="bold-text">04</span> Любит большие скорости и
+          тонкие колёса своего шоссейного велосипеда.{" "}
+          <span className="bold-text">05 </span>
+          До ALX работал в Lidings и BGP Litigation.
         </p>
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
         id="anastasia"
       >
         <div className="hidden relative flex-none lg:flex lg:w-[164px] lg:h-[108px] lg:z-10">
@@ -661,16 +685,18 @@ export default function Home() {
           дали феноменальные плоды — Анастасия в 24 года получила статус
           адвоката, сдав один из самых сложных экзаменов в Адвокатской палате
           города Москвы. <span className="bold-text">03 </span>Имеет чётко
-          выраженную литигаторскую специализацию (включая дела о банкротстве
-          и оспаривание сделок). <span className="bold-text">04</span> Помимо
-          участия в сложных судебных спорах, пробеждала десятки марафонов
-          и проплыла сотни километров. Очаровательная, спортивная, уникальная.
-          05 До ALX работала в BGP Litigation.
+          выраженную литигаторскую специализацию (включая дела{" "}
+          <br className="lg:hidden" /> о банкротстве и оспаривание сделок).{" "}
+          <span className="bold-text">04</span> Помимо участия{" "}
+          <br className="lg:hidden" /> в сложных судебных спорах, пробеждала
+          десятки марафонов и проплыла сотни километров. Очаровательная,
+          спортивная, уникальная. <span className="bold-text">05</span> До ALX
+          работала в BGP Litigation.
         </p>
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
         id="arina"
       >
         <div className="w-[191px] h-[127px] relative flex-none z-0 lg:w-[345px] lg:h-[228px]">
@@ -712,8 +738,9 @@ export default function Home() {
           к медицинским знаниям привела её к получению медицинского образования
           (с красным дипломом). Однако параллельно появилось новое увлечение и
           страсть — это право. <span className="bold-text"> 02</span> После
-          того, как эти чувства окрепли и превратились во что-то большее, Арина
-          приняла решение поступить в ВШЭ на факультет права.
+          того, как эти чувства окрепли и превратились{" "}
+          <br className="lg:hidden" /> во что-то большее, Арина приняла решение
+          поступить в ВШЭ <br className="lg:hidden" /> на факультет права.
           <span className="bold-text"> 03</span> Совмещает учёбу и работу.
           Талантливая, аккуратная, внимательная. Поразила всех нас несколько лет
           назад глубиной юридических знаний и логикой рассуждений.{" "}
@@ -723,7 +750,7 @@ export default function Home() {
       </div>
 
       <div
-        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20"
+        className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none"
         id="ksenia"
       >
         <div className="w-[166px] h-[110px] relative flex-none lg:w-[299px] lg:h-[197px]">
