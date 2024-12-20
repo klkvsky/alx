@@ -105,7 +105,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 0, y: 0 }}
-          className="flex flex-row items-center bg-black text-white whitespace-nowrap text-[14px] mx-2.5 gap-2.5 overflow-hidden mt-[63dvh] pl-2.5 lg:mt-[80dvh] py-1"
+          className="flex flex-row items-center bg-black text-white whitespace-nowrap text-[14px] mx-2.5 gap-2.5 overflow-hidden mt-[63dvh] pl-2.5 lg:mt-[80dvh] py-1 hidden"
         >
           <p className="bold-text underline underline-offset-2 decoration-white/50">
             НОВОСТИ
@@ -120,7 +120,7 @@ export default function Home() {
             «Интервью с Алексей Ахубой, сооснователем ALX Part
           </p>
         </motion.div>
-        <div className="w-[calc(100dvw-20px)] mx-auto h-[240px] relative lg:h-screen z-10">
+        <div className="w-[calc(100dvw-20px)] mx-auto h-[240px] relative lg:h-screen z-10 lg:mt-[75dvh]">
           <Image src={Hero2} alt="Hero Home" fill objectFit="cover" />
         </div>
       </div>
@@ -281,7 +281,7 @@ export default function Home() {
               className="flex flex-row gap-2 items-end mt-4 lg:mt-1"
             >
               <p className="bold-text leading-[16px]">01</p>
-              <p className="big-text underline underline-extension-2">
+              <p className="big-text underline underline-extension-2 hover:no-underline">
                 Сергей Лисин
               </p>
             </Link>
@@ -292,7 +292,7 @@ export default function Home() {
               className="flex flex-row gap-2 items-end mt-1"
             >
               <p className="bold-text leading-[16px]">02</p>
-              <p className="big-text underline underline-extension-2">
+              <p className="big-text underline underline-extension-2 hover:no-underline">
                 Алексей Ахуба
               </p>
             </Link>
@@ -303,7 +303,7 @@ export default function Home() {
               className="flex flex-row gap-2 items-end mt-1"
             >
               <p className="bold-text leading-[16px]">03</p>
-              <p className="big-text underline underline-extension-2">
+              <p className="big-text underline underline-extension-2 hover:no-underline">
                 Ася Алфёрова
               </p>
             </Link>
@@ -314,7 +314,7 @@ export default function Home() {
               className="flex flex-row gap-2 items-end mt-1"
             >
               <p className="bold-text leading-[16px]">04</p>
-              <p className="big-text underline underline-extension-2">
+              <p className="big-text underline underline-extension-2 hover:no-underline">
                 Алексей Рябов
               </p>
             </Link>
@@ -328,7 +328,9 @@ export default function Home() {
               className="flex flex-row gap-1 items-end mt-6 uppercase bold-text lg:mt-2"
             >
               <p>05</p>
-              <p className="underline underline-extension">Евгений Орлов</p>
+              <p className="underline underline-extension hover:no-underline">
+                Евгений Орлов
+              </p>
             </Link>
           </TextWrapper>
           <TextWrapper>
@@ -337,7 +339,9 @@ export default function Home() {
               className="flex flex-row gap-1 items-end mt-2 uppercase bold-text "
             >
               <p>06</p>
-              <p className="underline underline-extension">Анастасия Рябова</p>
+              <p className="underline underline-extension hover:no-underline">
+                Анастасия Рябова
+              </p>
             </Link>
           </TextWrapper>
           <TextWrapper>
@@ -346,7 +350,9 @@ export default function Home() {
               className="flex flex-row gap-1 items-end mt-2 uppercase bold-text "
             >
               <p>07</p>
-              <p className="underline underline-extension">Арина Русакевич</p>
+              <p className="underline underline-extension hover:no-underline">
+                Арина Русакевич
+              </p>
             </Link>
           </TextWrapper>
           <TextWrapper>
@@ -355,7 +361,9 @@ export default function Home() {
               className="flex flex-row gap-1 items-end mt-2 uppercase bold-text "
             >
               <p>08</p>
-              <p className="underline underline-extension">Ксения Мерзлякова</p>
+              <p className="underline underline-extension hover:no-underline">
+                Ксения Мерзлякова
+              </p>
             </Link>
           </TextWrapper>
         </div>
@@ -389,7 +397,7 @@ export default function Home() {
           <p className="bold-text">А</p>
           <p className="big-text">
             Изучите{" "}
-            <span className="underline underline-extension-2">
+            <span className="underline underline-extension-2 hover:no-underline">
               {" "}
               наши артефакты{" "}
             </span>
@@ -528,7 +536,7 @@ export default function Home() {
               href="https://t.me/LisinSergei"
               target="_blank"
               referrerPolicy="no-referrer"
-              className="big-text text-center underline underline-extension-2-x"
+              className="big-text text-center underline underline-extension-2-x hover:no-underline"
             >
               Телеграм
             </Link>
@@ -550,7 +558,7 @@ export default function Home() {
       <TextWrapper>
         <p className="bold-text text-center max-lg:text-[10px] uppercase">
           ©2024{" "}
-          <span className="underline underline-extension-2">
+          <span className="underline underline-extension-2 hover:no-underline cursor-pointer">
             Политика конфиденциальности
           </span>
         </p>
