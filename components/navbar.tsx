@@ -49,7 +49,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -100 }}
             exit={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 w-screen z-50 mix-blend-difference p-3 flex flex-row items-center gap-9"
+            className="hidden fixed top-0 left-0 w-screen z-50 mix-blend-difference p-3 lg:flex flex-row items-center gap-9"
           >
             <Link href="/">
               <Image
