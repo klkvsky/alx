@@ -119,7 +119,12 @@ export default function Home() {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      setVisible(latest > window.innerHeight);
+      const totalHeight = document.documentElement.scrollHeight;
+      const viewportHeight = window.innerHeight;
+      const scrollableHeight = totalHeight - viewportHeight;
+      const threshold = scrollableHeight * 0.95; // 95% of scrollable height
+
+      setVisible(latest > viewportHeight && latest < threshold);
     });
   }, [scrollY]);
 
@@ -442,9 +447,9 @@ export default function Home() {
           </p>
         </div>
         <p className="regular-text mt-6">
-          <span className="bold-text">01</span> Редкий день из последних 15 лет
+          <span className="bold-text">01</span> Редкий день из последних 15 лет{" "}
           <span className="bold-text">02</span> Создал несколько громких
-          прецедентов <br /> в Верховном суде.
+          прецедентов <br /> в Верховном суде.{" "}
           <span className="bold-text">03</span> Отмечен
           <br className="lg:hidden" /> в рейтингах Best Lawyers, Legal 500,
           Leaders League, Право.Ru-300, 100 влиятельных персон банкротства

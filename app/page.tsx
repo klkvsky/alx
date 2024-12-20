@@ -90,7 +90,7 @@ export default function Home() {
           className="mt-[100px] ml-[155px] gap-3 flex flex-col items-start justify-start lg:block lg:ml-auto lg:mr-[90px] lg:mt-[42px]"
         >
           <p className="bold-text uppercase leading-[14px] z-10 lg:hidden">
-            БЕСПОКОЙСТВО <br /> ВАШИХ ОППОНЕНТОВ
+            БЕСПОКОЙСТВО <br /> ВАШИХ ОППОНЕНТОВ.
           </p>
           <div className="w-[117px] h-[84px] lg:w-[135px] lg:h-[96px] relative z-0">
             <Image
@@ -132,9 +132,7 @@ export default function Home() {
               src={Hero3X}
               alt="Hero Home"
               fill
-              objectFit="cover"
-              objectPosition="10%"
-              className="scale-[1.2]"
+              className="scale-[1.1] object-cover object-left-top"
             />
           </ImageWrapper>
         </motion.div>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import Logo from "@/public/ALXLogo.svg";
+import LogoWhite from "@/public/ALXLogoWhite.svg";
 import LogoShort from "@/public/ALXLogoShort.svg";
 import NavbarBackground from "@/public/NavbarBackground.jpg";
 
@@ -114,23 +115,27 @@ export default function Navbar() {
         )}
       </AnimatePresence>
       <div
-        className="flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5 mix-blend-difference !text-white"
+        className="flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5 max-lg:mix-blend-difference max-lg:!text-white"
         // style={{
         //   color: isOpen || pathname.includes("partners") ? "white" : "black",
         // }}
       >
         <Link href="/">
           <Image
-            src={Logo}
+            src={pathname === "/partners" ? LogoWhite : Logo}
             alt="ALX Logo"
             width={134}
             height={48}
             objectFit="contain"
-            // style={{
-            //   filter:
-            //     pathname.includes("partners") || isOpen ? "invert(1)" : "none",
-            // }}
-            className="lg:w-[204px] lg:h-[60px]"
+            className="lg:w-[204px] lg:h-[60px] hidden lg:block"
+          />
+          <Image
+            src={LogoWhite}
+            alt="ALX Logo"
+            width={134}
+            height={48}
+            objectFit="contain"
+            className="lg:w-[204px] lg:h-[60px] lg:hidden block§"
           />
         </Link>
         <div className="flex flex-col ml-[10px] translate-y-[24px] lg:ml-[63px] lg:translate-y-[35px]">
