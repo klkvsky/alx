@@ -1,10 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
 // import { useState, useEffect } from "react";
-import {  useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import Navbar from "@/components/navbar";
+import TextWrapper from "@/components/TextWrapper";
+
 import Image from "next/image";
 
 import HeroImage from "@/public/Home/MainHeroBackground.png";
@@ -65,23 +67,25 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="absolute top-0 left-0 w-full h-full z-0"
+          className="absolute top-0 left-0 w-full h-full overflow-hidden"
         >
-          <Image
-            src={HeroImage}
-            alt="Hero Home"
-            fill
-            objectFit="cover"
-            objectPosition="60% 50%"
-            className="lg:max-h-[100dvh]"
-          />
+          <ImageWrapper>
+            <Image
+              src={HeroImage}
+              alt="Hero Home"
+              fill
+              objectFit="cover"
+              objectPosition="60% 50%"
+              className="max-h-[100dvh]"
+            />
+          </ImageWrapper>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-[100px] ml-[148px] gap-3 flex flex-col lg:block lg:ml-auto lg:mr-[90px] lg:mt-[42px]"
+          className="mt-[100px] ml-[155px] gap-3 flex flex-col items-start justify-start lg:block lg:ml-auto lg:mr-[90px] lg:mt-[42px]"
         >
-          <p className="bold-text uppercase leading-[14px] lg:hidden">
+          <p className="bold-text uppercase leading-[14px] z-10 lg:hidden">
             Беспокойство <br /> ваших оппонентов.
           </p>
           <div className="w-[117px] h-[84px] lg:w-[135px] lg:h-[96px] relative z-0">
@@ -118,14 +122,16 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center relative text-white pt-8 pb-12 lg:py-[84px]">
-        <motion.div className="absolute top-0 left-0 w-full h-full z-0">
-          <Image
-            src={Hero3}
-            alt="Hero Home"
-            fill
-            objectFit="cover"
-            objectPosition="10%"
-          />
+        <motion.div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+          <ImageWrapper>
+            <Image
+              src={Hero3}
+              alt="Hero Home"
+              fill
+              objectFit="cover"
+              objectPosition="10%"
+            />
+          </ImageWrapper>
         </motion.div>
         <motion.div className="hidden lg:block absolute top-0 -left-[95%] w-full h-full z-0">
           <Image
@@ -145,89 +151,107 @@ export default function Home() {
             objectPosition="100%"
           />
         </motion.div>
-        <p className="bold-text uppercase z-10">Знаем свои сильные стороны</p>
-        <div className="lg:flex lg:flex-row lg:gap-3 flex flex-col max-lg:items-center z-10">
-          <div className="flex flex-row items-end gap-2 mt-4 lg:gap-3">
-            <p className="bold-text leading-[16px] lg:leading-[19px]">01</p>
-            <p className="big-text">Суд и арбитраж</p>
+        <TextWrapper>
+          <p className="bold-text uppercase z-10">Знаем свои сильные стороны</p>
+        </TextWrapper>
+        <TextWrapper>
+          <div className="lg:flex lg:flex-row lg:gap-3 flex flex-col max-lg:items-center z-10">
+            <div className="flex flex-row items-end gap-2 mt-4 lg:gap-3">
+              <p className="bold-text leading-[16px] lg:leading-[19px]">01</p>
+              <p className="big-text">Суд и арбитраж</p>
+            </div>
+            <div className="flex flex-row items-end gap-2 mt-1 lg:gap-3 ">
+              <p className="bold-text leading-[16px] lg:leading-[19px]">02</p>
+              <p className="big-text">Банкротство</p>
+              <p className="bold-text leading-[16px] lg:leading-[19px]">03</p>
+              <p className="big-text">M&A</p>
+            </div>
           </div>
-          <div className="flex flex-row items-end gap-2 mt-1 lg:gap-3 ">
-            <p className="bold-text leading-[16px] lg:leading-[19px]">02</p>
-            <p className="big-text">Банкротство</p>
-            <p className="bold-text leading-[16px] lg:leading-[19px]">03</p>
-            <p className="big-text">M&A</p>
+        </TextWrapper>
+        <TextWrapper>
+          <div className="lg:flex lg:flex-row lg:gap-3 flex flex-col items-center lg:-mt-2 z-10">
+            <div className="flex flex-row items-end gap-2 mt-1 lg:gap-3">
+              <p className="bold-text leading-[16px] lg:leading-[19px]">04</p>
+              <p className="big-text">Бизнес-конфликты</p>
+            </div>
+            <div className="flex flex-row items-end gap-2 mt-1 lg:gap-3 ">
+              <p className="bold-text leading-[16px] lg:leading-[19px]">05</p>
+              <p className="big-text">Медиация</p>
+            </div>
           </div>
-        </div>
-        <div className="lg:flex lg:flex-row lg:gap-3 flex flex-col items-center lg:-mt-2 z-10">
-          <div className="flex flex-row items-end gap-2 mt-1 lg:gap-3">
-            <p className="bold-text leading-[16px] lg:leading-[19px]">04</p>
-            <p className="big-text">Бизнес-конфликты</p>
-          </div>
-          <div className="flex flex-row items-end gap-2 mt-1 lg:gap-3 ">
-            <p className="bold-text leading-[16px] lg:leading-[19px]">05</p>
-            <p className="big-text">Медиация</p>
-          </div>
-        </div>
+        </TextWrapper>
 
         <div className="flex flex-col items-center mt-[100dvh] pl-2.5 pr-2 lg:px-[210px] z-10">
-          <p className="bold-text uppercase">
-            руководствуемся простыми принципами
-          </p>
+          <TextWrapper>
+            <p className="bold-text uppercase">
+              руководствуемся простыми принципами
+            </p>
+          </TextWrapper>
 
-          <div className="flex flex-row mt-8 max-lg:max-w-[480px] lg:min-w-[780px]  lg:justify-between">
-            <p className=" bold-text leading-[20px]">01</p>
-            <p className="ml-[26px] mr-[29px] regular-text lg:-ml-12 max-lg:w-[260px]">
-              Узкая специализация: мы делаем <br className="lg:hidden" /> только
-              то, что хорошо знаем <br className="lg:hidden" />
-              и умеем.
-            </p>
-            <p className=" bold-text leading-[20px]">01</p>
-          </div>
+          <TextWrapper>
+            <div className="flex flex-row mt-8 max-lg:max-w-[480px] lg:min-w-[780px]  lg:justify-between">
+              <p className=" bold-text leading-[20px]">01</p>
+              <p className="ml-[26px] mr-[29px] regular-text lg:-ml-12 max-lg:w-[260px]">
+                Узкая специализация: мы делаем <br className="lg:hidden" />{" "}
+                только то, что хорошо знаем <br className="lg:hidden" />
+                и умеем.
+              </p>
+              <p className=" bold-text leading-[20px]">01</p>
+            </div>
+          </TextWrapper>
 
-          <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px]">
-            <p className=" bold-text leading-[20px]">02</p>
-            <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
-              Высокая юридическая кухня — <br className="lg:hidden" />
-              качество документов, творческие <br className="lg:hidden" />
-              и креативные рецепты.
-            </p>
-            <p className=" bold-text leading-[20px]">02</p>
-          </div>
-          <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
-            <p className=" bold-text leading-[20px]">03</p>
-            <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
-              Честные и долгосрочные отношения <br className="lg:hidden" />{" "}
-              важнее заработка. Некоторые <br className="lg:hidden" />
-              клиенты с нами больше 25 лет.
-            </p>
-            <p className=" bold-text leading-[20px]">03</p>
-          </div>
-          <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
-            <p className=" bold-text leading-[20px]">04</p>
-            <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
-              Наша главная ценность — команда.
-              <br className="lg:hidden" />
-              Она стабильна: костяк вместе <br className="lg:hidden" />
-              больше десятилетия. Она <br className="lg:hidden" />
-              преемственна: есть те, кому 50,
-              <br className="lg:hidden" />
-              40, 30 и даже чуть за 20, наше
-              <br className="lg:hidden" />
-              прошлое, настоящее и будущее.
-            </p>
-            <p className=" bold-text leading-[20px]">04</p>
-          </div>
-          <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
-            <p className=" bold-text leading-[20px]">05</p>
-            <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
-              Каждое дело — это инвестиция.
-              <br className="lg:hidden" /> В саморазвитие, в развитие{" "}
-              <br className="lg:hidden" /> судебной практики и отношения{" "}
-              <br className="lg:hidden" />
-              с клиентом. 
-            </p>
-            <p className=" bold-text leading-[20px]">05</p>
-          </div>
+          <TextWrapper>
+            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px]">
+              <p className=" bold-text leading-[20px]">02</p>
+              <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
+                Высокая юридическая кухня — <br className="lg:hidden" />
+                качество документов, творческие <br className="lg:hidden" />
+                и креативные рецепты.
+              </p>
+              <p className=" bold-text leading-[20px]">02</p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
+              <p className=" bold-text leading-[20px]">03</p>
+              <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
+                Честные и долгосрочные отношения <br className="lg:hidden" />{" "}
+                важнее заработка. Некоторые <br className="lg:hidden" />
+                клиенты с нами больше 25 лет.
+              </p>
+              <p className=" bold-text leading-[20px]">03</p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
+              <p className=" bold-text leading-[20px]">04</p>
+              <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
+                Наша главная ценность — команда.
+                <br className="lg:hidden" />
+                Она стабильна: костяк вместе <br className="lg:hidden" />
+                больше десятилетия. Она <br className="lg:hidden" />
+                преемственна: есть те, кому 50,
+                <br className="lg:hidden" />
+                40, 30 и даже чуть за 20, наше
+                <br className="lg:hidden" />
+                прошлое, настоящее и будущее.
+              </p>
+              <p className=" bold-text leading-[20px]">04</p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row mt-6 max-lg:max-w-[480px] lg:max-w-[780px] ">
+              <p className=" bold-text leading-[20px]">05</p>
+              <p className="ml-[26px] mr-[29px] regular-text max-lg:w-[260px]">
+                Каждое дело — это инвестиция.
+                <br className="lg:hidden" /> В саморазвитие, в развитие{" "}
+                <br className="lg:hidden" /> судебной практики и отношения{" "}
+                <br className="lg:hidden" />
+                с клиентом. 
+              </p>
+              <p className=" bold-text leading-[20px]">05</p>
+            </div>
+          </TextWrapper>
         </div>
       </div>
 
@@ -244,58 +268,77 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center text-center mt-12 lg:mt-[72px]">
-        <p className="bold-text">КОМАНДА</p>
-
+        <TextWrapper>
+          <p className="bold-text">КОМАНДА</p>
+        </TextWrapper>
         <div className="lg:flex lg:flex-row lg:gap-8 lg:mt-3 flex flex-col items-center">
-          <div className="flex flex-row gap-2 items-end mt-4 lg:mt-1">
-            <p className="bold-text leading-[16px]">01</p>
-            <p className="big-text underline underline-extension-2">
-              Сергей Лисин
-            </p>
-          </div>
-          <div className="flex flex-row gap-2 items-end mt-1">
-            <p className="bold-text leading-[16px]">02</p>
-            <p className="big-text underline underline-extension-2">
-              Алексей Ахуба
-            </p>
-          </div>
-          <div className="flex flex-row gap-2 items-end mt-1">
-            <p className="bold-text leading-[16px]">03</p>
-            <p className="big-text underline underline-extension-2">
-              Ася Алфёрова
-            </p>
-          </div>
-          <div className="flex flex-row gap-2 items-end mt-1">
-            <p className="bold-text leading-[16px]">04</p>
-            <p className="big-text underline underline-extension-2">
-              Алексей Рябов
-            </p>
-          </div>
+          <TextWrapper>
+            <div className="flex flex-row gap-2 items-end mt-4 lg:mt-1">
+              <p className="bold-text leading-[16px]">01</p>
+              <p className="big-text underline underline-extension-2">
+                Сергей Лисин
+              </p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row gap-2 items-end mt-1">
+              <p className="bold-text leading-[16px]">02</p>
+              <p className="big-text underline underline-extension-2">
+                Алексей Ахуба
+              </p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row gap-2 items-end mt-1">
+              <p className="bold-text leading-[16px]">03</p>
+              <p className="big-text underline underline-extension-2">
+                Ася Алфёрова
+              </p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row gap-2 items-end mt-1">
+              <p className="bold-text leading-[16px]">04</p>
+              <p className="big-text underline underline-extension-2">
+                Алексей Рябов
+              </p>
+            </div>
+          </TextWrapper>
         </div>
 
         <div className="lg:flex gap-2 lg:flex-row lg:gap-4 lg:mt-[30px] flex flex-col items-center">
-          <div className="flex flex-row gap-1 items-end mt-6 uppercase bold-text lg:mt-2">
-            <p>05</p>
-            <p className="underline underline-extension">Евгений Орлов</p>
-          </div>
-          <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
-            <p>06</p>
-            <p className="underline underline-extension">Анастасия Рябова</p>
-          </div>
-          <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
-            <p>07</p>
-            <p className="underline underline-extension">Арина Русакевич</p>
-          </div>
-          <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
-            <p>08</p>
-            <p className="underline underline-extension">Ксения Мерзлякова</p>
-          </div>
+          <TextWrapper>
+            <div className="flex flex-row gap-1 items-end mt-6 uppercase bold-text lg:mt-2">
+              <p>05</p>
+              <p className="underline underline-extension">Евгений Орлов</p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
+              <p>06</p>
+              <p className="underline underline-extension">Анастасия Рябова</p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
+              <p>07</p>
+              <p className="underline underline-extension">Арина Русакевич</p>
+            </div>
+          </TextWrapper>
+          <TextWrapper>
+            <div className="flex flex-row gap-1 items-end mt-2 uppercase bold-text ">
+              <p>08</p>
+              <p className="underline underline-extension">Ксения Мерзлякова</p>
+            </div>
+          </TextWrapper>
         </div>
       </div>
 
       <div className="flex flex-col items-center mt-[106px] lg:mt-[96px]">
-        <div className="w-[273px] h-[328px] relative lg:w-[calc(100vw-220px)] lg:h-[1140px]">
-          <Image src={Hero6} alt="Hero Home" fill objectFit="cover" />
+        <div className="w-[273px] h-[328px] relative lg:w-[calc(100vw-220px)] lg:h-[1140px] overflow-hidden">
+          <ImageWrapper>
+            <Image src={Hero6} alt="Hero Home" fill objectFit="cover" />
+          </ImageWrapper>
         </div>
         <motion.div
           className="w-[113px] h-[77px] -mt-[38px] relative lg:w-[386px] lg:h-[252px] lg:-mt-[100px]"
@@ -305,24 +348,28 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <p className="mt-16 bold-text text-center lg:mt-[52px]">
-        ВНИМАТЕЛЬНО ОТНОСИМСЯ К ДЕТАЛЯМ
-      </p>
-
-      <Link
-        href="/artifacts"
-        className="flex flex-row items-end justify-between mt-4 px-2.5 lg:mt-3 lg:w-[calc(100vw-440px)] lg:mx-auto lg:lg:max-w-[780px]"
-      >
-        <p className="bold-text">А</p>
-        <p className="big-text">
-          Изучите{" "}
-          <span className="underline underline-extension-2">
-            {" "}
-            наши артефакты{" "}
-          </span>
+      <TextWrapper>
+        <p className="mt-16 bold-text text-center lg:mt-[52px]">
+          ВНИМАТЕЛЬНО ОТНОСИМСЯ К ДЕТАЛЯМ
         </p>
-        <p className="bold-text">А</p>
-      </Link>
+      </TextWrapper>
+
+      <TextWrapper>
+        <Link
+          href="/artifacts"
+          className="flex flex-row items-end justify-between mt-4 px-2.5 lg:mt-3 lg:w-[calc(100vw-440px)] lg:mx-auto lg:lg:max-w-[780px]"
+        >
+          <p className="bold-text">А</p>
+          <p className="big-text">
+            Изучите{" "}
+            <span className="underline underline-extension-2">
+              {" "}
+              наши артефакты{" "}
+            </span>
+          </p>
+          <p className="bold-text">А</p>
+        </Link>
+      </TextWrapper>
 
       <motion.div
         className="flex flex-row justify-center gap-2.5 mt-[45px] lg:mt-[52px] lg:scale-[1.07] max-lg:translate-x-28 max-lg:items-end"
@@ -383,18 +430,20 @@ export default function Home() {
           <Image src={Hero9} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
         <motion.div
-          className="w-[294px] h-[352px] relative lg:w-[1488px] lg:h-[984px]"
+          className="w-[294px] h-[352px] relative lg:w-[1488px] lg:h-[984px] overflow-hidden"
           // style={{
           //   y: isMobile ? useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]) : 0,
           // }}
         >
-          <Image
-            src={Hero8}
-            alt="Hero Home"
-            fill
-            objectFit="cover"
-            objectPosition="20%"
-          />
+          <ImageWrapper>
+            <Image
+              src={Hero8}
+              alt="Hero Home"
+              fill
+              objectFit="cover"
+              objectPosition="20%"
+            />
+          </ImageWrapper>
         </motion.div>
       </div>
       <div className="flex flex-col items-center lg:gap-0">
@@ -416,53 +465,114 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <p className="uppercase bold-text mt-[128px] text-center" id="contacts">
-        и решаем ваши задачи здесь и сейчас
-      </p>
+      <TextWrapper>
+        <p className="uppercase bold-text mt-[128px] text-center" id="contacts">
+          и решаем ваши задачи здесь и сейчас
+        </p>
+      </TextWrapper>
 
       <div className="flex flex-col px-2.5 mt-4 gap-0 lg:w-[calc(100vw-440px)] lg:mx-auto">
-        <div className="flex flex-row items-end justify-between">
-          <p className="bold-text -translate-y-1">П.</p>
-          <p className="big-text">office@alxlegal.com</p>
-          <p className="bold-text -translate-y-1">П.</p>
-        </div>
-        <div className="flex flex-row items-start lg:items-start justify-between">
-          <p className="bold-text translate-y-3 lg:translate-y-1">А.</p>
-          <p className="big-text text-center">
-            Москва,1-й Тружеников переулок, 17А
-          </p>
-          <p className="bold-text translate-y-3 lg:translate-y-1">А.</p>
-        </div>
-        <div className="flex flex-row items-end justify-between">
-          <p className="bold-text -translate-y-1">Т.</p>
-          <p className="big-text text-center">+7 499 455-1-777</p>
-          <p className="bold-text -translate-y-1">Т.</p>
-        </div>
-        <div className="flex flex-row items-end justify-between">
-          <p className="bold-text -translate-y-1">Т.</p>
-          <p className="big-text text-center underline underline-extension-2-x">
-            Телеграм
-          </p>
-          <p className="bold-text -translate-y-1">Т.</p>
-        </div>
+        <TextWrapper>
+          <div className="flex flex-row items-end justify-between">
+            <p className="bold-text -translate-y-1">П.</p>
+            <Link href="mailto:office@alxlegal.com" className="big-text">
+              office@alxlegal.com
+            </Link>
+            <p className="bold-text -translate-y-1">П.</p>
+          </div>
+        </TextWrapper>
+        <TextWrapper>
+          <div className="flex flex-row items-start lg:items-start justify-between">
+            <p className="bold-text translate-y-3 lg:translate-y-1">А.</p>
+            <Link
+              href="https://yandex.ru/maps/-/CHEpv258"
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className="big-text text-center"
+            >
+              Москва,1-й Тружеников переулок, 17А
+            </Link>
+            <p className="bold-text translate-y-3 lg:translate-y-1">А.</p>
+          </div>
+        </TextWrapper>
+        <TextWrapper>
+          <div className="flex flex-row items-end justify-between">
+            <p className="bold-text -translate-y-1">Т.</p>
+            <Link href="tel:+74994551777" className="big-text text-center">
+              +7 499 455-1-777
+            </Link>
+            <p className="bold-text -translate-y-1">Т.</p>
+          </div>
+        </TextWrapper>
+        <TextWrapper>
+          <div className="flex flex-row items-end justify-between">
+            <p className="bold-text -translate-y-1">Т.</p>
+            <Link
+              href="https://t.me/LisinSergei"
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className="big-text text-center underline underline-extension-2-x"
+            >
+              Телеграм
+            </Link>
+            <p className="bold-text -translate-y-1">Т.</p>
+          </div>
+        </TextWrapper>
       </div>
 
-      <div className="w-full h-[248px] mt-[64px] relative lg:h-[804px] lg:mt-[156px]">
-        <Image src={Hero12} alt="Hero Home" fill objectFit="cover" />
+      <div className="w-full h-[248px] mt-[64px] relative lg:h-[804px] lg:mt-[156px] overflow-hidden">
+        <ImageWrapper>
+          <Image src={Hero12} alt="Hero Home" fill objectFit="cover" />
+        </ImageWrapper>
       </div>
-      <p className="regular-text text-center max-lg:text-[12px] mt-8">
-        Коллегия адвокатов города Москвы «А-ЭЛ-ИКС Партнеры»
-      </p>
-      <p className="bold-text text-center max-lg:text-[10px] uppercase">
-        ©2024 <span className="underline">Политика конфиденциальности</span>
-      </p>
+      <TextWrapper>
+        <p className="regular-text text-center max-lg:text-[12px] mt-8">
+          Коллегия адвокатов города Москвы «А-ЭЛ-ИКС Партнеры»
+        </p>
+      </TextWrapper>
+      <TextWrapper>
+        <p className="bold-text text-center max-lg:text-[10px] uppercase">
+          ©2024 <span className="underline">Политика конфиденциальности</span>
+        </p>
+      </TextWrapper>
 
       <div className="mt-16 w-[200px] h-[128px]  relative mx-auto lg:w-[386px] lg:h-[240px]">
         <Image src={Hero13} alt="Hero Home" fill objectFit="cover" />
       </div>
-      <div className="mt-[128px] w-screen h-screen relative lg:h-[200dvh] lg:mt-[216px]">
-        <Image src={Hero14} alt="Hero Home" fill objectFit="cover" />
+      <div className="mt-[128px] w-screen h-screen relative lg:h-[200dvh] lg:mt-[216px] overflow-hidden">
+        <ImageWrapper>
+          <Image src={Hero14} alt="Hero Home" fill objectFit="cover" />
+        </ImageWrapper>
       </div>
     </div>
+  );
+}
+
+function ImageWrapper({ children }: { children: React.ReactNode }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+  });
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const yOffset = useTransform(scrollYProgress, [0, 1], [0, 50]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{
+        opacity: isInView ? 1 : 0,
+        y: isInView ? 0 : 10,
+      }}
+      style={{ y: yOffset }}
+      ref={ref}
+      className="will-change-transform z-0 w-full h-full"
+    >
+      {children}
+    </motion.div>
   );
 }
