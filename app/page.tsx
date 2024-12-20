@@ -448,7 +448,7 @@ export default function Home() {
       </motion.div>
 
       <div className="flex flex-row mt-[52px] relative lg:h-[1200px]">
-        <motion.div className="w-[308px] h-[480px] -ml-[209px] relative lg:w-[768px] lg:h-[1200px] lg:z-10 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-[126.5%]">
+        <motion.div className="w-[308px] h-[480px] max-lg:-ml-[209px] relative lg:w-[768px] lg:h-[1200px] lg:z-10 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-[126.5%]">
           <Image src={Hero9} alt="Hero Home" fill objectFit="cover" />
         </motion.div>
         <motion.div className="w-[294px] h-[352px] relative lg:w-[1488px] lg:h-[984px] overflow-hidden lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-[13.7%]">
