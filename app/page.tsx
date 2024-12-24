@@ -42,12 +42,22 @@ import Slider9 from "@/public/Home/Slider9.png";
 import Slider10 from "@/public/Home/Slider10.png";
 import Slider11 from "@/public/Home/Slider11.jpg";
 import Link from "next/link";
+import { getAllPosts, Post } from "@/sanity/lib/queries";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
 
+  const [topNews, setTopNews] = useState<Post[]>([]);
+
   useEffect(() => {
+    const fetchTopNews = async () => {
+      const posts = await getAllPosts();
+      setTopNews(posts);
+    };
+
+    fetchTopNews();
+
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1199);
     };
@@ -102,25 +112,70 @@ export default function Home() {
             />
           </div>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 0, y: 0 }}
-          className="flex flex-row items-center bg-black text-white whitespace-nowrap text-[14px] mx-2.5 gap-2.5 overflow-hidden mt-[63dvh] pl-2.5 lg:mt-[80dvh] py-1 hidden"
-        >
-          <p className="bold-text underline underline-offset-2 decoration-white/50">
-            НОВОСТИ
-          </p>
-          <p className="bold-text">01</p>
-          <p className="regular-text">«</p>
-          <p className="underline regular-text -ml-2.5">
-            Новые тенденции в Верховном суде» Комментарий Сергея Лисина
-          </p>
-          <p className="bold-text max-lg:text-[10px] ml-9">02</p>
-          <p className="underline regular-text decoration-white/20">
-            «Интервью с Алексей Ахубой, сооснователем ALX Part
-          </p>
-        </motion.div>
-        <div className="w-[calc(100dvw-20px)] mx-auto h-[240px] relative lg:h-screen z-10 mt-[63dvh] lg:mt-[75dvh]">
+        <div className="flex flex-row items-center bg-black text-white whitespace-nowrap text-[14px] mx-2.5 overflow-hidden mt-[63dvh] pl-2.5 lg:mt-[80dvh] py-1 z-20 lg:gap-[25px] lg:h-[40px]">
+          <motion.div
+            className="flex flex-row items-center gap-[25px]"
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              duration: 40,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {/* First instance of content */}
+            <Link
+              href="/news"
+              className="bold-text underline underline-extension-2 hover:no-underline cursor-pointer"
+            >
+              НОВОСТИ
+            </Link>
+            {topNews.map((post, idx) => (
+              <Link
+                key={`first-${post.slug.current}`}
+                href={post.sourceLink}
+                className="flex flex-row items-center"
+              >
+                <p className="bold-text leading-[22px] lg:leading-[24px]">
+                  {idx < 9 ? `0${idx + 1}` : `${idx + 1}`}
+                </p>
+                <p className="regular-text ml-2">
+                  <span className="underline underline-extension-2 hover:no-underline">
+                    {post.titleLink}
+                  </span>
+                  {post.titleNormal && <span>{post.titleNormal}</span>}
+                </p>
+              </Link>
+            ))}
+
+            {/* Duplicate content for seamless loop */}
+            <Link
+              href="/news"
+              className="bold-text underline underline-extension-2 hover:no-underline cursor-pointer"
+            >
+              НОВОСТИ
+            </Link>
+            {topNews.map((post, idx) => (
+              <Link
+                key={`second-${post.slug.current}`}
+                href={post.sourceLink}
+                className="flex flex-row items-center"
+              >
+                <p className="bold-text leading-[22px] lg:leading-[24px]">
+                  {idx < 9 ? `0${idx + 1}` : `${idx + 1}`}
+                </p>
+                <p className="regular-text ml-2">
+                  <span className="underline underline-extension-2 hover:no-underline">
+                    {post.titleLink}
+                  </span>
+                  {post.titleNormal && <span>{post.titleNormal}</span>}
+                </p>
+              </Link>
+            ))}
+          </motion.div>
+        </div>
+        <div className="w-[calc(100dvw-20px)] mx-auto h-[240px] relative lg:h-screen z-10">
           <Image src={Hero2} alt="Hero Home" fill objectFit="cover" />
         </div>
       </div>

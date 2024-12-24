@@ -24,7 +24,7 @@ import Image17 from "@/public/Artifacts/image17.jpg";
 
 import ImageX from "@/public/Artifacts/ImageForgot.png";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden bg-[#E8E8E8]">
       <Navbar />

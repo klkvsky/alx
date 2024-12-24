@@ -92,6 +92,15 @@ export default function Navbar() {
               Артефакты
             </Link>
             <Link
+              href="/news"
+              className={cn(
+                "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase hover:decoration-white/0 transition-all",
+                pathname !== "/news" && "underline underline-extension"
+              )}
+            >
+              Новости
+            </Link>
+            <Link
               href="/#contacts"
               onClick={(e) => {
                 e.preventDefault();
@@ -115,14 +124,23 @@ export default function Navbar() {
         )}
       </AnimatePresence>
       <div
-        className="flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5 max-lg:mix-blend-difference max-lg:!text-white"
+        className={cn(
+          "flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5",
+          pathname.includes("news")
+            ? "text-white"
+            : "max-lg:mix-blend-difference max-lg:!text-white"
+        )}
         // style={{
         //   color: isOpen || pathname.includes("partners") ? "white" : "black",
         // }}
       >
         <Link href="/">
           <Image
-            src={pathname === "/partners" ? LogoWhite : Logo}
+            src={
+              pathname === "/partners" || pathname === "/news"
+                ? LogoWhite
+                : Logo
+            }
             alt="ALX Logo"
             width={134}
             height={48}
@@ -181,6 +199,16 @@ export default function Navbar() {
               )}
             >
               Артефакты
+            </Link>
+            <Link
+              href="/news"
+              className={cn(
+                "bold-text mt-3 uppercase",
+                pathname !== "/news" &&
+                  "underline underline-extension hover:no-underline"
+              )}
+            >
+              Новости
             </Link>
             <Link
               href="/#contacts"
@@ -335,6 +363,33 @@ export default function Navbar() {
                 y: 0,
                 transition: {
                   delay: 0.4,
+                },
+              }}
+              className="flex flex-row items-end justify-between w-full z-10"
+            >
+              <p className="bold-text">04</p>
+              <Link
+                href="/news"
+                className={cn(
+                  "big-text text-[24px]",
+                  pathname !== "/news" &&
+                    "underline underline-extension-2 decoration-white/50"
+                )}
+              >
+                Новости
+              </Link>
+              <p className="bold-text">04</p>
+            </motion.div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 10,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.5,
                 },
               }}
               className="flex flex-row items-end justify-between w-full z-10"
