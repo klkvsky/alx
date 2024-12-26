@@ -1,0 +1,242 @@
+[
+  {
+    "of": [
+      {
+        "marks": {
+          "annotations": [
+            {
+              "fields": [
+                {
+                  "validation": [
+                    {
+                      "rules": [
+                        {
+                          "flag": "uri",
+                          "constraint": {
+                            "options": {
+                              "scheme": [
+                                "/^http$/",
+                                "/^https$/"
+                              ],
+                              "allowRelative": false,
+                              "relativeOnly": false,
+                              "allowCredentials": false
+                            }
+                          }
+                        }
+                      ],
+                      "level": "error"
+                    }
+                  ],
+                  "name": "href",
+                  "type": "url",
+                  "title": "URL"
+                }
+              ],
+              "name": "link",
+              "type": "object",
+              "title": "URL"
+            }
+          ],
+          "decorators": [
+            {
+              "value": "strong",
+              "title": "Strong"
+            },
+            {
+              "value": "em",
+              "title": "Emphasis"
+            }
+          ]
+        },
+        "lists": [
+          {
+            "value": "bullet",
+            "title": "Bullet"
+          }
+        ],
+        "styles": [
+          {
+            "value": "normal",
+            "title": "Normal"
+          },
+          {
+            "value": "h1",
+            "title": "H1"
+          },
+          {
+            "value": "h2",
+            "title": "H2"
+          },
+          {
+            "value": "h3",
+            "title": "H3"
+          },
+          {
+            "value": "h4",
+            "title": "H4"
+          },
+          {
+            "value": "blockquote",
+            "title": "Quote"
+          }
+        ],
+        "of": [],
+        "type": "block"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternative Text"
+          }
+        ],
+        "type": "image"
+      }
+    ],
+    "name": "blockContent",
+    "type": "array"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "dateFormat": "DD.MM.YYYY"
+        },
+        "name": "date",
+        "type": "date",
+        "title": "Дата"
+      },
+      {
+        "name": "source",
+        "type": "string",
+        "title": "Источник"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "sourceLink",
+        "type": "url",
+        "title": "Ссылка на оригинальный источник"
+      },
+      {
+        "name": "titleLink",
+        "type": "string",
+        "title": "Часть заголовка со ссылкой"
+      },
+      {
+        "name": "titleNormal",
+        "type": "string",
+        "title": "Обычная часть заголовка"
+      },
+      {
+        "options": {
+          "source": "titleLink"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug",
+        "title": "Ссылка"
+      },
+      {
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Альтернативный текст"
+          }
+        ],
+        "name": "mainImage",
+        "type": "image"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Большой текст",
+              "value": "bigText"
+            },
+            {
+              "title": "Обычный текст",
+              "value": "normalText"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "bigText",
+                  "normalText"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error",
+            "message": "Выберите тип текста"
+          }
+        ],
+        "name": "textType",
+        "type": "string",
+        "title": "Тип текста"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error",
+            "message": "Введите текст"
+          }
+        ],
+        "name": "text",
+        "type": "text",
+        "title": "Текст"
+      }
+    ],
+    "name": "post",
+    "type": "document",
+    "title": "Пост"
+  }
+]

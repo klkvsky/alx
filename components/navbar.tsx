@@ -289,6 +289,9 @@ export default function Navbar() {
               <p className="bold-text">01</p>
               <Link
                 href="/"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/" &&
@@ -316,6 +319,9 @@ export default function Navbar() {
               <p className="bold-text">02</p>
               <Link
                 href="/partners"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/partners" &&
@@ -343,6 +349,9 @@ export default function Navbar() {
               <p className="bold-text">03</p>
               <Link
                 href="/artifacts"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/artifacts" &&
@@ -370,6 +379,9 @@ export default function Navbar() {
               <p className="bold-text">04</p>
               <Link
                 href="/news"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
                 className={cn(
                   "big-text text-[24px]",
                   pathname !== "/news" &&
@@ -399,6 +411,7 @@ export default function Navbar() {
                 href="/#contacts"
                 onClick={(e) => {
                   e.preventDefault();
+                  setIsOpen(false);
                   const href = e.currentTarget.href;
                   const targetId = href.split("#")[1];
 
