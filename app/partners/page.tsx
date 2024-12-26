@@ -447,7 +447,8 @@ export default function Home() {
           </p>
         </div>
         <p className="regular-text mt-6">
-          <span className="bold-text">01</span> Редкий день из последних 15 лет провёл не в арбитраже, выиграл сотни процессов на десятки миллиардов.{" "}
+          <span className="bold-text">01</span> Редкий день из последних 15 лет
+          провёл не в арбитраже, выиграл сотни процессов на десятки миллиардов.{" "}
           <span className="bold-text">02</span> Создал несколько громких
           прецедентов <br /> в Верховном суде.{" "}
           <span className="bold-text">03</span> Отмечен
