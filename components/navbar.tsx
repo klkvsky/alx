@@ -157,7 +157,7 @@ export default function Navbar() {
           />
         </Link>
         <div className="flex flex-col ml-[10px] translate-y-[24px] lg:ml-[63px] lg:translate-y-[35px]">
-          <div className="flex flex-col gap-[3px] text-[10px] lg:text-[12px]">
+          <div className="flex flex-col gap-[9px] text-[10px] lg:text-[12px]">
             <p className="uppercase bold-text">коллегия адвокатов</p>
             <p className="uppercase font-oceanic leading-[10px] tracking-[0.2em] lg:text-[12px] lg:leading-[12px] lg:ml-[100%] whitespace-nowrap">
               M&A & Litigation
