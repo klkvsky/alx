@@ -81,10 +81,7 @@ export default function Home() {
     const scrollToComponent = () => {
       const currentPosition = window.scrollY;
       const targetPosition =
-        pickedComponentRef!.getBoundingClientRect().top +
-        window.scrollY +
-        pickedComponentRef!.offsetHeight -
-        window.innerHeight;
+        pickedComponentRef!.getBoundingClientRect().top + window.scrollY - 60;
 
       const distance = targetPosition - currentPosition;
       const duration = 1500;
