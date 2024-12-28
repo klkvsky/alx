@@ -53,7 +53,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -100 }}
             exit={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.3 }}
-            className="hidden fixed top-0 left-0 w-screen z-50 mix-blend-difference p-3 lg:flex flex-row items-center gap-9"
+            className="hidden fixed top-0 left-0 w-screen z-50 mix-blend-difference p-3 md:flex flex-row items-center gap-9"
           >
             <Link href="/">
               <Image
@@ -125,7 +125,7 @@ export default function Navbar() {
       </AnimatePresence>
       <div
         className={cn(
-          "flex flex-row items-start px-2.5 max-lg:fixed top-1 left-0 w-screen h-fit z-50 lg:relative lg:h-0 lg:pl-11 lg:top-1.5",
+          "flex flex-row items-start px-2.5 max-md:fixed top-1 left-0 w-screen h-fit z-50 md:relative md:h-0 md:pl-11 md:top-1.5",
           pathname.includes("news")
             ? "text-white"
             : "max-lg:mix-blend-difference max-lg:!text-white"
@@ -159,13 +159,13 @@ export default function Navbar() {
         <div className="flex flex-col ml-[10px] translate-y-[24px] lg:ml-[63px] lg:translate-y-[35px]">
           <div className="flex flex-col gap-[9px] text-[10px] lg:text-[12px]">
             <p className="uppercase bold-text">коллегия адвокатов</p>
-            <p className="uppercase font-oceanic leading-[10px] tracking-[0.2em] lg:text-[12px] lg:leading-[12px] lg:ml-[100%] whitespace-nowrap">
+            <p className="uppercase font-oceanic leading-[10px] tracking-[0.2em] md:text-[12px] md:leading-[12px] md:ml-[74%] lg:ml-[100%] whitespace-nowrap">
               M&A & Litigation
             </p>
           </div>
         </div>
 
-        <div className="lg:flex flex-col lg:ml-[155px] translate-y-[35px] hidden">
+        <div className="md:flex flex-col md:ml-[55px] lg:ml-[155px] md:translate-y-[24px] lg:translate-y-[35px] hidden">
           <div className="flex flex-col gap-[3px] text-[10px] lg:text-[12px]">
             <p className="uppercase bold-text">
               Беспокойство ваших оппонентов.
@@ -234,7 +234,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="uppercase translate-y-[24px] ml-auto bold-text underline text-[10px] lg:hidden"
+          className="uppercase translate-y-[24px] ml-auto bold-text underline text-[10px] md:hidden"
           style={{
             opacity: isOpen ? 0 : 1,
             pointerEvents: isOpen ? "none" : "auto",
@@ -248,6 +248,7 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence initial={false} mode="popLayout">
         {isOpen && (
           <motion.div

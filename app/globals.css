@@ -4,15 +4,15 @@
 
 @layer components {
   .bold-text {
-    @apply font-bold font-brutal text-[10px] leading-[10px] tracking-[0.2em] lg:text-[12px] lg:leading-[12px];
+    @apply font-bold font-brutal text-[10px] leading-[10px] tracking-[0.2em] md:text-[12px] md:leading-[12px] lg:text-[12px] lg:leading-[12px];
   }
 
   .regular-text {
-    @apply font-normal font-oceanic text-[14px] leading-[20px] -tracking-[0.03em] lg:text-[16px] lg:leading-[24px];
+    @apply font-normal font-oceanic text-[14px] leading-[20px] -tracking-[0.03em] md:text-[16px] md:leading-[24px];
   }
 
   .big-text {
-    @apply font-normal font-oceanic text-[20px] leading-[24px] -tracking-[0.03em] lg:text-[24px] lg:leading-[28px];
+    @apply font-normal font-oceanic text-[20px] leading-[24px] -tracking-[0.03em] md:text-[24px] md:leading-[24px] lg:leading-[28px];
   }
 
   .underline-extension {
