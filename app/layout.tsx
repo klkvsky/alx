@@ -16,7 +16,8 @@ const BrutalType = localFont({
 
 export const metadata: Metadata = {
   title: "ALX Partners",
-  description: "Коллегия адвокатов | M&A & LITIGATION | БЕСПОКОЙСТВО ВАШИХ ОППОНЕНТОВ",
+  description:
+    "Коллегия адвокатов | M&A & LITIGATION | БЕСПОКОЙСТВО ВАШИХ ОППОНЕНТОВ",
 };
 
 export default function RootLayout({

@@ -70,7 +70,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1199);
+      setIsMobile(window.innerWidth < 768);
     };
 
     handleResize(); // Set initial value
@@ -131,21 +131,23 @@ export default function Home() {
   }, [scrollY]);
 
   return (
-    <div className="flex flex-col max-w-[100vw] overflow-hidden text-white relative">
+    <div className="flex flex-col max-w-[100vw] overflow-hidden text-white relative bg-black">
       <Navbar />
       <Image
         src={background}
         alt="Background"
-        width={1000}
-        height={1221}
-        className="fixed top-0 left-0 -z-10 max-md:h-[108vh] max-md:w-auto max-md:object-cover max-md:object-right 2xl:w-[83vw]"
+        width={0}
+        height={0}
+        unoptimized
+        className="fixed w-[335.7vw] h-[299.4vw] -top-[6.4vw] -left-[] md:w-[109.9vw] md:h-[148.2vw] md:-top-[7.9vw] md:-left-[11.3vw] lg:w-[237.9vw] lg:h-[133.9vw] lg:-left-[7.9vw] lg:-top-[30.9vw]"
       />
       <Image
         src={background}
         alt="Background"
-        width={1000}
-        height={1221}
-        className="fixed top-0 left-[115px] sm:max-md:w-[90vw] lg:left-[299px] -z-10 max-md:h-[108vh] max-md:w-auto max-md:object-cover max-md:object-right 2xl:w-[83vw]"
+        width={0}
+        height={0}
+        unoptimized
+        className="fixed md:w-[82.1vw] md:h-[146.4vw] md:-top-[7.9vw] md:left-[17.8vw] lg:w-[237.9vw] lg:h-[157.5vw] lg:left-[24.9vw] lg:-top-[55.8vw]"
       />
 
       <p className="bold-text ml-[94px] mt-[92px] uppercase md:mt-[314px] md:ml-[420px] lg:mt-[224px] lg:ml-[12px] z-10">
@@ -430,25 +432,25 @@ export default function Home() {
         className="flex flex-row items-end mt-16 lg:mt-[315px] lg:ml-[3.667vw] z-20 pointer-events-none"
         id="sergey"
       >
-        <div className="w-[156px] h-[103px] relative flex-none lg:w-[21.25vw] lg:h-[14vw]">
+        <div className="w-[156px] h-[103px] relative flex-none md:w-[27vw] md:h-[17.7vw]">
           <Image src={Sergey1} alt="Sergey 1" fill objectFit="cover" />
         </div>
-        <div className="w-[145px] h-[220px] relative flex-none -ml-[41px] lg:w-[19.833vw] lg:h-[30vw] lg:ml-0">
+        <div className="w-[145px] h-[220px] relative flex-none -ml-[41px] md:-ml-[9.1vw] md:w-[25.2vw] md:h-[38.1vw]">
           <Image src={Sergey2} alt="Sergey 2" fill objectFit="cover" />
         </div>
-        <div className="w-[199px] h-[132px] relative flex-none lg:w-[27.167vw] lg:h-[18vw]">
+        <div className="w-[199px] h-[132px] relative flex-none md:w-[34.5vw] md:h-[22.8vw]">
           <Image src={Sergey3} alt="Sergey 3" fill objectFit="cover" />
         </div>
-        <div className="relative flex-none flex w-[146px] h-[96px] lg:z-10">
+        <div className="relative flex-none flex w-[146px] h-[96px] md:hidden">
           <Image src={Sergey4} alt="Sergey 3" fill objectFit="cover" />
         </div>
-        <div className="relative flex-none flex w-[272px] h-[180px] lg:-ml-[19px]">
+        <div className="relative flex-none flex w-[272px] h-[180px] md:w-[28.8vw] md:h-[19vw] md:-ml-[6.3vw] md:-z-10">
           <Image src={Sergey5} alt="Sergey 3" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto pr-2.5 lg:ml-[25%] lg:w-[55.417vw] z-20">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[55.417vw] z-20">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Сергей Лисин</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
             управляющий партнёр, <br className="md:hidden" />
@@ -476,28 +478,28 @@ export default function Home() {
         className="flex flex-row items-end mt-[128px] lg:mt-[192px] z-20  pointer-events-none"
         id="alexey"
       >
-        <div className="hidden relative flex-none lg:flex lg:w-[13.667vw] lg:h-[14vw] lg:-ml-[16px]">
+        <div className="hidden relative flex-none lg:flex">
           <Image src={Alexey1} alt="Sergey 3" fill objectFit="cover" />
         </div>
-        <div className="w-[166px] h-[110px] relative flex-none md:w-[22.667vw] md:h-[15vw] md:-ml-[29px]">
+        <div className="w-[166px] h-[110px] relative flex-none md:w-[24.3vw] md:h-[21.5vw]">
           <Image src={Alexey2} alt="Alexey 1" fill objectFit="cover" />
         </div>
-        <div className="w-[148px] h-[220px] relative flex-none -ml-[56px] md:w-[20.083vw] md:h-[30vw] md:-ml-[92px]">
+        <div className="w-[148px] h-[220px] relative flex-none -ml-[56px] md:-ml-[6.4vw] md:w-[25.5vw] md:h-[38.1vw]">
           <Image src={Alexey3} alt="Alexey 2" fill objectFit="cover" />
         </div>
-        <div className="w-[184px] h-[123px] relative flex-none -ml-[26px] md:w-[25.667vw] md:h-[17vw] md:-ml-[40px]">
+        <div className="w-[184px] h-[123px] relative flex-none -ml-[26px] md:-ml-[1.7vw] md:w-[36.9vw] md:h-[24.4vw]">
           <Image src={Alexey4} alt="Alexey 3" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[10.75vw] md:h-[7vw] md:z-10">
+        <div className="hidden relative flex-none lg:flex">
           <Image src={Alexey5} alt="Sergey 3" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[19.667vw] md:h-[13vw] md:-ml-[33px]">
+        <div className="hidden relative flex-none md:flex md:w-[28.2vw] md:h-[18.7vw] md:-ml-[2.9vw]">
           <Image src={Alexey6} alt="Sergey 3" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto pr-2.5 lg:ml-[25%] lg:w-[55.417vw]">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[55.417vw] z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Алексей Ахуба</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
             старший партнёр
@@ -521,22 +523,22 @@ export default function Home() {
         className="flex flex-row items-end mt-[128px] lg:mt-[192px] z-20 pointer-events-none"
         id="asya"
       >
-        <div className="w-[210px] h-[138px] relative flex-none md:w-[28.75vw] md:h-[19vw] md:-ml-[46px]">
+        <div className="w-[210px] h-[138px] relative flex-none md:w-[36.7vw] md:h-[24.3vw] md:-ml-[5.5vw]">
           <Image src={Asya1} alt="Asya 1" fill objectFit="cover" />
         </div>
-        <div className="w-[330px] h-[220px] relative flex-none -ml-[96px] md:w-[45.333vw] md:h-[30vw] md:ml-0">
+        <div className="w-[330px] h-[220px] relative flex-none -ml-[96px] md:w-[48.5vw] md:h-[38.1vw] md:-ml-[13.4vw]">
           <Image src={Asya2} alt="Asya 2" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[11.917vw] md:h-[18vw]">
+        <div className="hidden relative flex-none md:flex md:w-[15.3vw] md:h-[23.1vw]">
           <Image src={Asya3} alt="Asya 3" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[21.167vw] md:h-[14vw] md:-ml-[27px]">
+        <div className="hidden relative flex-none md:flex md:w-[27.2vw] md:h-[17.9vw] md:-ml-[8.9vw] -z-10">
           <Image src={Asya4} alt="Asya 4" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto pr-2.5 lg:ml-[25%] lg:w-[55.417vw]">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[55.417vw] z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Ася Алфёрова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
             партнёр
@@ -561,30 +563,22 @@ export default function Home() {
         className="flex flex-row items-end mt-[128px] lg:mt-[192px] pointer-events-none z-20"
         id="alexey-r"
       >
-        <div className="hidden relative flex-none md:flex md:w-[24vw] md:h-[16vw] md:ml-[11px]">
+        <div className="hidden relative flex-none md:flex md:w-[24.8vw] md:h-[16.6vw]">
           <Image src={AlexeyR1} alt="Alexey R 1" fill objectFit="cover" />
         </div>
-        <div className="w-[197px] h-[131px] relative flex-none overflow-hidden md:w-[27vw] md:h-[18vw] md:-ml-[67px]">
-          <Image
-            src={AlexeyR2}
-            alt="Alexey R 1"
-            fill
-            objectFit="cover"
-            style={{
-              transform: isMobile ? "translateX(-35%) scale(1.05)" : "",
-            }}
-          />
+        <div className="w-[197px] h-[131px] relative flex-none overflow-hidden md:w-[36.2vw] md:h-[24.1vw] md:-ml-[13.7vw] md:-z-10">
+          <Image src={AlexeyR2} alt="Alexey R 1" fill objectFit="cover" />
         </div>
-        <div className="w-[330px] h-[220px] relative flex-none -ml-[96px] md:w-[45vw] md:h-[30vw] md:-ml-[31px]">
+        <div className="w-[330px] h-[220px] relative flex-none -ml-[96px] md:w-[50vw] md:h-[38.1vw] md:ml-0">
           <Image src={AlexeyR3} alt="Alexey R 2" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[22.417vw] md:h-[15vw] md:-ml-[134px]">
+        <div className="hidden relative flex-none lg:flex">
           <Image src={AlexeyR4} alt="Alexey R 1" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto pr-2.5 lg:ml-[25%] lg:w-[56.833vw]">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[56.833vw] z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Алексей Рябов</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
             партнёр
@@ -615,7 +609,7 @@ export default function Home() {
         className="flex flex-row items-end mt-[128px] lg:mt-[192px] pointer-events-none z-20"
         id="evgeny"
       >
-        <div className="w-[168px] h-[111px] relative flex-none md:w-[25.833vw] md:h-[17vw]">
+        <div className="w-[168px] h-[111px] relative flex-none md:w-[24.1vw] md:h-[21.5vw] md:-ml-[1.3vw]">
           <Image
             src={Evgeny1}
             alt="Evgeny 1"
@@ -626,22 +620,22 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="w-[133px] h-[201px] relative flex-none -ml-[99px] md:w-[19.833vw] md:h-[30vw] md:ml-0">
+        <div className="w-[133px] h-[201px] relative flex-none -ml-[99px] md:w-[25.2vw] md:h-[38.1vw] md:-ml-[5vw]">
           <Image src={Evgeny2} alt="Evgeny 2" fill objectFit="cover" />
         </div>
-        <div className="w-[115px] h-[161px] relative flex-none z-10 md:w-[17.167vw] md:h-[24vw]">
+        <div className="w-[115px] h-[161px] relative flex-none z-10 md:w-[21.8vw] md:h-[30.5vw] md:-ml-[3.3vw]">
           <Image src={Evgeny3} alt="Evgeny 3" fill objectFit="cover" />
         </div>
-        <div className="w-[152px] h-[101px] relative flex-none -ml-[73px] z-0 md:w-[28.583vw] md:h-[19vw] md:-ml-[16px]">
+        <div className="w-[152px] h-[101px] relative flex-none -ml-[73px] z-0 md:w-[36.3vw] md:h-[24.1vw] md:-ml-[8.1vw]">
           <Image src={Evgeny4} alt="Evgeny 4" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[11.583vw] md:h-[17vw]">
+        <div className="hidden relative flex-none md:flex md:w-[14.7vw] md:h-[21.6vw] md:-ml-[4.3vw] -z-10">
           <Image src={Evgeny5} alt="Evgeny 5" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[58.333vw] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[58.333vw] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Евгений Орлов</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
             старший юрист
@@ -670,10 +664,10 @@ export default function Home() {
         className="flex flex-row items-end mt-[128px] lg:mt-[192px] lg:z-20 pointer-events-none z-20"
         id="anastasia"
       >
-        <div className="hidden relative flex-none md:flex md:w-[13.667vw] md:h-[14vw] md:z-10">
+        <div className="hidden relative flex-none lg:flex lg:w-[13.667vw] lg:h-[14vw] lg:z-10">
           <Image src={Anastasia1} alt="Anastasya 1" fill objectFit="cover" />
         </div>
-        <div className="w-[151px] h-[101px] relative flex-none md:w-[22.667vw] md:h-[15vw] md:-ml-[23px]">
+        <div className="w-[151px] h-[101px] relative flex-none md:w-[23.3vw] md:h-[19vw] md:ml-0">
           <Image
             src={Anastasia2}
             alt="Anastasia 1"
@@ -684,22 +678,22 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="w-[135px] h-[200px] relative flex-none -ml-[41px] z-10 md:w-[20.083vw] md:h-[30vw] md:-ml-[114px]">
+        <div className="w-[135px] h-[200px] relative flex-none -ml-[41px] z-10 md:w-[25.4vw] md:h-[38.1vw] md:-ml-[5.5vw]">
           <Image src={Anastasia3} alt="Anastasia 2" fill objectFit="cover" />
         </div>
-        <div className="w-[232px] h-[153px] relative flex-none -ml-[47px] md:w-[34.583vw] md:h-[22.917vw] md:-ml-[84px]">
+        <div className="w-[232px] h-[153px] relative flex-none -ml-[47px] md:w-[43.9vw] md:h-[29.1vw] md:-ml-[8vw] md:-z-10">
           <Image src={Anastasia4} alt="Anastasia 3" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[19.667vw] md:h-[13vw] md:-ml-[52px]">
+        <div className="hidden relative flex-none md:flex md:w-[24.9vw] md:h-[16.5vw] md:-ml-[13.8vw]">
           <Image src={Anastasia5} alt="Anastasya 4" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[13.667vw] md:h-[14vw] md:-ml-[19px]">
+        <div className="hidden relative flex-none md:flex md:w-[13.6vw] md:h-[11.3vw] md:-ml-[4.1vw]">
           <Image src={Anastasia6} alt="Anastasya 5" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[54.583vw] z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[54.583vw] z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw]">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Анастасия Рябова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
             адвокат
@@ -741,24 +735,19 @@ export default function Home() {
             }}
           />
         </div>
-        <div
-          className="w-[302px] h-[200px] relative flex-none z-10 md:w-[45.333vw] md:h-[30vw]"
-          style={{
-            marginLeft: isMobile ? "-90px" : "-46px",
-          }}
-        >
+        <div className="w-[302px] h-[200px] relative flex-none z-10 md:w-[57.6vw] md:h-[38.1vw] -ml-[90px] md:-ml-[10.9vw]">
           <Image src={Arina2} alt="Arina 2" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[24.75vw] md:h-[13vw] md:-ml-[80px]">
+        <div className="hidden relative flex-none md:flex md:w-[31.4vw] md:h-[20.8vw] md:-ml-[17.3vw] md:z-10">
           <Image src={Arina3} alt="Arina 3" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[13.667vw] md:h-[14vw]">
+        <div className="hidden relative flex-none md:flex md:w-[17.3vw] md:h-[11.4vw] md:-ml-[6.9vw] md:z-10">
           <Image src={Arina4} alt="Arina 4" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[56.833vw] z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[56.833vw] z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw]">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Арина Русакевич</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
             помощник юриста
@@ -784,7 +773,7 @@ export default function Home() {
         className="flex flex-row items-end mt-[128px] lg:mt-[192px] z-20 pointer-events-none"
         id="ksenia"
       >
-        <div className="w-[166px] h-[110px] relative flex-none md:w-[24.917vw] md:h-[14vw]">
+        <div className="w-[166px] h-[110px] relative flex-none md:w-[17.8vw] md:h-[20.8vw]">
           <Image
             src={Ksenia1}
             alt="Ksenia 1"
@@ -795,27 +784,22 @@ export default function Home() {
             }}
           />
         </div>
-        <div
-          className="w-[132px] h-[200px] relative flex-none md:w-[19.833vw] md:h-[30vw]"
-          style={{
-            marginLeft: isMobile ? "-71px" : "",
-          }}
-        >
+        <div className="w-[132px] h-[200px] relative flex-none md:w-[25.2vw] md:h-[38.1vw] -ml-[71px] md:ml-0">
           <Image src={Ksenia2} alt="Ksenia 2" fill objectFit="cover" />
         </div>
-        <div className="w-[114px] h-[160px] relative flex-none z-10 md:w-[17.167vw] md:h-[24vw]">
+        <div className="w-[114px] h-[160px] relative flex-none z-10 md:w-[21.8vw] md:h-[30.5vw] md:-ml-[2.4vw]">
           <Image src={Ksenia3} alt="Ksenia 3" fill objectFit="cover" />
         </div>
-        <div className="w-[152px] h-[101px] relative flex-none -ml-[52px] z-0 md:w-[22.75vw] md:h-[12vw] md:-ml-[16px]">
+        <div className="w-[152px] h-[101px] relative flex-none -ml-[52px] z-0 md:w-[28.9vw] md:h-[19.1vw] md:-ml-[8.1vw]">
           <Image src={Ksenia4} alt="Ksenia 4" fill objectFit="cover" />
         </div>
-        <div className="hidden relative flex-none md:flex md:w-[16.667vw] md:h-[12vw]">
+        <div className="hidden relative flex-none md:flex md:w-[21.1vw] md:h-[15.2vw] md:-ml-[4.4vw]">
           <Image src={Ksenia5} alt="Ksenia 5" fill objectFit="cover" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[25%] lg:max-w-[56.833vw] lg:z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:gap-[24px]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[25%] lg:max-w-[56.833vw] md:z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw]">
+        <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Ксения Мерзлякова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
             офис-менеджер

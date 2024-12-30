@@ -12,6 +12,9 @@ export default {
         oceanic: ["var(--font-oceanic-text-mono)"],
         brutal: ["var(--font-brutal-type)"],
       },
+      screens: {
+        "lg:": "1200px",
+      },
     },
   },
   plugins: [],
