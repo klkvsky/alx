@@ -569,7 +569,7 @@ export default function Home() {
         <div className="w-[197px] h-[131px] relative flex-none overflow-hidden md:w-[36.2vw] md:h-[24.1vw] md:-ml-[13.7vw] md:-z-10">
           <Image src={AlexeyR2} alt="Alexey R 1" fill objectFit="cover" />
         </div>
-        <div className="w-[330px] h-[220px] relative flex-none -ml-[96px] md:w-[50vw] md:h-[38.1vw] md:ml-0">
+        <div className="w-[330px] h-[220px] relative flex-none -ml-[96px] md:w-[55vw] md:h-[38.1vw] md:ml-0">
           <Image src={AlexeyR3} alt="Alexey R 2" fill objectFit="cover" />
         </div>
         <div className="hidden relative flex-none lg:flex">
