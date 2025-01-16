@@ -798,7 +798,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[25%] lg:max-w-[56.833vw] md:z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[25%] lg:max-w-[56.833vw] md:z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] z-20">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Ксения Мерзлякова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
