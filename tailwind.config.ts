@@ -13,6 +13,7 @@ export default {
         brutal: ["var(--font-brutal-type)"],
       },
       screens: {
+        mg: "1000px",
         lg: "1366px",
         xl: "1440px",
         "2xl": "1920px",

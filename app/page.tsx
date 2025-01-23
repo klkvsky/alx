@@ -97,7 +97,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-[100px] ml-[155px] gap-3 flex flex-col items-start justify-start md:block md:ml-auto md:mt-[104px] mr-[16px] lg:mr-[90px] lg:mt-[42px]"
+          className="mt-[100px] ml-[155px] gap-3 flex flex-col items-start justify-start md:block md:ml-auto md:mt-[104px] mr-[16px] mg:mr-[90px] mg:mt-[42px] lg:mr-[90px] lg:mt-[42px]"
         >
           <p className="bold-text uppercase leading-[14px] z-10 md:hidden">
             БЕСПОКОЙСТВО <br /> ВАШИХ ОППОНЕНТОВ.

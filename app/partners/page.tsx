@@ -449,7 +449,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[55.417vw] z-20">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)] pr-2.5 lg:ml-[calc(25%+8px)] lg:w-[calc(55.417vw+8px)] z-20">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Сергей Лисин</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
@@ -498,7 +498,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[55.417vw] z-10">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)] pr-2.5 lg:ml-[calc(25%+8px)] lg:w-[calc(55.417vw+8px)] z-10">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Алексей Ахуба</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -537,7 +537,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[55.417vw] z-10">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)] pr-2.5 lg:ml-[calc(25%+8px)] lg:w-[calc(55.417vw+8px)] z-10">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Ася Алфёрова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -577,7 +577,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] pr-2.5 lg:ml-[25%] lg:w-[56.833vw] z-10">
+      <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)] pr-2.5 lg:ml-[calc(25%+8px)] lg:w-[calc(56.833vw+8px)] z-10">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Алексей Рябов</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -634,7 +634,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[58.333vw] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] z-10">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[calc(25%+8px)] lg:max-w-[calc(58.333vw+8px)] md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)] z-10">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Евгений Орлов</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -692,7 +692,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[54.583vw] z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[calc(25%+8px)] lg:max-w-[calc(54.583vw+8px)] z-20 md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)]">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Анастасия Рябова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5 lg:mt-0">
@@ -746,7 +746,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[25%] lg:max-w-[56.833vw] z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw]">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 lg:ml-[calc(25%+8px)] lg:max-w-[calc(56.833vw+8px)] z-20 md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)]">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Арина Русакевич</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
@@ -798,7 +798,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[25%] lg:max-w-[56.833vw] md:z-20 md:ml-0 md:max-lg:max-w-[674px] md:max-lg:ml-[17.8vw] z-20">
+      <div className="flex flex-col mt-12 ml-[29%] pr-2.5 mb-16 lg:ml-[calc(25%+8px)] lg:max-w-[calc(56.833vw+8px)] md:z-20 md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)] z-20">
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Ксения Мерзлякова</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
