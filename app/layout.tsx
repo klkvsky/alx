@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Analytics from "@/app/components/Analytics";
 
 const OceanicTextMono = localFont({
   src: "../public/fonts/OceanicTextMono-Regular.woff",
@@ -27,6 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Analytics />
+      </head>
       <body
         className={`${OceanicTextMono.variable} ${BrutalType.variable} antialiased`}
       >
