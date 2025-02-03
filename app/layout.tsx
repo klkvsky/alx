@@ -16,9 +16,9 @@ const BrutalType = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ALX Partners",
+  title: "ALX Partners — профессиональные юристы и адвокаты ALX, КА А-ЭЛ-ИКС",
   description:
-    "Коллегия адвокатов | M&A & LITIGATION | БЕСПОКОЙСТВО ВАШИХ ОППОНЕНТОВ",
+    "Юридическая фирма ALX Partners (КА А-ЭЛ-ИКС) предлагает услуги адвокатов и юристов ALX для решения любых правовых вопросов. Наши эксперты ALX advocate и ALX lawyer предоставляют качественную правовую поддержку и защиту интересов в любой сфере. Консультации от ALX legal, сопровождение сделок и судебные разбирательства — доверяйте профессионалам ALXlaw и alxlegal",
 };
 
 export default function RootLayout({

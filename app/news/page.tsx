@@ -88,7 +88,7 @@ function NewsItem({ post, index }: { post: Post; index: string }) {
         />
       )}
 
-      <h1
+      <h2
         className={cn(
           "big-text max-w-[273px] mx-auto md:max-w-[calc(100vw-146px)] lg:max-w-[584px] text-left mr-auto",
           post.mainImage ? "mt-[16px] md:mt-[24px]" : "mt-[64px] md:mt-3"
@@ -98,7 +98,7 @@ function NewsItem({ post, index }: { post: Post; index: string }) {
           {post.titleLink}
         </span>
         {post.titleNormal && <span>{post.titleNormal}</span>}
-      </h1>
+      </h2>
 
       {post.textType === "bigText" ? (
         <p className="w-full max-w-[273px] mx-auto mt-[24px] big-text text-center md:max-w-[calc(100vw-146px)] lg:max-w-[584px] md:mt-[48px] ">
