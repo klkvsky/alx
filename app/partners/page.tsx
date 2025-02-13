@@ -713,7 +713,7 @@ export default function Home() {
           выраженную литигаторскую специализацию (включая дела{" "}
           <br className="md:hidden" /> о банкротстве и оспаривание сделок).{" "}
           <span className="bold-text">04</span> Помимо участия{" "}
-          <br className="md:hidden" /> в сложных судебных спорах, пробеждала
+          <br className="md:hidden" /> в сложных судебных спорах, пробежала
           десятки марафонов и проплыла сотни километров. Очаровательная,
           спортивная, уникальная. <span className="bold-text">05</span> До ALX
           работала в BGP Litigation.

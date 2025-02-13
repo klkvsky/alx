@@ -91,7 +91,7 @@ export default function Navbar() {
             >
               Артефакты
             </Link>
-            <Link
+            {/* <Link
               href="/news"
               className={cn(
                 "text-white font-brutal font-bold text-[12px] leading-[12px] tracking-[0.2em] uppercase hover:decoration-white/0 transition-all",
@@ -99,7 +99,7 @@ export default function Navbar() {
               )}
             >
               Новости
-            </Link>
+            </Link> */}
             <Link
               href="/#contacts"
               onClick={(e) => {
@@ -200,7 +200,7 @@ export default function Navbar() {
             >
               Артефакты
             </Link>
-            <Link
+            {/* <Link
               href="/news"
               className={cn(
                 "bold-text mt-3 uppercase",
@@ -209,7 +209,7 @@ export default function Navbar() {
               )}
             >
               Новости
-            </Link>
+            </Link> */}
             <Link
               href="/#contacts"
               onClick={(e) => {
@@ -363,7 +363,7 @@ export default function Navbar() {
               </Link>
               <p className="bold-text">03</p>
             </motion.div>
-            <motion.div
+            {/* <motion.div
               initial={{
                 opacity: 0,
                 y: 10,
@@ -392,7 +392,7 @@ export default function Navbar() {
                 Новости
               </Link>
               <p className="bold-text">04</p>
-            </motion.div>
+            </motion.div> */}
             <motion.div
               initial={{
                 opacity: 0,
