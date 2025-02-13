@@ -61,6 +61,12 @@ import background from "@/public/Partnets/Phon.jpg";
 import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
 
+export const metadata = {
+  title: "Партнеры ALX Partners - профессиональные юристы и адвокаты",
+  description:
+    "ALX Partners (КА А-ЭЛ-ИКС) — это команда опытных юристов и адвокатов ALX. стремящихся защищать интересы клиентов. Мы объединяем профессионализм, ответственность и глубокие знания для достижения успешных правовых решений",
+};
+
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
   const { scrollYProgress } = useScroll();

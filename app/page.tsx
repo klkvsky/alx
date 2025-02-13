@@ -44,6 +44,12 @@ import Slider11 from "@/public/Home/Slider11.jpg";
 import Link from "next/link";
 import { getAllPosts, Post } from "@/sanity/lib/queries";
 
+export const metadata = {
+  title: "ALX Partners - профессиональные юристы и адвокаты ALX, КА А-ЭЛ-ИКС",
+  description:
+    "Юридическая фирма ALX Partners (КА А-ЭЛ-ИКС) предлагает услуги адвокатов и юристов ALX для решения любых правовых вопросов. Наши эксперты ALX advocate и ALX lawyer предоставляют качественную правовую поддержку и защиту интересов в любой сфере. Консультации от ALX legal, сопровождение сделок и судебные разбирательства — доверяйте профессионалам ALXlaw и abdegal.",
+};
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
