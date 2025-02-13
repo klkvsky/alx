@@ -42,21 +42,21 @@ import Slider9 from "@/public/Home/Slider9.png";
 import Slider10 from "@/public/Home/Slider10.png";
 import Slider11 from "@/public/Home/Slider11.jpg";
 import Link from "next/link";
-import { getAllPosts, Post } from "@/sanity/lib/queries";
+// import { getAllPosts, Post } from "@/sanity/lib/queries";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
 
-  const [topNews, setTopNews] = useState<Post[]>([]);
+  // const [topNews, setTopNews] = useState<Post[]>([]);
 
   useEffect(() => {
-    const fetchTopNews = async () => {
-      const posts = await getAllPosts();
-      setTopNews(posts);
-    };
+    // const fetchTopNews = async () => {
+    //   const posts = await getAllPosts();
+    //   setTopNews(posts);
+    // };
 
-    fetchTopNews();
+    // fetchTopNews();
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1199);

@@ -24,11 +24,6 @@ import Image17 from "@/public/Artifacts/image17.jpg";
 
 import ImageX from "@/public/Artifacts/ImageForgot.png";
 
-export const metadata = {
-  title: "Артефакты ALX Partners - наследие юридической практики",
-  description:
-    "Артефакты ALX Partners отражают ключевые достижения и наследие КА А-ЭЛ-ИКС. Мы гордимся результатами работы наших юристов и адвокатов ALX, которые на протяжении лет обеспечивают успешные юридические решения.",
-};
 
 export default function Page() {
   return (
