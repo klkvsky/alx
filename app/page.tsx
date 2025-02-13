@@ -44,12 +44,6 @@ import Slider11 from "@/public/Home/Slider11.jpg";
 import Link from "next/link";
 import { getAllPosts, Post } from "@/sanity/lib/queries";
 
-export const metadata = {
-  title: "ALX Partners - профессиональные юристы и адвокаты ALX, КА А-ЭЛ-ИКС",
-  description:
-    "Юридическая фирма ALX Partners (КА А-ЭЛ-ИКС) предлагает услуги адвокатов и юристов ALX для решения любых правовых вопросов. Наши эксперты ALX advocate и ALX lawyer предоставляют качественную правовую поддержку и защиту интересов в любой сфере. Консультации от ALX legal, сопровождение сделок и судебные разбирательства — доверяйте профессионалам ALXlaw и abdegal.",
-};
-
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
@@ -118,70 +112,7 @@ export default function Home() {
             />
           </div>
         </motion.div>
-        <div className="flex flex-row items-center bg-black text-white whitespace-nowrap mx-2.5 md:mx-3 overflow-hidden mt-[63dvh] px-2 lg:pl-2.5 lg:mt-[80dvh] py-1 md:py-2 z-20 md:gap-4 lg:gap-[25px] md:h-[40px]">
-          <motion.div
-            className="flex flex-row items-center gap-[25px]"
-            animate={{
-              x: ["0%", "-50%"],
-            }}
-            transition={{
-              duration: 40,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-          >
-            {/* First instance of content */}
-            <Link
-              href="/news"
-              className="bold-text underline underline-extension-2 hover:no-underline cursor-pointer"
-            >
-              НОВОСТИ
-            </Link>
-            {topNews.map((post, idx) => (
-              <Link
-                key={`first-${post.slug.current}`}
-                href={post.sourceLink}
-                className="flex flex-row items-center gap-2"
-              >
-                <p className="bold-text leading-[22px] md:leading-[24px]">
-                  {idx < 9 ? `0${idx + 1}` : `${idx + 1}`}
-                </p>
-                <p className="regular-text ml-2 ">
-                  <span className="underline underline-extension-2 hover:no-underline">
-                    {post.titleLink}
-                  </span>
-                  {post.titleNormal && <span>{post.titleNormal}</span>}
-                </p>
-              </Link>
-            ))}
-
-            {/* Duplicate content for seamless loop */}
-            <Link
-              href="/news"
-              className="bold-text underline underline-extension-2 hover:no-underline cursor-pointer"
-            >
-              НОВОСТИ
-            </Link>
-            {topNews.map((post, idx) => (
-              <Link
-                key={`second-${post.slug.current}`}
-                href={post.sourceLink}
-                className="flex flex-row items-center gap-2"
-              >
-                <p className="bold-text leading-[22px] md:leading-[24px]">
-                  {idx < 9 ? `0${idx + 1}` : `${idx + 1}`}
-                </p>
-                <p className="regular-text ml-2">
-                  <span className="underline underline-extension-2 hover:no-underline">
-                    {post.titleLink}
-                  </span>
-                  {post.titleNormal && <span>{post.titleNormal}</span>}
-                </p>
-              </Link>
-            ))}
-          </motion.div>
-        </div>
-        <div className="w-[calc(100dvw-20px)] mx-auto h-[61.5vw] relative md:h-[65.3vw] lg:h-screen z-10">
+        <div className="w-[calc(100dvw-20px)] mx-auto h-[61.5vw] relative md:h-[65.3vw] lg:h-screen z-10 mt-[63dvh] lg:mt-[80dvh]">
           <Image src={Hero2} alt="Hero Home" fill objectFit="cover" />
         </div>
       </div>
@@ -673,4 +604,128 @@ function ImageWrapper({ children }: { children: React.ReactNode }) {
       {children}
     </motion.div>
   );
+}
+
+{
+  /* <div *className*="flex flex-row items-center bg-black text-white whitespace-nowrap mx-2.5 md:mx-3 overflow-hidden mt-[63dvh] px-2 lg:pl-2.5 lg:mt-[80dvh] py-1 md:py-2 z-20 md:gap-4 lg:gap-[25px] md:h-[40px]">
+
+<motion.div
+
+*className*="flex flex-row items-center gap-[25px]"
+
+*animate*={{
+
+x: ["0%", "-50%"],
+
+}}
+
+*transition*={{
+
+duration: 40,
+
+ease: "linear",
+
+repeat: Infinity,
+
+}}
+
+>
+
+
+<Link
+
+href="/news"
+
+className="bold-text underline underline-extension-2 hover:no-underline cursor-pointer"
+
+>
+
+НОВОСТИ
+
+</Link>
+
+{topNews.map((*post*, *idx*) => (
+
+<Link
+
+*key*={`first-${post.slug.current}`}
+
+*href*={post.sourceLink}
+
+*className*="flex flex-row items-center gap-2"
+
+>
+
+<p *className*="bold-text leading-[22px] md:leading-[24px]">
+
+{idx < 9 ? `0${idx + 1}` : `${idx + 1}`}
+
+</p>
+
+<p *className*="regular-text ml-2 ">
+
+<span *className*="underline underline-extension-2 hover:no-underline">
+
+{post.titleLink}
+
+</span>
+
+{post.titleNormal && <span>{post.titleNormal}</span>}
+
+</p>
+
+</Link>
+
+))}
+
+
+<Link
+
+*href*="/news"
+
+*className*="bold-text underline underline-extension-2 hover:no-underline cursor-pointer"
+
+>
+
+НОВОСТИ
+
+</Link>
+
+{topNews.map((*post*, *idx*) => (
+
+<Link
+
+*key*={`second-${post.slug.current}`}
+
+*href*={post.sourceLink}
+
+*className*="flex flex-row items-center gap-2"
+
+>
+
+<p *className*="bold-text leading-[22px] md:leading-[24px]">
+
+{idx < 9 ? `0${idx + 1}` : `${idx + 1}`}
+
+</p>
+
+<p *className*="regular-text ml-2">
+
+<span *className*="underline underline-extension-2 hover:no-underline">
+
+{post.titleLink}
+
+</span>
+
+{post.titleNormal && <span>{post.titleNormal}</span>}
+
+</p>
+
+</Link>
+
+))}
+
+</motion.div>
+
+</div> */
 }
