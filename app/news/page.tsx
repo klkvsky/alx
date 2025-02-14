@@ -19,7 +19,7 @@ export default async function Home() {
           новости
         </p>
 
-        <div className="flex flex-col mt-[64px] px-[11px] gap-y-[10px] max-w-[353px] md:max-w-[674px] lg:max-w-[780px] mx-auto w-full  lg:px-0">
+        <div className="flex flex-col mt-[64px] px-[11px] gap-y-[10px] max-w-[353px] md:max-w-[674px] lg:max-w-[780px] mx-auto w-full lg:px-0">
           {posts.slice(0, 4).map((post, idx) => (
             <div className="flex flex-row" key={post._id}>
               <p className="bold-text leading-[22px] md:leading-[24px] w-[14px]">
