@@ -751,7 +751,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
           <p className="big-text">Арина Русакевич</p>
           <p className="bold-text uppercase leading-[14px] mt-1.5">
-            помощник юриста
+            младший юрист
           </p>
         </div>
         <p className="regular-text mt-6">
