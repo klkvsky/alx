@@ -40,3 +40,7 @@
     text-decoration-skip-ink: none;
   }
 }
+
+.rfm-initial-child-container {
+  align-items: flex-end !important;
+}

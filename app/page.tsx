@@ -42,7 +42,13 @@ import Slider9 from "@/public/Home/Slider9.png";
 import Slider10 from "@/public/Home/Slider10.png";
 import Slider11 from "@/public/Home/Slider11.jpg";
 import Link from "next/link";
-import { getAllPosts, Post } from "@/sanity/lib/queries";
+
+import {
+  getAllPosts,
+  getAllTeamMembers,
+  Post,
+  TeamMember,
+} from "@/sanity/lib/queries";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -72,6 +78,35 @@ export default function Home() {
 
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
   const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [partners, setPartners] = useState<TeamMember[]>([]);
+  const [otherMembers, setOtherMembers] = useState<TeamMember[]>([]);
+
+  useEffect(() => {
+    const fetchTeamMembers = async () => {
+      try {
+        const data = await getAllTeamMembers();
+
+        // Split team members into partners and other members
+        const partners = data.filter((member) =>
+          member.position.toLowerCase().includes("партнёр")
+        );
+
+        const others = data.filter(
+          (member) => !member.position.toLowerCase().includes("партнёр")
+        );
+
+        setTeamMembers(data);
+        setPartners(partners);
+        setOtherMembers(others);
+      } catch (error) {
+        console.error("Error fetching team members:", error);
+      }
+    };
+
+    fetchTeamMembers();
+  }, []);
 
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden bg-[#E8E8E8]">
@@ -331,97 +366,37 @@ export default function Home() {
           <p className="bold-text">КОМАНДА</p>
         </TextWrapper>
         <div className="lg:flex lg:flex-row lg:gap-8 md:mt-12 lg:mt-3 flex flex-col items-center">
-          <TextWrapper>
-            <Link
-              href="/partners#sergey"
-              className="flex flex-row gap-2 items-end mt-4 md:mt-0 lg:mt-1"
-            >
-              <p className="bold-text leading-[16px]">01</p>
-              <p className="big-text underline underline-extension-2 hover:no-underline">
-                Сергей Лисин
-              </p>
-            </Link>
-          </TextWrapper>
-          <TextWrapper>
-            <Link
-              href="/partners#alexey"
-              className="flex flex-row gap-2 items-end mt-1 md:mt-3 md:gap-3"
-            >
-              <p className="bold-text leading-[16px]">02</p>
-              <p className="big-text underline underline-extension-2 hover:no-underline">
-                Алексей Ахуба
-              </p>
-            </Link>
-          </TextWrapper>
-          <TextWrapper>
-            <Link
-              href="/partners#asya"
-              className="flex flex-row gap-2 items-end mt-1 md:mt-3 md:gap-3"
-            >
-              <p className="bold-text leading-[16px]">03</p>
-              <p className="big-text underline underline-extension-2 hover:no-underline">
-                Ася Алфёрова
-              </p>
-            </Link>
-          </TextWrapper>
-          <TextWrapper>
-            <Link
-              href="/partners#alexey-r"
-              className="flex flex-row gap-2 items-end mt-1 md:mt-3 md:gap-3"
-            >
-              <p className="bold-text leading-[16px]">04</p>
-              <p className="big-text underline underline-extension-2 hover:no-underline">
-                Алексей Рябов
-              </p>
-            </Link>
-          </TextWrapper>
+          {partners.map((partner, index) => (
+            <TextWrapper key={partner.id.current}>
+              <Link
+                href={`/partners#${partner.name.toLowerCase().split(" ").join("-")}`}
+                className="flex flex-row gap-2 items-end mt-4 md:mt-0 lg:mt-1"
+              >
+                <p className="bold-text leading-[16px]">01</p>
+                <p className="big-text underline underline-extension-2 hover:no-underline">
+                  {partner.name}
+                </p>
+              </Link>
+            </TextWrapper>
+          ))}
         </div>
 
         <div className="lg:flex gap-2 md:gap-3 md:mt-9 lg:flex-row lg:gap-4 lg:mt-[30px] flex flex-col items-center">
-          <TextWrapper>
-            <Link
-              href="/partners#evgeny"
-              className="flex flex-row gap-1 md:gap-3 items-end mt-6 md:mt-0 uppercase bold-text lg:mt-2"
-            >
-              <p>05</p>
-              <p className="underline underline-extension hover:no-underline">
-                Евгений Орлов
-              </p>
-            </Link>
-          </TextWrapper>
-          <TextWrapper>
-            <Link
-              href="/partners#anastasia"
-              className="flex flex-row gap-1 md:gap-3 items-end mt-2 uppercase bold-text "
-            >
-              <p>06</p>
-              <p className="underline underline-extension hover:no-underline">
-                Анастасия Рябова
-              </p>
-            </Link>
-          </TextWrapper>
-          <TextWrapper>
-            <Link
-              href="/partners#arina"
-              className="flex flex-row gap-1 md:gap-3 items-end mt-2 uppercase bold-text "
-            >
-              <p>07</p>
-              <p className="underline underline-extension hover:no-underline">
-                Арина Русакевич
-              </p>
-            </Link>
-          </TextWrapper>
-          <TextWrapper>
-            <Link
-              href="/partners#ksenia"
-              className="flex flex-row gap-1 md:gap-3 items-end mt-2 uppercase bold-text "
-            >
-              <p>08</p>
-              <p className="underline underline-extension hover:no-underline">
-                Ксения Мерзлякова
-              </p>
-            </Link>
-          </TextWrapper>
+          {otherMembers.map((member, index) => (
+            <TextWrapper key={member.id.current}>
+              <Link
+                href={`/partners#${member.name.toLowerCase().split(" ")[0]}`}
+                className="flex flex-row gap-1 md:gap-3 items-end mt-6 md:mt-0 uppercase bold-text lg:mt-2"
+              >
+                <p>
+                  {(partners.length + index + 1).toString().padStart(2, "0")}
+                </p>
+                <p className="underline underline-extension hover:no-underline">
+                  {member.name}
+                </p>
+              </Link>
+            </TextWrapper>
+          ))}
         </div>
       </div>
 
