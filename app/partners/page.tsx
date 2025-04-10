@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
@@ -10,7 +10,6 @@ import { TeamMember, getAllTeamMembers } from "@/sanity/lib/queries";
 import Marquee from "react-fast-marquee";
 
 import background from "@/public/Partnets/Phon.jpg";
-import Link from "next/link";
 import TextWrapper from "@/components/TextWrapper";
 
 export default function Home() {
@@ -32,8 +31,8 @@ export default function Home() {
     };
   }, []);
 
-  // Function to shuffle an array (Fisher-Yates shuffle algorithm)
-  const shuffleArray = (array: any[]) => {
+
+  const shuffleArray = (array: TeamMember[]) => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

@@ -79,7 +79,6 @@ export default function Home() {
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
   const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
 
-  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [partners, setPartners] = useState<TeamMember[]>([]);
   const [otherMembers, setOtherMembers] = useState<TeamMember[]>([]);
 
@@ -97,7 +96,6 @@ export default function Home() {
           (member) => !member.position.toLowerCase().includes("партнёр")
         );
 
-        setTeamMembers(data);
         setPartners(partners);
         setOtherMembers(others);
       } catch (error) {
@@ -366,7 +364,7 @@ export default function Home() {
           <p className="bold-text">КОМАНДА</p>
         </TextWrapper>
         <div className="lg:flex lg:flex-row lg:gap-8 md:mt-12 lg:mt-3 flex flex-col items-center">
-          {partners.map((partner, index) => (
+          {partners.map((partner) => (
             <TextWrapper key={partner.id.current}>
               <Link
                 href={`/partners#${partner.name.toLowerCase().split(" ").join("-")}`}
