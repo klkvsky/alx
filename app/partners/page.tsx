@@ -8,9 +8,7 @@ import { cn } from "@/lib/utils";
 import { TeamMember, getAllTeamMembers } from "@/sanity/lib/queries";
 
 import Marquee from "react-fast-marquee";
-
-import background from "@/public/Partnets/Phon.jpg";
-import TextWrapper from "@/components/TextWrapper";
+import background from "@/public/background.png";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -30,7 +28,6 @@ export default function Home() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
 
   const shuffleArray = (array: TeamMember[]) => {
     const shuffled = [...array];
@@ -74,26 +71,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col max-w-[100vw] overflow-hidden text-white relative bg-black mb-80">
+    <div className="flex flex-col max-w-[100vw] overflow-hidden text-white relative bg-black pb-32 min-h-dvh">
       <Navbar />
-      <Image
-        src={background}
-        alt="Background"
-        width={0}
-        height={0}
-        unoptimized
-        className="fixed w-[335.7vw] h-[299.4vw] -top-[6.4vw] -left-[] md:w-[109.9vw] md:h-[148.2vw] md:-top-[7.9vw] md:-left-[11.3vw] lg:w-[237.9vw] lg:h-[133.9vw] lg:-left-[7.9vw] lg:-top-[30.9vw]"
-      />
-      <Image
-        src={background}
-        alt="Background"
-        width={0}
-        height={0}
-        unoptimized
-        className="fixed md:w-[82.1vw] md:h-[146.4vw] md:-top-[7.9vw] md:left-[17.8vw] lg:w-[237.9vw] lg:h-[157.5vw] lg:left-[24.9vw] lg:-top-[55.8vw]"
-      />
 
-      <Marquee className="mt-16 md:mt-[315px] !hidden lg:!flex" pauseOnClick>
+      <div className="max-md:aspect-[733/679] w-[679px] fixed top-0 right-0 md:w-[1003px] md:max-[1199px]:aspect-[1003/1083] min-[1199px]:w-screen min-[1199px]:aspect-[1200/1293]">
+        <Image
+          src={background}
+          alt="background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <Marquee
+        className="hidden min-[1199px]:!flex mt-[334px] h-fit"
+        pauseOnClick
+      >
         {[...Array(10)].map((_, i) => {
           const shuffledMembers = shuffleArray(teamMembers);
           return shuffledMembers.map(
@@ -101,7 +94,7 @@ export default function Home() {
               member.images.length > 0 && (
                 <div
                   key={`set-${i}-${member.id.current}`}
-                  className="w-full h-auto flex-none max-h-[220px] md:max-h-[319px] lg:max-h-[360px] xl:max-h-[514px]"
+                  className="w-fit h-auto min-h-[237px] xl:max-h-[514px]"
                   onClick={() =>
                     scrollToPartner(member.name.toLowerCase().split(" ")[0])
                   }
@@ -119,13 +112,11 @@ export default function Home() {
         })}
       </Marquee>
 
-      <div className="flex flex-col items-center text-center mt-[100px] md:mt-[192px] lg:mt-[72px] lg:px-[10vw] z-50">
-        <TextWrapper>
-          <p className="bold-text mb-[53px]">КОМАНДА</p>
-        </TextWrapper>
+      <div className="flex flex-col items-center text-center mt-[100px] md:mt-[296px] min-[1199px]:mt-[144px] min-[1199px]:px-[5vw] 2xl:px-[30vw] z-50">
+        <p className="bold-text mb-[53px] md:mb-[24px]">КОМАНДА</p>
 
         {/* Partners Row (with big text) */}
-        <div className="lg:flex lg:flex-row lg:gap-8 md:mt-12 lg:mt-3 flex flex-col items-center w-full lg:flex-wrap lg:justify-center z-50 px-2.5 gap-6">
+        <div className="flex flex-col items-center w-full gap-6 md:flex-row md:flex-wrap md:justify-center lg:gap-8 lg:mt-3 z-50 px-2.5">
           {partners.map((partner, index) => (
             <div
               className="flex flex-row max-md:w-full md:items-end md:gap-3 cursor-pointer"
@@ -144,7 +135,7 @@ export default function Home() {
                     alt={partner.name}
                     width={300}
                     height={300}
-                    className="h-auto w-[60px] md:h-[24px] md:w-auto"
+                    className="w-auto h-[60px] md:h-[18px] lg:h-[24px]"
                   />
                 )}
                 <div className="flex flex-col gap-2 md:flex-row md:items-end">
@@ -161,7 +152,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="lg:flex gap-2 md:gap-3 md:mt-9 lg:flex-row lg:gap-4 lg:mt-[48px] flex flex-row items-center mt-10 flex-wrap justify-center">
+        <div className="flex flex-row items-center mt-12 flex-wrap justify-center gap-2 md:mt-[62px] md:gap-4 lg:mt-[48px]">
           {otherMembers.map((member, index) => (
             <div
               className="flex flex-row gap-1 md:gap-3 items-end mt-2 uppercase bold-text cursor-pointer"
@@ -177,7 +168,7 @@ export default function Home() {
                   alt={member.name}
                   width={300}
                   height={300}
-                  className="w-auto h-[24px] hidden lg:block"
+                  className="w-auto md:h-[18px] lg:h-[24px] hidden md:block"
                 />
               )}
               <p className="underline underline-extension hover:no-underline">
@@ -192,8 +183,10 @@ export default function Home() {
         <div
           key={member.id.current}
           className={cn(
-            "z-50 w-full",
-            index === 0 ? "mt-16 md:mt-[315px]" : "mt-[128px] md:mt-[192px]"
+            "z-40 w-full",
+            index === 0
+              ? "mt-[256px] md:mt-[276px] lg:mt-[315px]"
+              : "mt-[128px] md:mt-[108px] lg:mt-[192px]"
           )}
           id={member.name.toLowerCase().split(" ")[0]}
         >
@@ -222,7 +215,7 @@ export default function Home() {
               ))}
           </div>
 
-          <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[682px] md:max-lg:ml-[calc(17.8vw+8px)] pr-2.5 lg:ml-[calc(25%+8px)] lg:w-[calc(55.417vw+8px)] z-20">
+          <div className="flex flex-col mt-12 ml-[29%] md:ml-0 md:max-lg:max-w-[674px] md:max-lg:mx-auto pr-2.5 md:pr-0 lg:ml-[calc(25%+8px)] lg:w-[calc(55.417vw+8px)] z-20 xl:max-w-[674px] xl:mx-auto">
             <div className="flex flex-col md:flex-row md:items-end md:gap-[24px]">
               <p className="big-text">{member.name}</p>
               <p className="bold-text uppercase leading-[14px] mt-1.5">
@@ -230,9 +223,9 @@ export default function Home() {
               </p>
             </div>
             <p className="regular-text mt-6">
-              {member.description.map((description) => (
-                <span className="bold-text" key={description}>
-                  {description}
+              {member.description.map((description, index) => (
+                <span className="regular-text" key={description}>
+                  <span className="bold-text"> 0{index + 1}</span> {description}
                 </span>
               ))}
             </p>
