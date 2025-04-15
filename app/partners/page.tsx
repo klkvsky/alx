@@ -84,28 +84,24 @@ export default function Home() {
       </div>
 
       <div className="hidden min-[1199px]:!flex mt-[334px] h-fit">
-        <Marquee pauseOnClick>
-          {[...Array(10)].map((_, i) => {
-            const shuffledMembers = shuffleArray(teamMembers);
-            return shuffledMembers.map(
-              (member) =>
-                member.images.length > 0 && (
-                  <div
-                    key={`set-${i}-${member.id.current}`}
-                    className="w-fit h-auto min-h-[237px] xl:max-h-[514px]"
-                    onClick={() =>
-                      scrollToPartner(member.name.toLowerCase().split(" ")[0])
-                    }
-                  >
-                    <Image
-                      src={urlFor(member.images[1]).url()}
-                      alt={`${member.name}`}
-                      width={300}
-                      height={500}
-                      className="h-auto w-full object-contain"
-                    />
-                  </div>
-                )
+        <Marquee pauseOnClick speed={10}>
+          {teamMembers.map((member, i) => {
+            return (
+              member.images.length > 0 && (
+                <div
+                  key={`set-${i}-${member.id.current}`}
+                  className="w-fit h-auto min-h-[237px] xl:max-h-[514px]"
+                  onClick={() => scrollToPartner(member.id.current)}
+                >
+                  <Image
+                    src={urlFor(member.images[1]).url()}
+                    alt={`${member.name}`}
+                    width={300}
+                    height={500}
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
+              )
             );
           })}
         </Marquee>
@@ -187,7 +183,7 @@ export default function Home() {
               ? "mt-[256px] md:mt-[276px] lg:mt-[315px]"
               : "mt-[128px] md:mt-[108px] lg:mt-[192px]"
           )}
-          id={member.name.toLowerCase().split(" ")[0]}
+          id={member.id.current}
         >
           <div className="flex flex-row items-end z-20 pointer-events-none w-full h-[220px] md:h-[319px] lg:h-[360px] xl:h-[514px]">
             {member.images

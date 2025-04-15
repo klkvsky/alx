@@ -367,7 +367,7 @@ export default function Home() {
           {partners.map((partner) => (
             <TextWrapper key={partner.id.current}>
               <Link
-                href={`/partners#${partner.name.toLowerCase().split(" ").join("-")}`}
+                href={`/partners#${partner.id.current}`}
                 className="flex flex-row gap-2 items-end mt-4 md:mt-0 lg:mt-1"
               >
                 <p className="bold-text leading-[16px]">01</p>
