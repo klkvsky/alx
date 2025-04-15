@@ -83,34 +83,33 @@ export default function Home() {
         />
       </div>
 
-      <Marquee
-        className="hidden min-[1199px]:!flex mt-[334px] h-fit"
-        pauseOnClick
-      >
-        {[...Array(10)].map((_, i) => {
-          const shuffledMembers = shuffleArray(teamMembers);
-          return shuffledMembers.map(
-            (member) =>
-              member.images.length > 0 && (
-                <div
-                  key={`set-${i}-${member.id.current}`}
-                  className="w-fit h-auto min-h-[237px] xl:max-h-[514px]"
-                  onClick={() =>
-                    scrollToPartner(member.name.toLowerCase().split(" ")[0])
-                  }
-                >
-                  <Image
-                    src={urlFor(member.images[1]).url()}
-                    alt={`${member.name}`}
-                    width={300}
-                    height={500}
-                    className="h-auto w-full object-contain"
-                  />
-                </div>
-              )
-          );
-        })}
-      </Marquee>
+      <div className="hidden min-[1199px]:!flex mt-[334px] h-fit">
+        <Marquee pauseOnClick>
+          {[...Array(10)].map((_, i) => {
+            const shuffledMembers = shuffleArray(teamMembers);
+            return shuffledMembers.map(
+              (member) =>
+                member.images.length > 0 && (
+                  <div
+                    key={`set-${i}-${member.id.current}`}
+                    className="w-fit h-auto min-h-[237px] xl:max-h-[514px]"
+                    onClick={() =>
+                      scrollToPartner(member.name.toLowerCase().split(" ")[0])
+                    }
+                  >
+                    <Image
+                      src={urlFor(member.images[1]).url()}
+                      alt={`${member.name}`}
+                      width={300}
+                      height={500}
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
+                )
+            );
+          })}
+        </Marquee>
+      </div>
 
       <div className="flex flex-col items-center text-center mt-[100px] md:mt-[296px] min-[1199px]:mt-[144px] min-[1199px]:px-[5vw] 2xl:px-[30vw] z-50">
         <p className="bold-text mb-[53px] md:mb-[24px]">КОМАНДА</p>
