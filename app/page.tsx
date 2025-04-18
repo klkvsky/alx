@@ -319,14 +319,9 @@ export default function Home() {
             <div className="flex flex-row mt-8 max-md:max-w-[480px] lg:min-w-[780px] md:min-w-[590px] md:max-w-[590px] w-full md:justify-between">
               <p className=" bold-text leading-[22px] md:leading-[26px]">04</p>
               <p className="ml-[26px] mr-[29px] regular-text max-md:w-[260px]">
-                Наша главная ценность — команда.
-                <br className="md:hidden" />
-                Она стабильна: костяк вместе <br className="md:hidden" />
-                больше десятилетия. Она <br className="md:hidden" />
-                преемственна: есть те, кому 50, <br className="md:hidden" />
-                40, 30 и даже чуть за 20, наше
-                <br className="md:hidden" />
-                прошлое, настоящее и будущее.
+                Наша главная ценность — команда. Она стабильна и преемственна:
+                есть те, кому 50, 40, 30 и даже чуть за 20. Наше пробел прошлое,
+                настоящее и будущее. Много большого Будущего
               </p>
               <p className="bold-text leading-[22px] md:leading-[26px]">04</p>
             </div>
@@ -363,14 +358,14 @@ export default function Home() {
         <TextWrapper>
           <p className="bold-text">КОМАНДА</p>
         </TextWrapper>
-        <div className="lg:flex lg:flex-row lg:gap-8 md:mt-12 lg:mt-3 flex flex-col items-center">
-          {partners.map((partner) => (
+        <div className="lg:flex lg:flex-row lg:gap-8 md:mt-12 lg:mt-3 flex flex-col items-center gap-2">
+          {partners.map((partner, index) => (
             <TextWrapper key={partner.id.current}>
               <Link
                 href={`/partners#${partner.id.current}`}
                 className="flex flex-row gap-2 items-end mt-4 md:mt-0 lg:mt-1"
               >
-                <p className="bold-text leading-[16px]">01</p>
+                <p className="bold-text leading-[16px]">0{index + 1}</p>
                 <p className="big-text underline underline-extension-2 hover:no-underline">
                   {partner.name}
                 </p>

@@ -29,15 +29,6 @@ export default function Home() {
     };
   }, []);
 
-  const shuffleArray = (array: TeamMember[]) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  };
-
   const scrollToPartner = (id: string) => {
     const partner = document.getElementById(id);
     if (partner) {
@@ -68,6 +59,25 @@ export default function Home() {
     };
 
     fetchTeamMembers();
+  }, []);
+
+  const [isShowingBackToTopButton, setIsShowingBackToTopButton] =
+    useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight * 1) {
+        setIsShowingBackToTopButton(true);
+      } else {
+        setIsShowingBackToTopButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -107,7 +117,10 @@ export default function Home() {
         </Marquee>
       </div>
 
-      <div className="flex flex-col items-center text-center mt-[100px] md:mt-[296px] min-[1199px]:mt-[144px] min-[1199px]:px-[5vw] 2xl:px-[30vw] z-50">
+      <div
+        className="flex flex-col items-center text-center mt-[100px] md:mt-[296px] min-[1199px]:mt-[144px] min-[1199px]:px-[5vw] 2xl:px-[30vw] z-50"
+        id="team-block"
+      >
         <p className="bold-text mb-[53px] md:mb-[24px]">КОМАНДА</p>
 
         {/* Partners Row (with big text) */}
@@ -227,6 +240,35 @@ export default function Home() {
           </div>
         </div>
       ))}
+
+      <button
+        className={cn(
+          "bold-text hover:underline underline-extension-2-x fixed bottom-6 min-[1199px]:bottom-10 xl:bottom-12 left-1/2 -translate-x-1/2 z-[1000] uppercase whitespace-nowrap transition-all duration-300",
+          isShowingBackToTopButton
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10 pointer-events-none"
+        )}
+        onClick={() => {
+          const teamBlock = document.getElementById("team-block");
+          if (teamBlock) {
+            teamBlock.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        }}
+      >
+        вернуться к списку команды
+      </button>
+
+      <div
+        className={cn(
+          "fixed bottom-0 left-0 w-screen h-[100px] z-50 bg-gradient-to-t from-black to-transparent transition-all duration-300 min-[1199px]:h-[150px] xl:h-[200px]",
+          isShowingBackToTopButton ? "opacity-100" : "opacity-0"
+        )}
+      />
+
+      <p className="regular-text mt-[25dvh] z-50 mx-auto max-w-sm text-center">
+        Мы будем и дальше раскрывать состав команды по мере того, как отдельные
+        ее участники будут отбрасывать свою природную скромность
+      </p>
     </div>
   );
 }
