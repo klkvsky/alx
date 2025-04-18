@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
@@ -82,19 +82,23 @@ export default function Home() {
     };
   }, []);
 
-  const searchParams = useSearchParams();
+  const SearchParamsHandler = () => {
+    const searchParams = useSearchParams();
 
-  useEffect(() => {
-    if (searchParams.get("id")) {
-      const id = searchParams.get("id");
-      if (id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+    useEffect(() => {
+      if (searchParams.get("id")) {
+        const id = searchParams.get("id");
+        if (id) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
         }
       }
-    }
-  }, [searchParams, partners]);
+    }, [searchParams]);
+
+    return null;
+  };
 
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden text-white relative bg-black pb-32 min-h-dvh">
@@ -281,6 +285,10 @@ export default function Home() {
         Мы будем и дальше раскрывать состав команды по мере того, как отдельные
         ее участники будут отбрасывать свою природную скромность
       </p>
+
+      <Suspense>
+        <SearchParamsHandler />
+      </Suspense>
     </div>
   );
 }

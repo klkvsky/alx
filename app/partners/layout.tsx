@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 export const metadata = {
   title: "Партнеры ALX Partners - профессиональные юристы и адвокаты",
   description:
@@ -7,9 +5,5 @@ export const metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <Suspense fallback={<div className="bg-black w-screen h-screen"></div>}>
-      <div>{children}</div>
-    </Suspense>
-  );
+  return <div>{children}</div>;
 }
