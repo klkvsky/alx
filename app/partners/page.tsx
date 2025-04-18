@@ -7,6 +7,8 @@ import { urlFor } from "@/sanity/lib/image";
 import { cn } from "@/lib/utils";
 import { TeamMember, getAllTeamMembers } from "@/sanity/lib/queries";
 
+import { useSearchParams } from "next/navigation";
+
 import Marquee from "react-fast-marquee";
 import background from "@/public/background.png";
 
@@ -80,6 +82,20 @@ export default function Home() {
     };
   }, []);
 
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("id")) {
+      const id = searchParams.get("id");
+      if (id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  }, [searchParams, partners]);
+
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden text-white relative bg-black pb-32 min-h-dvh">
       <Navbar />
@@ -93,7 +109,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="hidden min-[1199px]:!flex mt-[334px] h-fit">
+      <div className="hidden min-[1000px]:!block mt-[334px] h-fit">
         <Marquee pauseOnClick speed={10}>
           {teamMembers.map((member, i) => {
             return (
@@ -129,9 +145,7 @@ export default function Home() {
             <div
               className="flex flex-row max-md:w-full md:items-end md:gap-3 cursor-pointer"
               key={partner.id.current}
-              onClick={() =>
-                scrollToPartner(partner.name.toLowerCase().split(" ")[0])
-              }
+              onClick={() => scrollToPartner(partner.id.current)}
             >
               <p className="bold-text leading-[16px]">
                 {(index + 1).toString().padStart(2, "0")}
@@ -165,9 +179,7 @@ export default function Home() {
             <div
               className="flex flex-row gap-1 md:gap-3 items-end mt-2 uppercase bold-text cursor-pointer"
               key={index}
-              onClick={() =>
-                scrollToPartner(member.name.toLowerCase().split(" ")[0])
-              }
+              onClick={() => scrollToPartner(member.id.current)}
             >
               <p>{(partners.length + index + 1).toString().padStart(2, "0")}</p>
               {member.teamBlockImage && (
@@ -243,7 +255,7 @@ export default function Home() {
 
       <button
         className={cn(
-          "bold-text hover:underline underline-extension-2-x fixed bottom-6 min-[1199px]:bottom-10 xl:bottom-12 left-1/2 -translate-x-1/2 z-[1000] uppercase whitespace-nowrap transition-all duration-300",
+          "bold-text hover:underline underline-extension-2-x fixed bottom-6 min-[1199px]:bottom-10 xl:bottom-12 left-1/2 -translate-x-1/2 z-[41] uppercase whitespace-nowrap transition-all duration-300",
           isShowingBackToTopButton
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10 pointer-events-none"
@@ -260,7 +272,7 @@ export default function Home() {
 
       <div
         className={cn(
-          "fixed bottom-0 left-0 w-screen h-[100px] z-50 bg-gradient-to-t from-black to-transparent transition-all duration-300 min-[1199px]:h-[150px] xl:h-[200px]",
+          "fixed bottom-0 left-0 w-screen h-[100px] z-40 bg-gradient-to-t from-black to-transparent transition-all duration-300 min-[1199px]:h-[150px] xl:h-[200px]",
           isShowingBackToTopButton ? "opacity-100" : "opacity-0"
         )}
       />

@@ -264,7 +264,7 @@ export default function Navbar() {
             exit={{
               opacity: 0,
             }}
-            className="fixed top-0 left-0 w-screen h-[100dvh] bg-black z-40 flex flex-col items-center justify-center gap-6 text-white px-2.5"
+            className="fixed top-0 left-0 w-screen h-[100dvh] bg-black z-[50] flex flex-col items-center justify-center gap-6 text-white px-2.5"
           >
             <Image
               src={NavbarBackground}

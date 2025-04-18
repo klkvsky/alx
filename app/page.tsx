@@ -320,8 +320,8 @@ export default function Home() {
               <p className=" bold-text leading-[22px] md:leading-[26px]">04</p>
               <p className="ml-[26px] mr-[29px] regular-text max-md:w-[260px]">
                 Наша главная ценность — команда. Она стабильна и преемственна:
-                есть те, кому 50, 40, 30 и даже чуть за 20. Наше пробел прошлое,
-                настоящее и будущее. Много большого Будущего
+                есть те, кому 50, 40, 30 и даже чуть за 20. Наше прошлое,
+                настоящее и будущее. Много большого Будущего.
               </p>
               <p className="bold-text leading-[22px] md:leading-[26px]">04</p>
             </div>
@@ -362,7 +362,7 @@ export default function Home() {
           {partners.map((partner, index) => (
             <TextWrapper key={partner.id.current}>
               <Link
-                href={`/partners#${partner.id.current}`}
+                href={`/partners?id=${partner.id.current}`}
                 className="flex flex-row gap-2 items-end mt-4 md:mt-0 lg:mt-1"
               >
                 <p className="bold-text leading-[16px]">0{index + 1}</p>
@@ -378,7 +378,7 @@ export default function Home() {
           {otherMembers.map((member, index) => (
             <TextWrapper key={member.id.current}>
               <Link
-                href={`/partners#${member.name.toLowerCase().split(" ")[0]}`}
+                href={`/partners?id=${member.id.current}`}
                 className="flex flex-row gap-1 md:gap-3 items-end mt-6 md:mt-0 uppercase bold-text lg:mt-2"
               >
                 <p>
@@ -588,7 +588,7 @@ export default function Home() {
         <p className="bold-text text-center max-md:text-[10px] uppercase">
           ©2024{" "}
           <Link
-            href="/privacy.pdf"
+            href="/Privacy.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-extension-2 hover:no-underline cursor-pointer"
