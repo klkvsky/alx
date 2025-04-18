@@ -1,14 +1,11 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { cn } from "@/lib/utils";
 import { TeamMember, getAllTeamMembers } from "@/sanity/lib/queries";
-
-import { useSearchParams } from "next/navigation";
-
 import Marquee from "react-fast-marquee";
 import background from "@/public/background.png";
 
@@ -82,23 +79,19 @@ export default function Home() {
     };
   }, []);
 
-  const SearchParamsHandler = () => {
-    const searchParams = useSearchParams();
+  // Handle URL params for direct navigation without useSearchParams
+  useEffect(() => {
+    // Get ID from URL using window.location instead of useSearchParams
+    const url = new URL(window.location.href);
+    const id = url.searchParams.get("id");
 
-    useEffect(() => {
-      if (searchParams.get("id")) {
-        const id = searchParams.get("id");
-        if (id) {
-          const element = document.getElementById(id);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }
+    if (id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
       }
-    }, [searchParams]);
-
-    return null;
-  };
+    }
+  }, [partners]);
 
   return (
     <div className="flex flex-col max-w-[100vw] overflow-hidden text-white relative bg-black pb-32 min-h-dvh">
@@ -285,10 +278,6 @@ export default function Home() {
         Мы будем и дальше раскрывать состав команды по мере того, как отдельные
         ее участники будут отбрасывать свою природную скромность
       </p>
-
-      <Suspense>
-        <SearchParamsHandler />
-      </Suspense>
     </div>
   );
 }
